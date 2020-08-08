@@ -5,6 +5,10 @@ public sakshi(){
 syso("hello");
 }
 
+public krishna(){
+System.out.println("Krishna1");
+}
+
 public customer(){
 syso("welcome hi");
 }
