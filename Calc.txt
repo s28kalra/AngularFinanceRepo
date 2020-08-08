@@ -1,2 +1,6 @@
 public sagar1(){
 System.out.println("Sagar2");}
+
+public sakshi(){
+syso("hello");
+}
