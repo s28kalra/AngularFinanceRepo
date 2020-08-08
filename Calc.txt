@@ -13,6 +13,11 @@ public customer(){
 syso("welcome hi");
 }
 
+
 public sagar3(){
 syso("sagar3")
+}
+
+public krishna2(){
+syso("krishna2")
 }
