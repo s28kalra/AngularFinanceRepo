@@ -6,5 +6,5 @@ syso("hello");
 }
 
 public customer(){
-syso("welcome");
+syso("welcome hi");
 }
