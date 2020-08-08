@@ -4,3 +4,7 @@ System.out.println("Sagar2");}
 public sakshi(){
 syso("hello");
 }
+
+public customer(){
+syso("welcome");
+}
