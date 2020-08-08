@@ -8,3 +8,7 @@ syso("hello");
 public sagar2(){
 syso("Sagar2");
 }
+
+public sagar3(){
+syso("Sagar3");
+}
