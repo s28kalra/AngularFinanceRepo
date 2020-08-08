@@ -1,1 +1,2 @@
-
+public sagar1(){
+System.out.println("Sagar2");}
