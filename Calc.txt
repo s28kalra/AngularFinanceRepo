@@ -12,3 +12,7 @@ System.out.println("Krishna1");
 public customer(){
 syso("welcome hi");
 }
+
+public sagar3(){
+syso("sagar3")
+}
