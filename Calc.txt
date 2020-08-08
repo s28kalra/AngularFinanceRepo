@@ -26,3 +26,7 @@ syso("krishna2")
 public sagar4(){
 syso("sagar4")
 }
+
+public sakshi2(){
+syso("Sakshi2");
+}
