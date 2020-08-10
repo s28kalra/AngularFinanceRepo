@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success">Go to Cart</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+<app-product-search></app-product-search>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <a href="#" class="list-group-item clearfix" *ngFor="let p of Products">
+            <div class="pull-left">
+                <h4 class="list-group-item-heading">{{p.productName}}</h4>
+                <p class="list-group-item-text">{{p.productId}}</p>
+                <p class="list-group-item-text">RS. {{p.productPrice}} /-</p>
+
+            </div>
+            <span class="pull-right">
+                <img [src]=p.productImage alt="{{p.productName}}" class="img-responsive" style=" max-height: 50px;">
+            </span>
+        </a>
+       <app-product-item></app-product-item>
+    </div>
+</div>
+
