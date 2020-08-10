@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from "../shared/product.model";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['../app.component.css']
 })
 export class ProductListComponent implements OnInit {
   Products:Product[]=[
@@ -14,7 +15,7 @@ export class ProductListComponent implements OnInit {
 
   ];
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
   }

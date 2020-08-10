@@ -6,7 +6,7 @@ import { UserLoginComponent } from "./user-login/user-login.component";
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { HomepageComponent } from "./homepage/homepage.component";
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductItemComponent } from './product-list/product-item/product-item.component';
 import { ProductDetailComponent } from './product-list/product-detail/product-detail.component';
@@ -25,7 +25,8 @@ import { RegisterComponent } from './register/register.component';
     ProductSearchComponent,
     RegisterComponent,
     AdminLoginComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
