@@ -1,0 +1,52 @@
+<div>
+    <form #registerForm='ngForm' (ngSubmit)='registerUser(registerForm)'>
+        <input type="text" placeholder="First-Name" name="userFirstName" (keypress)='isAName($event)' ngModel required>
+
+        <input type="text" placeholder="Last-Name" name="userLastName" (keypress)='isAName($event)' ngModel>
+
+        <br><br>Date Of Birth: <br><input type="date" name="dob" ngModel required>
+
+        <br><br> <input type="email" name="userEmail" ngModel pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{1,3})+$"
+            placeholder="Email" required>
+
+        <br><br><input type="text" placeholder="Mobile" name="userMobile" id="userMobile"
+            (keypress)='isNumber($event,"userMobile",10)' (keyup)='manageMobile("userMobile")' value="" minlength="11"
+            ngModel required>
+
+        <br><br><input type="password" name="password" placeholder="Password" ngModel minlength="8"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{8,15}$" [(ngModel)]='password' required>
+
+        <br><br><input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"
+            ngModel required>
+
+        <br><br><input type="text" name="address" placeholder="Address" ngModel required><br><br>
+
+        <span>Card Type: </span>
+        <input type="radio" id="Gold" name="cardType" value="Gold" class="cardType">Gold
+        <input type="radio" id="Titanium" name="cardType" value="Titanium" class="cardType" checked>Titanium
+
+        <br><br>Select Your Bank <select name="bank" id="bank">
+            <option value="HDFC" selected>HDFC</option>
+            <option value="AXIS">Axis</option>
+            <option value="ICICI">ICICI</option>
+            <option value="CITI">CITI Bank</option>
+            <option value="PNB">Punjab National Bank</option>
+            <option value="SBI">State Bank Of India</option>
+            <option value="CBI">Central Bank Of India</option>
+            <option value="UNION">Union Bank Of India</option>
+        </select>
+
+        <br><br><input type="text" placeholder="Account Number" name="userAccount" id="userAccount"
+            (keypress)='isNumber($event,"userAccount",18)' (keyup)='manageAccount("userAccount")' value=""
+            minlength="11" ngModel required>
+
+        <br><br><input type="text" name="ifsc" id="ifsc" placeholder="IFSC Code" pattern="^[A-Z]{4}[0-9]{7}$" ngModel
+            maxlength="11" required>
+
+        <br><br><input type="text" placeholder="Aadhar Card Number" name="userAadhar" id="userAadhar"
+            (keypress)='isNumber($event,"userAadhar",13)' (keyup)='manageAadharCard("userAadhar")' value=""
+            minlength="14" ngModel required>
+
+        <br><br><button type="submit" [disabled]='!registerForm.valid || !confirmPassword()'>Submit</button>
+    </form>
+</div>
