@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from "@angular/forms";
 import { Router } from '@angular/router';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-register',
@@ -10,24 +11,27 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   password: string;
-
+  user= new User();
+  passwordMismatch=false;
+  
   constructor(private route: Router) { }
 
   ngOnInit(): void {
   }
 
-  registerUser(form: NgForm) {
-    var mobile = (<HTMLInputElement>document.getElementById("bank"));
-    var data = mobile.value;
-    console.log(data);
-
-    //var elements=(<HTMLInputElements>document.getElementsByName("cardType"));
-    var gold = (<HTMLInputElement>document.getElementById("Gold"));
-    var titanium = (<HTMLInputElement>document.getElementById("Titanium"));
-    if (gold.checked)
-      console.log(gold.value);
-    else
-      console.log(titanium.value);
+  registerUser(form:NgForm) {
+   this.user.userFirstName=form.value.userFirstName;
+   this.user.userLastName=form.value.userLastName;
+   this.user.userDOB=form.value.dob;
+   this.user.userEmail=form.value.userEmail
+   this.user.userMobile=form.value.userMobile.replace(/ /g,'');
+   this.user.userPassword=form.value.userPassword;
+   this.user.cardType=form.value.cardType;
+   this.user.bank=form.value.bank;
+   this.user.accountNo=form.value.userAccount.replace(/ /g,'');
+   this.user.ifsc=form.value.ifsc;
+   this.user.userAadharCard=form.value.userAadhar.replace(/ /g,'');
+   console.log(this.user);
   }
 
 
@@ -84,12 +88,15 @@ export class RegisterComponent implements OnInit {
       event.preventDefault();
     }
   }
-
+  
   confirmPassword(): boolean {
     var p = (<HTMLInputElement>document.getElementById("confirmPassword"));
     var pass = p.value;
-    if (this.password === pass)
-      return true;
+    if (this.password === pass){
+      this.passwordMismatch=false;
+      return true;      
+    }
+    this.passwordMismatch=true;
     return false;
   }
 

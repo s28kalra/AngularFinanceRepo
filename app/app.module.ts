@@ -12,8 +12,8 @@ import { ProductItemComponent } from './product-list/product-item/product-item.c
 import { ProductDetailComponent } from './product-list/product-detail/product-detail.component';
 import { ProductSearchComponent } from "./product-list/product-search/product-search.component";
 
-
 import { RegisterComponent } from './register/register.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -26,7 +26,8 @@ import { RegisterComponent } from './register/register.component';
     RegisterComponent,
     AdminLoginComponent,
     UserLoginComponent,
-    HomepageComponent
+    HomepageComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
