@@ -1,52 +1,122 @@
-<div>
-    <form #registerForm='ngForm' (ngSubmit)='registerUser(registerForm)'>
-        <input type="text" placeholder="First-Name" name="userFirstName" (keypress)='isAName($event)' ngModel required>
+ 
+        <div class="contain">
+            <img src="assets/1.jpg"  style="width:100%; height: 500%;" >
+            
+            <div class="content">
+                <h2  class="head">Register With Us To Avail All The Exciting Services</h2>
+                <form #registerForm='ngForm' (ngSubmit)='registerUser(registerForm)'>
+        <div class="col-25">
+            <label for="userFirstName">First Name</label>
+        </div>
+        <div class="col-75">
+            <input type="text" placeholder="First-Name" name="userFirstName" (keypress)='isAName($event)' ngModel required>
+            <span class="error">First Name Required</span>
+        </div>
 
-        <input type="text" placeholder="Last-Name" name="userLastName" (keypress)='isAName($event)' ngModel>
+        <div class="col-25">
+            <label for="userLastName">Last Name</label>
+        </div>
+        <div class="col-75">
+            <input type="text" placeholder="Last-Name" name="userLastName" (keypress)='isAName($event)' ngModel>
+        </div>
 
-        <br><br>Date Of Birth: <br><input type="date" name="dob" ngModel required>
-
-        <br><br> <input type="email" name="userEmail" ngModel pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{1,3})+$"
+        <div class="col-25">
+            <label for="dob">Date Of Birth:</label>
+        </div>
+        <div class="col-75">
+            <input type="date"   name="dob" ngModel required>
+            <span class="error">Choose Your Correct Birth Details</span>
+        </div>
+        
+        <div class="col-25">
+            <label for="userEmail">Email:</label>
+        </div>
+        <div class="col-75">
+            <input type="email" name="userEmail" ngModel pattern="^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{1,3})+$"
             placeholder="Email" required>
-
-        <br><br><input type="text" placeholder="Mobile" name="userMobile" id="userMobile"
+        <span class="error">Oops!! Invalid Email Address</span>
+        </div>
+   
+        <div class="col-25">
+            <label for="userMobile"> Mobile:</label>
+        </div>
+        <div class="col-75">
+            <input type="text" placeholder="Mobile" name="userMobile" id="userMobile"
             (keypress)='isNumber($event,"userMobile",10)' (keyup)='manageMobile("userMobile")' value="" minlength="11"
             ngModel required>
+            <span class="error">Oops!! Invalid Mobile Number</span>
+        </div>
 
-        <br><br><input type="password" name="password" placeholder="Password" ngModel minlength="8"
-            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{8,15}$" [(ngModel)]='password' required>
 
-        <br><br><input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"
-            ngModel required>
+        <div class="col-25">
+            <label for="password">Password:</label>
+        </div>
+        <div class="col-75">
+            <input type="password" name="userPassword" placeholder="Password" ngModel minlength="8"
+            pattern="^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@#\$%\^&\*]).{8,15}$" [(ngModel)]='password' required>
+        <span class="error">Oops!! Your Password is not Strong Enough</span>
 
-        <br><br><input type="text" name="address" placeholder="Address" ngModel required><br><br>
+        </div>
+    
 
-        <span>Card Type: </span>
-        <input type="radio" id="Gold" name="cardType" value="Gold" class="cardType">Gold
-        <input type="radio" id="Titanium" name="cardType" value="Titanium" class="cardType" checked>Titanium
+                         
+    <div class="col-25">
+     <label for="confirmPassword">Confirm Password:</label>
+    </div>
+    <div class="col-75">
+        <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"
+        ngModel required>
+        <!-- <span *ngIf='passwordMismatch' style="color: red;">Oops!! Password mismatch</span> -->
+     </div>
+                        
 
-        <br><br>Select Your Bank <select name="bank" id="bank">
-            <option value="HDFC" selected>HDFC</option>
-            <option value="AXIS">Axis</option>
-            <option value="ICICI">ICICI</option>
-            <option value="CITI">CITI Bank</option>
-            <option value="PNB">Punjab National Bank</option>
-            <option value="SBI">State Bank Of India</option>
-            <option value="CBI">Central Bank Of India</option>
-            <option value="UNION">Union Bank Of India</option>
-        </select>
+    
+    
+    
+             
+    <div class="col-25">
+        <label for="userAccount">Account Number</label>
+    </div>
+    <div class="col-75">
+        <input type="text" placeholder="Account Number" name="userAccount" id="userAccount"
+        (keypress)='isNumber($event,"userAccount",18)' (keyup)='manageAccount("userAccount")' value=""
+        minlength="11" ngModel required>
+        <span class="error">Oops!! Invalid Account Number</span>
+    </div>               
 
-        <br><br><input type="text" placeholder="Account Number" name="userAccount" id="userAccount"
-            (keypress)='isNumber($event,"userAccount",18)' (keyup)='manageAccount("userAccount")' value=""
-            minlength="11" ngModel required>
+     <div class="col-25">
+    <label for="ifsc">IFSC Code:</label>
+    </div>
+    <div class="col-75">
+        <input type="text" name="ifsc" id="ifsc" placeholder="IFSC Code" pattern="^[A-Z]{4}[0-9]{7}$" ngModel
+        maxlength="11" required>
+    <span class="error">Oops!! Invalid IFSC Code</span>
+     </div>
+                     
+    <div class="col-25">
+    <label for="userAadhar">Aadhar Number:</label>
+     </div>
+    <div class="col-75">
+        <input type="text" placeholder="Aadhar Card Number" name="userAadhar" id="userAadhar"
+        (keypress)='isNumber($event,"userAadhar",13)' (keyup)='manageAadharCard("userAadhar")' value=""
+        minlength="14" ngModel required>
+        <span class="error">Oops!! Invalid Aadhar Number</span>
+    </div>
+                         
+                         <div class="col-25">
+                            <label for="cardType">Card Type:</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="radio" id="Gold" name="cardType" value="Gold" class="cardType" ngModel required >Gold
+                            <input type="radio" id="Titanium" name="cardType" value="Titanium" class="cardType" ngModel required checked>Titanium
+                        </div>
 
-        <br><br><input type="text" name="ifsc" id="ifsc" placeholder="IFSC Code" pattern="^[A-Z]{4}[0-9]{7}$" ngModel
-            maxlength="11" required>
 
-        <br><br><input type="text" placeholder="Aadhar Card Number" name="userAadhar" id="userAadhar"
-            (keypress)='isNumber($event,"userAadhar",13)' (keyup)='manageAadharCard("userAadhar")' value=""
-            minlength="14" ngModel required>
-
-        <br><br><button type="submit" [disabled]='!registerForm.valid || !confirmPassword()'>Submit</button>
-    </form>
-</div>
+                        <div >
+                            <button  type="submit" class="btnn" [disabled]='!registerForm.valid || !confirmPassword()'>Register</button>
+                        </div>
+                    
+                 
+                 </form>
+                </div>
+            </div>

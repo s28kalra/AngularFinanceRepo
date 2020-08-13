@@ -2,17 +2,18 @@
     position: absolute;
 	width: 100%;
 	left: 0;
-	
+	height: 12%;
     overflow: hidden;
     color: white;
-    padding: 0px;
+    padding-top: 20px;
     text-align: center;
     background:black;
     margin-top: 20px;
   }
 
   .header-section {
-	position: absolute;
+  position: absolute;
+  height: 12%;
 	width: 100%;
 	left: 0;
 	top: 0;
@@ -28,7 +29,7 @@
 .site-logo {
 	float: left;
 	display: inline-block;
-	padding: 33px 0;
+	padding: 20px 0;
 }
 
 .main-menu {
@@ -56,9 +57,10 @@
 }
 
 .header-right {
-    float: right;
-    display: inline-block;
-	padding-right: 50px;
+  float: right;
+  display: inline-block;
+  padding-right: 50px;
+  padding-top: 0px;
     
 }
 .header-right li {
@@ -71,7 +73,7 @@
 	font-size: 16px;
 	color: #ffffff;
 	font-weight: 600;
-	padding: 33px 5px;
+	padding-top: 35px;
 	margin-right: 55px;
 }
 .header-right li a:hover,
@@ -85,18 +87,7 @@
     padding: 20px;
     margin-top: 20px;
   }
-  .footer {
-    position: absolute;
-	width: 100%;
-	left: 0;
-	
-    overflow: hidden;
-    color: white;
-    padding: 0px;
-    text-align: center;
-    background:black;
-    margin-top: 20px;
-  }
+  
   .hero-image{
     position: relative;
   }
@@ -141,19 +132,20 @@
   }
   .column1 {
     float: left;
-    width: 20%;
+    width: 30%;
     margin-bottom: 16px;
-    padding: 0px 8px;
+    padding: 0px 15px;
     padding-left: 130px;
   }
  
   
-  .card1 {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  }
+   .card1 {
+    box-shadow: 0px 4px 10px 0 rgba(0, 0, 0, 0.2);
+    
+  } 
   
   .container1 {
-    padding: 0 16px;
+    padding: 0 20px;
   }
   
   .container1::after, .row1::after {
@@ -179,6 +171,149 @@
   .button1:hover {
     background-color: #555;
   }
+ .regis{
+  padding-top: 20px;
+  padding-left: 550px;
+  font-size: 15px;
+ color: black;
+ font-weight: 600;
+ border:red;
+} 
+
+.regimage{
+
+  padding-top: 90px;
+ 
+}
+input.ng-valid.ng-touched{
+  border-color: red;
+}
+
+.rr{
+  padding-top: 100px;
+	font-size: 30px;
+	color: #ffffff;
+  font-weight: 600;
+  padding-left: 400px;
+}
+  .fo{
+    position: static;
+    margin-left:500px;
+    max-width: 350px;
+    background-color:honeydew;
+    padding-left: 30px;
+    padding-top: 15px;
+    font-size: 16px;
+ color: black;
+ 
+    
+  }
 
   
+  .contain {
+    height: 100%;
+    width: 100%;
+    padding-top: 13px;
+    margin: 0 auto;
+  }
+  
+  .contain img {
+  position:relative;
+  overflow:auto;
+  /* margin-top: 0px;
+  margin-bottom: 0px;
+  height: 500%; */
+  }
+  .contain .content {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1;
+    width: 100%;
+    height: 100%;
+  padding-top: 100px;
+  padding-left: 400px;
+  }
+  
+  .head{
+    
+    margin-right: 200px;
+    
+    /* padding-left: 280px;
+    padding-top: 0px;
+    margin-bottom: 95px; */
+  }
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  .btnn{
+    background-color: #4CAF50;
+    color:white;
+    margin-top: 35px;
+    margin-right: 500px;
+    width: 45%;
+    
+  }
+  .bg-img-log {
+    /* The image used */
+    
+  width: 100%;
+    min-height: 380px;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  /* Add styles to the form container */
+  
+  .in-log{
+    padding-right: 40px;
+  }
+  .error{
+    display: none;
+  }
+  input.ng-invalid.ng-touched{
+    border-color: red;
+  }
+  
+  input.ng-invalid.ng-touched +.error{
+   display: inline; 
+   color: red;
+  }
+  .contain .content1 {
+    position: absolute;
+    bottom: 0;
+
+    background:white; /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1;
+    width: 30%;
+    height: 50%;
+    margin-left: 490px;
+    margin-bottom: 150px;
+    
+    
+ 
+  }
+  .container-log {
+    position: absolute;
+    right: 0;
+   margin-right: 200px;
+    max-width: 100px;
+    padding: 16px;
+    font-weight: 500;
+  
+  }
   

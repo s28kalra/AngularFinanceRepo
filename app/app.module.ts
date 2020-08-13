@@ -13,6 +13,7 @@ import { ProductDetailComponent } from './product-list/product-detail/product-de
 import { ProductSearchComponent } from "./product-list/product-search/product-search.component";
 
 
+
 import { RegisterComponent } from './register/register.component';
 
 
