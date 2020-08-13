@@ -6,11 +6,12 @@ import { User } from '../models/user';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['../app.component.css']
+  styleUrls: ['./register.component.css']
+  //styleUrls: ['../app.component.css']
 })
 export class RegisterComponent implements OnInit {
 
-  password: string;
+  password= new String();
   user= new User();
   
   constructor(private route: Router) { }
@@ -91,7 +92,7 @@ export class RegisterComponent implements OnInit {
   confirmPassword(): boolean {
     var p = (<HTMLInputElement>document.getElementById("confirmPassword"));
     var pass = p.value;
-    if (this.password === pass){
+    if (this.password == pass){
       return true;      
     }
     return false;
