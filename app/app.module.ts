@@ -14,6 +14,7 @@ import { ProductSearchComponent } from "./product-list/product-search/product-se
 
 import { RegisterComponent } from './register/register.component';
 import { CartComponent } from './cart/cart.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { CartComponent } from './cart/cart.component';
     AdminLoginComponent,
     UserLoginComponent,
     HomepageComponent,
-    CartComponent
+    CartComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,
