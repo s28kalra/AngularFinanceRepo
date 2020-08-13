@@ -185,9 +185,6 @@
   padding-top: 90px;
  
 }
-input.ng-valid.ng-touched{
-  border-color: red;
-}
 
 .rr{
   padding-top: 100px;
@@ -292,7 +289,6 @@ input.ng-valid.ng-touched{
    display: inline; 
    color: red;
   }
-  
   .contain .content1 {
     position: absolute;
     bottom: 0;
@@ -311,11 +307,10 @@ input.ng-valid.ng-touched{
   .container-log {
     position: absolute;
     right: 0;
+    font-weight: bolder;
    margin-right: 200px;
     max-width: 100px;
     padding: 16px;
     font-weight: 500;
   
   }
-
-  

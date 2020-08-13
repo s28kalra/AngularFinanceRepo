@@ -12,7 +12,6 @@ export class RegisterComponent implements OnInit {
 
   password: string;
   user= new User();
-  passwordMismatch=false;
   
   constructor(private route: Router) { }
 
@@ -93,10 +92,8 @@ export class RegisterComponent implements OnInit {
     var p = (<HTMLInputElement>document.getElementById("confirmPassword"));
     var pass = p.value;
     if (this.password === pass){
-      this.passwordMismatch=false;
       return true;      
     }
-    this.passwordMismatch=true;
     return false;
   }
 
