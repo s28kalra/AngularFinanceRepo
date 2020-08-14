@@ -5,6 +5,7 @@ import { HomepageComponent } from "./homepage/homepage.component";
 import { AdminLoginComponent } from "./admin-login/admin-login.component";
 import { UserLoginComponent } from "./user-login/user-login.component";
 import { CartComponent } from "./cart/cart.component";
+import { CheckoutComponent } from "./checkout/checkout.component";
 const routes: Routes = [
   {
     path: '', component: HomepageComponent
@@ -23,6 +24,9 @@ const routes: Routes = [
   },
   {
     path:'cartLink', component: CartComponent
+  },
+  {
+    path:'checkoutLink', component:CheckoutComponent
   }
 ];
 
