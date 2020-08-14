@@ -5,6 +5,9 @@ import { HomepageComponent } from "./homepage/homepage.component";
 import { AdminLoginComponent } from "./admin-login/admin-login.component";
 import { UserLoginComponent } from "./user-login/user-login.component";
 import { CartComponent } from "./cart/cart.component";
+import { ProductListComponent } from "./product-list/product-list.component";
+import { ProductDetailComponent } from "./product-list/product-detail/product-detail.component";
+
 const routes: Routes = [
   {
     path: '', component: HomepageComponent
@@ -23,6 +26,12 @@ const routes: Routes = [
   },
   {
     path:'cartLink', component: CartComponent
+  },
+  {
+    path:'productListLink', component: ProductListComponent
+  },
+  {
+    path:'productDetailLink', component: ProductDetailComponent
   }
 ];
 
