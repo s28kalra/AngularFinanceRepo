@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from "@angular/forms";
+import { Checkout } from "../models/checkout";
 
 @Component({
   selector: 'app-checkout',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutComponent implements OnInit {
 
+  checkout = new Checkout();
   constructor() { }
 
+
   ngOnInit(): void {
+  }
+
+  checkoutFunction(form: NgForm) {
+    this.checkout.emiTenure = form.value.emiTenure;
+    this.checkout.shippingAddress=form.value.shippingAddress;
+    this.checkout.cardHolderName=form.value.cardHolderName;
+    this.checkout.cardNumber=form.value.cardNumber.replace(/ /g, '');
+    this.checkout.expiryMonth=form.value.expiryMonth;
+    this.checkout.expiryYear=form.value.expiryYear;
+    this.checkout.cvv=form.value.cvv;
+    console.log(this.checkout);
   }
 
   isNumber(event, id, l) {

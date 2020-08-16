@@ -35,8 +35,8 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
-                        <button class="btn btn-light" type="submit">Search</button>
-                        <button class="btn btn-warning" type="button">clear</button>
+                        <button class="btn btn-light" type="submit"(keyup)="onKey($event)">Search</button>
+                        <button class="btn btn-warning" type="reset">clear</button>
                     </div>
                 </div>
             </form>
@@ -49,7 +49,7 @@
 <hr>
 <div class="row">
     <div class="col-xs-12">
-        <a [routerLink]="['productListLink']" class="list-group-item clearfix" *ngFor="let p of products" (click)="onSelected($ecent,p)" >
+        <a class="list-group-item clearfix" *ngFor="let p of products" (click)="onSelected($event,p)" >
             <div class="pull-left" >
                 <h4 class="list-group-item-heading">{{p.productName}}</h4>
                 <p class="list-group-item-text">{{p.productId}}</p>
@@ -109,6 +109,8 @@
             <div class="btn-group">
                <h4>MRP:     Rs- {{selectedProduct.productPrice}}  /-  </h4>
             </div>
+            <!-- <div><a class="btn btn-info" [routerLink]="['productDetailLink']">Open in New Tab</a></div> -->
+            <div><a class="btn btn-info" (click)='navigateToProductDetail()'>Open in New Tab</a></div>
         </div>
         </div>
         
