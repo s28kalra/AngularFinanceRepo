@@ -21,15 +21,15 @@
       </ul>
       <ul class="header-right">
         <li><a href="#"><i class="fa fa-fw fa-search"></i>Have a questions?</a> </li>
-        <li><a href="#"><i class="fa fa-fw fa-address-book"></i> Contact</a></li>
+        <li><a [routerLink]="['contactUsLink']"><i class="fa fa-fw fa-address-book"></i> Contact</a></li>
         <li> <a href="#"> <i class="fa fa-fw fa-envelope"></i>info@lti.com</a> </li>
       </ul>
     </nav>
   </header>
 
-  <!-- <router-outlet></router-outlet>  -->
-  <!-- <app-cart></app-cart> -->
-  <app-checkout></app-checkout>
+  <router-outlet></router-outlet>
+<!--  <app-cart></app-cart>
+  <app-checkout></app-checkout> -->
 
   <div class="footer">
     <p>©Larsen & Toubro Infotech Limited</p>
