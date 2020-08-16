@@ -21,7 +21,7 @@ export class ProductListComponent implements OnInit {
    products=new Array<Product>();
 
 
-  constructor() {
+  constructor(private route:Router) {
     var c1;
     c1 = new Product();
     c1.productId = 1;
@@ -55,5 +55,13 @@ export class ProductListComponent implements OnInit {
   }
   onSelected(event:any,product:any){ 
     this.selectedProduct=product;
+  }
+  onKey(event) {
+    const inputValue = event.target.value;
+  console.log(inputValue);
+  }
+
+  navigateToProductDetail(){
+    this.route.navigateByUrl('productDetailLink');
   }
 }
