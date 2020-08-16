@@ -4,7 +4,8 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				<form class="login100-form ">
+					
 					<span class="login100-form-title p-b-43">
 						Login to continue
 					</span>
@@ -27,7 +28,8 @@
 						 <div class="contact100-form-checkbox">
 							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
 							<label class="label-checkbox100" for="ckb1">
-								Remember me<a [routerLink]="['forgotPasswordLink']" class="txt1">
+								Remember me
+								<a (click)='navigateToForgot()' class="txt1">
                                     Forgot Password?
                                 </a>
                             </label>
@@ -43,6 +45,16 @@
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
 							Login
+						</button>
+					</div>
+					<br>
+					
+					<hr class="new4">
+<br>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login As Admin
 						</button>
 					</div>
 					
