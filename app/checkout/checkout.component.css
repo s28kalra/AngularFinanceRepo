@@ -3,6 +3,7 @@
 .container {
   display: -webkit-box;
   display: flex;
+  background-image: url("src/assets/2.jpg");
   -webkit-box-align: center;
           align-items: center;
   -webkit-box-pack: center;
@@ -11,6 +12,7 @@
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
           flex-direction: column;
+
 }
 
 * {
@@ -69,15 +71,14 @@ html {
 }
 .paypal .left label, .credit .left label {
   margin-left: 10px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   cursor: pointer;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 700;
   letter-spacing: 0.5px;
   color: #fff;
 }
-.paypal .left input[type=radio], .credit .left input[type=radio] {
-  visibility: hidden;
-}
+
 .paypal .left .radio, .credit .left .radio {
   position: absolute;
   top: -2px;
@@ -270,7 +271,8 @@ input[type=radio]:checked ~ .radio::before {
 }
 
 .button button {
-  font-size: 1.2rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.7rem;
   font-weight: 400;
   letter-spacing: 1px;
   width: 520px;
@@ -293,3 +295,30 @@ input[type=radio]:checked ~ .radio::before {
   font-size: 1.2rem;
   margin-right: 5px;
 }
+
+#shippingAddress{
+  background: transparent;
+  border: none;
+  border-bottom:  1px solid  #444880;
+  padding-left: 20px;
+  color: #fff;
+}
+
+#emiTenure{
+  margin-left: 40px;
+  margin-bottom: 15px;
+  background: transparent;
+  color: #fff;
+  border: none;
+}
+option{
+  color: black;
+}
+#expiry-date{
+  color: #fff;
+}
+
+input.ng-invalid.ng-touched{
+  border-color: red;
+}
+
