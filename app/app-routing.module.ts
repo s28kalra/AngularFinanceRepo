@@ -5,16 +5,21 @@ import { HomepageComponent } from "./homepage/homepage.component";
 import { AdminLoginComponent } from "./admin-login/admin-login.component";
 import { UserLoginComponent } from "./user-login/user-login.component";
 import { CartComponent } from "./cart/cart.component";
-
+import { ForgotpasswordComponent } from "./forgotpassword/forgotpassword.component";
+import { AboutusComponent } from './aboutus/aboutus.component';
 import { CheckoutComponent } from "./checkout/checkout.component";
 import { ProductListComponent } from "./product-list/product-list.component";
 import { ProductDetailComponent } from "./product-list/product-detail/product-detail.component";
+import { ContactusComponent } from './contactus/contactus.component';
 
 const routes: Routes = [
   {
     path: '', component: HomepageComponent
   },
   {
+    path: 'aboutus', component: AboutusComponent
+  },
+   {
     path: 'homelink', component: HomepageComponent
   },
   {
@@ -27,6 +32,9 @@ const routes: Routes = [
     path: 'userLoginLink', component: UserLoginComponent
   },
   {
+    path: 'forgotPasswordLink', component: ForgotpasswordComponent
+  },
+  {
     path:'cartLink', component: CartComponent
   },
   {
@@ -37,6 +45,9 @@ const routes: Routes = [
   },
   {
 	  path:'productListLink', component: ProductListComponent
+  },
+  {
+    path: 'contactUsLink', component: ContactusComponent
   }
 ];
 
