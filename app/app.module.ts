@@ -17,6 +17,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
