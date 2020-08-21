@@ -10,7 +10,7 @@ import { HomepageComponent } from "./homepage/homepage.component";
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-list/product-detail/product-detail.component';
 
-
+import { MatTooltipModule } from "@angular/material/tooltip";
 import { RegisterComponent } from './register/register.component';
 import { CartComponent } from './cart/cart.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
@@ -40,8 +40,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTooltipModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

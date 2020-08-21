@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgForm } from "@angular/forms";
 import { Router } from '@angular/router';
 import { User } from '../models/user';
@@ -6,68 +6,57 @@ import { User } from '../models/user';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+  encapsulation: ViewEncapsulation.None,
   //styleUrls: ['../app.component.css']
 })
 export class RegisterComponent implements OnInit {
 
-  password= new String();
   user= new User();
-  
+  confirmPass="";
   constructor(private route: Router) { }
 
   ngOnInit(): void {
   }
 
   registerUser(form:NgForm) {
-   this.user.userFirstName=form.value.userFirstName;
-   this.user.userLastName=form.value.userLastName;
-   this.user.userDOB=form.value.dob;
-   this.user.userEmail=form.value.userEmail
-   this.user.userMobile=form.value.userMobile.replace(/ /g,'');
-   this.user.userPassword=form.value.userPassword;
-   this.user.cardType=form.value.cardType;
-   this.user.bank=form.value.bank;
-   this.user.accountNo=form.value.userAccount.replace(/ /g,'');
-   this.user.ifsc=form.value.ifsc;
-   this.user.userAadharCard=form.value.userAadhar.replace(/ /g,'');
+   this.user.userMobile=this.user.userMobile.replace(/ /g,'');
+   this.user.accountNo=this.user.accountNo.replace(/ /g,'');
+   this.user.userAadharCard= this.user.userAadharCard.replace(/ /g,'');
    console.log(this.user);
   }
 
 
-  manageAccount(id) {
-    var account = (<HTMLInputElement>document.getElementById(id));
-    var data = account.value;
+  manageAccount() {
+    var data = this.user.accountNo;
     data = data.replace(/ /g, '');
     if (data.length == 10)
-      account.value = data.substring(0, 5) + ' ' + data.substring(5, 10);
+    this.user.accountNo = data.substring(0, 5) + ' ' + data.substring(5, 10);
     else {
       var n = data.length / 4;
-      account.value = data.substring(0, 4);
+      this.user.accountNo = data.substring(0, 4);
       for (var i = 1; i < n; i++) {
-        account.value += ' ' + data.substring(4 * i, 4 * (i + 1));
+        this.user.accountNo += ' ' + data.substring(4 * i, 4 * (i + 1));
       }
     }
   }
 
-  manageMobile(id) {
-    var mobile = (<HTMLInputElement>document.getElementById(id));
-    var data = mobile.value;
+  manageMobile() {
+    var data = this.user.userMobile;
     data = data.replace(/ /g, "");
     if (data.length <= 5)
-      mobile.value = data;
+    this.user.userMobile = data;
     else
-      mobile.value = data.substring(0, 5) + " " + data.substring(5, data.length);
+    this.user.userMobile = data.substring(0, 5) + " " + data.substring(5, data.length);
   }
 
-  manageAadharCard(id){
-    var aadhar = (<HTMLInputElement>document.getElementById(id));
-    var data= aadhar.value;
+  manageAadharCard(){
+    var data= this.user.userAadharCard;
     data = data.replace(/ /g, "");
     var n = data.length / 4;
-      aadhar.value = data.substring(0, 4);
+    this.user.userAadharCard = data.substring(0, 4);
       for (var i = 1; i < n; i++) {
-        aadhar.value += ' ' + data.substring(4 * i, 4 * (i + 1));
+        this.user.userAadharCard += ' ' + data.substring(4 * i, 4 * (i + 1));
       }
   }
 
@@ -90,9 +79,7 @@ export class RegisterComponent implements OnInit {
   }
   
   confirmPassword(): boolean {
-    var p = (<HTMLInputElement>document.getElementById("confirmPassword"));
-    var pass = p.value;
-    if (this.password == pass){
+    if (this.user.userPassword == this.confirmPass){
       return true;      
     }
     return false;
