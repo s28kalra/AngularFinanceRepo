@@ -10,13 +10,14 @@ import { HomepageComponent } from "./homepage/homepage.component";
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-list/product-detail/product-detail.component';
 
-
+import { MatTooltipModule } from "@angular/material/tooltip";
 import { RegisterComponent } from './register/register.component';
 import { CartComponent } from './cart/cart.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -38,7 +39,9 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
