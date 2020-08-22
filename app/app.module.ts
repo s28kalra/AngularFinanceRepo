@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from "./homepage/homepage.component";
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-list/product-detail/product-detail.component';
-
+import { HttpClientModule } from "@angular/common/http";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { RegisterComponent } from './register/register.component';
 import { CartComponent } from './cart/cart.component';
@@ -43,7 +43,8 @@ import { CardDetailsComponent } from './card-details/card-details.component';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatTooltipModule
+    MatTooltipModule,
+    HttpClientModule
 
   ],
   
