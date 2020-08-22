@@ -18,6 +18,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CardDetailsComponent } from './card-details/card-details.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CheckoutComponent,
     ContactusComponent,
     ForgotpasswordComponent,
+    CardDetailsComponent,
 
   ],
   imports: [
