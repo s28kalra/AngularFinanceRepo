@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomerInfo } from 'src/app/models/customer-info';
 
 @Component({
   selector: 'app-view-profile',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewProfileComponent implements OnInit {
 
+  customerInfo = new CustomerInfo();
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

@@ -10,7 +10,13 @@ export class CustomerDashboardComponent implements OnInit {
 
   display;
   customerId=0;
-  constructor(private router : ActivatedRoute, private route:Router) { }
+  constructor(private router : ActivatedRoute, private route:Router) { 
+    if(sessionStorage.getItem("customerId")!=null)
+      this.customerId= parseInt(sessionStorage.getItem("customerId"));
+    else{
+      this.route.navigateByUrl('/userLoginLink');
+    }
+  }
 
   ngOnInit(): void {
     this.customerId=1;

@@ -10,7 +10,10 @@ export class ViewCardComponent implements OnInit {
   emiCard= new EmiCard();
   cardType="";
   month;
-  constructor() { }
+  customerId=0;
+  constructor() { 
+    this.customerId=parseInt(sessionStorage.getItem("customerId"));
+  }
 
   ngOnInit(): void {
     this.emiCard.cardNumber="12345678";

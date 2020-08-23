@@ -1,5 +1,3 @@
-import { Product } from "./product";
-
 export class EmiTransaction{
     transactionId: number;
     amount: number;
@@ -9,6 +7,6 @@ export class EmiTransaction{
     productQuantity: number;
     processingFee: number;
     noOfEmisLeft: number;
-    product: Product;
+    productName: string;
 
 }
