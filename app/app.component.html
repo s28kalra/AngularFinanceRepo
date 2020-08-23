@@ -8,14 +8,14 @@
   <title>Document</title>
 </head>
 <body>
-  <header class="header-section">
+  <div class="header-section">
     <a href="homepage.component.html" class="site-logo">
       <img src="assets/logo.jpg" alt="">
     </a>
     <nav class="header-nav">
       <ul class="main-menu">
         <li><a [routerLink]="['aboutus']"><i class="fa fa-fw fa-info-circle"></i>About Us</a></li>
-        <li><a [routerLink]="['']" class="active"><i class="fa fa-fw fa-home"></i>Home</a></li>
+        <li><a [routerLink]="['']" ><i class="fa fa-fw fa-home"></i>Home</a></li>
         <li><a [routerLink]="['registerLink']"><i class="fa fa-fw fa-user-plus"></i>Register</a></li>
         <li><a class="dropdown" [routerLink]="['userLoginLink']"><i class="fa fa-fw fa-user"></i>
           Login
@@ -30,7 +30,7 @@
         <li> <a href="#"> <i class="fa fa-fw fa-envelope"></i>info@lti.com</a> </li>
       </ul>
     </nav>
-  </header>
+  </div>
 
 
   <router-outlet></router-outlet> 

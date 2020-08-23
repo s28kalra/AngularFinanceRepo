@@ -1,12 +1,14 @@
 <body>
 	
 <div class="loginbox">  
+	<h3 style="color: red;">{{ message }}</h3>
 	<h2>Login here</h2>
+	<form (ngSubmit)="loginCustomer()">
 	<label class="lblemail" for="email"> Email</label>
-	<input class="txtemail" placeholder="Email" type="text" name="email">
+	<input class="txtemail" placeholder="Email" type="text" name="email" [(ngModel)]="login.customerEmail"> 
 	
 	<label class="lblpass" for="password"> Password</label>
-	<input class="txtpass" placeholder="Password" type="text" name="pass">
+	<input class="txtpass" placeholder="Password" type="password" name="pass" [(ngModel)]="login.customerPassword">
 	
 	<br>
 	<button class="btnsubmit">
@@ -15,8 +17,9 @@
 	<button class="btnsubmit">
 		Login As Admin
 	</button>
-	<a (click)='navigateToForgot()' class="btnforget">
+	<a  [routerLink]="['forgotPasswordLink']"  class="btnforget">
 		Forgot Password?
 	</a>
+</form>
 </div>
 </body>
