@@ -11,6 +11,7 @@ import { CheckoutComponent } from "./checkout/checkout.component";
 import { ProductListComponent } from "./product-list/product-list.component";
 import { ProductDetailComponent } from "./product-list/product-detail/product-detail.component";
 import { ContactusComponent } from './contactus/contactus.component';
+import { TermsAndConditionComponent } from "./terms-and-condition/terms-and-condition.component";
 
 const routes: Routes = [
   {
@@ -48,6 +49,9 @@ const routes: Routes = [
   },
   {
     path: 'contactUsLink', component: ContactusComponent
+  },
+  {
+    path: 'termsLink', component: TermsAndConditionComponent
   }
 ];
 
