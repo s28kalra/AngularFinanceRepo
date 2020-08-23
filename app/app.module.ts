@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from "./homepage/homepage.component";
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-list/product-detail/product-detail.component';
-
+import { HttpClientModule } from "@angular/common/http";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { RegisterComponent } from './register/register.component';
 import { CartComponent } from './cart/cart.component';
@@ -19,6 +19,7 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TermsAndConditionComponent } from './terms-and-condition/terms-and-condition.component';
+import { CardDetailsComponent } from './card-details/card-details.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { TermsAndConditionComponent } from './terms-and-condition/terms-and-cond
     ContactusComponent,
     ForgotpasswordComponent,
     TermsAndConditionComponent,
+    CardDetailsComponent,
 
   ],
   imports: [
@@ -43,7 +45,8 @@ import { TermsAndConditionComponent } from './terms-and-condition/terms-and-cond
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatTooltipModule
+    MatTooltipModule,
+    HttpClientModule
 
   ],
   

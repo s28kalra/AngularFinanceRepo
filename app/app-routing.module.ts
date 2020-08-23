@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RegisterComponent } from "./register/register.component";
 import { HomepageComponent } from "./homepage/homepage.component";
@@ -12,6 +12,7 @@ import { ProductListComponent } from "./product-list/product-list.component";
 import { ProductDetailComponent } from "./product-list/product-detail/product-detail.component";
 import { ContactusComponent } from './contactus/contactus.component';
 import { TermsAndConditionComponent } from "./terms-and-condition/terms-and-condition.component";
+import { CardDetailsComponent } from "./card-details/card-details.component";
 
 const routes: Routes = [
   {
@@ -52,6 +53,9 @@ const routes: Routes = [
   },
   {
     path: 'termsLink', component: TermsAndConditionComponent
+  },
+  {
+    path: 'cardTourLink', component: CardDetailsComponent
   }
 ];
 
