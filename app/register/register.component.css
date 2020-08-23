@@ -42,7 +42,7 @@
   padding-left: 400px;
   }
 
-  input{
+  input [type=text],input [type=password]input [type=email]input [type=date]input [type=radio]{
       color: black;
       box-sizing: border-box;
       border-radius: 5px;    

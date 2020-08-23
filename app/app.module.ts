@@ -18,7 +18,12 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
+
+
+
+import { TermsAndConditionComponent } from './terms-and-condition/terms-and-condition.component';
+import { CardDetailsComponent } from './card-details/card-details.component';
+
 
 
 @NgModule({
@@ -35,7 +40,12 @@ import { CustomerDashboardComponent } from './customer-dashboard/customer-dashbo
     CheckoutComponent,
     ContactusComponent,
     ForgotpasswordComponent,
-    CustomerDashboardComponent,
+
+    
+
+    TermsAndConditionComponent,
+    CardDetailsComponent,
+
 
   ],
   imports: [
