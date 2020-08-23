@@ -32,6 +32,12 @@ import { ViewAdminProfileComponent } from './admin-dashboard/view-admin-profile/
 import { UpdateAdminProfileComponent } from './admin-dashboard/update-admin-profile/update-admin-profile.component';
 
 
+
+import { TermsAndConditionComponent } from './terms-and-condition/terms-and-condition.component';
+import { CardDetailsComponent } from './card-details/card-details.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +64,12 @@ import { UpdateAdminProfileComponent } from './admin-dashboard/update-admin-prof
     AddNewProductComponent,
     ViewAdminProfileComponent,
     UpdateAdminProfileComponent,
+
+    
+
+    TermsAndConditionComponent,
+    CardDetailsComponent,
+
 
   ],
   imports: [

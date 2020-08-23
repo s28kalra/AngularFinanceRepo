@@ -91,6 +91,9 @@ export class RegisterComponent implements OnInit {
     return false;
   }
 
+  navigateToTerms() {
+    this.route.navigateByUrl('termsLink');
+  }
 
 
 

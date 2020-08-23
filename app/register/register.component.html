@@ -128,6 +128,9 @@
                     [disabled]='!registerForm.valid || !confirmPassword()'>Register</button>
             </div>
 
+            <input type="checkbox" id="terms" name="termsbtn" value="terms" checked>
+            <a (click)='navigateToTerms()' class="btnterms">
+                <label for="terms">Accept Terms and Conditions</label> </a>
 
         </form>
     </div>

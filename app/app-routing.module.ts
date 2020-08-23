@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RegisterComponent } from "./register/register.component";
 import { HomepageComponent } from "./homepage/homepage.component";
@@ -23,6 +23,12 @@ import { ViewAllPendingCustomersComponent } from './admin-dashboard/view-all-pen
 import { AddNewProductComponent } from './admin-dashboard/add-new-product/add-new-product.component';
 import { ViewAdminProfileComponent } from './admin-dashboard/view-admin-profile/view-admin-profile.component';
 
+
+
+import { TermsAndConditionComponent } from "./terms-and-condition/terms-and-condition.component";
+import { CardDetailsComponent } from "./card-details/card-details.component";
+
+
 const routes: Routes = [
   {
     path: '', component: HomepageComponent
@@ -30,7 +36,7 @@ const routes: Routes = [
   {
     path: 'aboutus', component: AboutusComponent
   },
-   {
+  {
     path: 'homelink', component: HomepageComponent
   },
   {
@@ -46,39 +52,45 @@ const routes: Routes = [
     path: 'forgotPasswordLink', component: ForgotpasswordComponent
   },
   {
-    path:'cartLink', component: CartComponent
+    path: 'cartLink', component: CartComponent
   },
   {
-    path:'checkoutLink', component:CheckoutComponent
+    path: 'checkoutLink', component: CheckoutComponent
   },
   {
-    path:'productDetailLink', component: ProductDetailComponent
+    path: 'productDetailLink', component: ProductDetailComponent
   },
   {
-	  path:'productListLink', component: ProductListComponent
+    path: 'productListLink', component: ProductListComponent
   },
   {
     path: 'contactUsLink', component: ContactusComponent
   },
   {
-    path:'customerDashboardLink', component: CustomerDashboardComponent,
-    children:[
-      {path: 'viewProfile', component: ViewProfileComponent},
-      {path: 'updateProfile', component: UpdateProfileComponent},
-      {path: 'viewCard', component: ViewCardComponent},
-      {path: 'viewTransactions', component: ViewTransactionsComponent},
-      {path: 'viewCardTransactions', component: ViewCardTransactionsComponent}
-    ]    
+    path: 'customerDashboardLink', component: CustomerDashboardComponent,
+    children: [
+      { path: 'viewProfile', component: ViewProfileComponent },
+      { path: 'updateProfile', component: UpdateProfileComponent },
+      { path: 'viewCard', component: ViewCardComponent },
+      { path: 'viewTransactions', component: ViewTransactionsComponent },
+      { path: 'viewCardTransactions', component: ViewCardTransactionsComponent }
+    ]
   },
   {
-    path:'adminDashboardLink', component: AdminDashboardComponent,
-    children:[
-      {path: 'viewAdminProfile', component: ViewAdminProfileComponent},
-      {path: 'updateadminProfile', component: UpdateProfileComponent},
-      {path: 'viewAllCustomers',component: ViewAllCustomersComponent},
-      {path: 'viewAllPendingCustomers',component: ViewAllPendingCustomersComponent},
-      {path: 'addNewProduct', component: AddNewProductComponent}
-    ]    
+    path: 'adminDashboardLink', component: AdminDashboardComponent,
+    children: [
+      { path: 'viewAdminProfile', component: ViewAdminProfileComponent },
+      { path: 'updateadminProfile', component: UpdateProfileComponent },
+      { path: 'viewAllCustomers', component: ViewAllCustomersComponent },
+      { path: 'viewAllPendingCustomers', component: ViewAllPendingCustomersComponent },
+      { path: 'addNewProduct', component: AddNewProductComponent }
+    ]  
+  },
+  {
+    path: 'termsLink', component: TermsAndConditionComponent
+  },
+  {
+    path: 'cardTourLink', component: CardDetailsComponent
   }
 ];
 
