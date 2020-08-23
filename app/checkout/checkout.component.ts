@@ -17,13 +17,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   checkoutFunction(form: NgForm) {
-    this.checkout.emiTenure = form.value.emiTenure;
-    this.checkout.shippingAddress=form.value.shippingAddress;
-    this.checkout.cardHolderName=form.value.cardHolderName;
-    this.checkout.cardNumber=form.value.cardNumber.replace(/ /g, '');
-    this.checkout.expiryMonth=form.value.expiryMonth;
-    this.checkout.expiryYear=form.value.expiryYear;
-    this.checkout.cvv=form.value.cvv;
+    this.checkout.cardNumber=this.checkout.cardNumber.replace(/ /g, '');
     console.log(this.checkout);
   }
 
@@ -35,14 +29,13 @@ export class CheckoutComponent implements OnInit {
       event.preventDefault();
   }
 
-  manageCard(id) {
-    var account = (<HTMLInputElement>document.getElementById(id));
-    var data = account.value;
+  manageCard() {
+    var data= this.checkout.cardNumber;
     data = data.replace(/ /g, '');
     var n = data.length / 4;
-    account.value = data.substring(0, 4);
+    this.checkout.cardNumber= data.substring(0, 4);
     for (var i = 1; i < n; i++) {
-      account.value += ' ' + data.substring(4 * i, 4 * (i + 1));
+      this.checkout.cardNumber += ' ' + data.substring(4 * i, 4 * (i + 1));
     }
 
   }

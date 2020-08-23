@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="left">
+        <div class="functionality"><h3 (click)="viewProfile()"> View Your Profile </h3> </div>
+        <div class="functionality"><h3 (click)="updateProfile()"> Update Your Profile</h3></div>
+        <div class="functionality"><h3 (click)="viewAllCustomers()"> View All Customers </h3></div>
+        <div class="functionality"><h3 (click)="viewAllPendingCustomers()"> View All Pending Customers</h3></div>
+        <div class="functionality"><h3 (click)="addNewProduct()"> Add New Product</h3></div>
+    </div>
+
+    <div class="right">
+        {{display}}
+        <router-outlet></router-outlet>
+    </div>
+</div>

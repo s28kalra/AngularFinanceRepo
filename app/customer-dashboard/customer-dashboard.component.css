@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    min-height: 100%;
+    display: flex;
+}
+
+.left {
+    width: 25%;
+    text-align: center;
+    padding: 10px;
+    background-color: pink;
+}
+
+.left h3{
+    cursor: pointer;
+}
+
+.left h3:hover{
+    background-color: #53b5aa;
+}
+
+.right{
+    width: 75%;
+    text-align: center;
+    scroll-behavior: auto;
+    padding-top: 20px;
+    background-color: salmon;
+}
