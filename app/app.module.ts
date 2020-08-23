@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AdminLoginComponent } from "./admin-login/admin-login.component";
 import { UserLoginComponent } from "./user-login/user-login.component";
 
 import { FormsModule } from "@angular/forms";
@@ -44,7 +43,6 @@ import { CardDetailsComponent } from './card-details/card-details.component';
     ProductListComponent,
     ProductDetailComponent,
     RegisterComponent,
-    AdminLoginComponent,
     UserLoginComponent,
     HomepageComponent,
     CartComponent,

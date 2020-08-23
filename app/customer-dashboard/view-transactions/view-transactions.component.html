@@ -1,1 +1,27 @@
-<p>view-transactions works!</p>
+
+    <table style="width:100%" border="3px">
+        <tr>
+          <th>Transaction Id</th>
+          <th>Amount</th>
+          <th>EMI Tenure</th>
+          <th>Number of EMI's Left</th>
+          <th>Product Quantity</th>
+          <th>Purchase Date</th>
+          <th>Shipping Address</th>
+          <th>Product Id</th>
+          <th>Product Name</th>
+
+        </tr>
+        <tr *ngFor="let t of transactions">
+          <td>{{t.transactionId}}</td>
+          <td>Rs. {{t.amount}}/-</td>
+          <td>{{t.emiTenure}}</td>
+          <td>{{t.noOfEmisLeft}}</td>
+          <td>{{t.productQuantity}}</td>
+          <td>{{t.transactionDate}}</td>
+          <td>{{t.shippingAddress}}</td>
+          <td>{{t.product.productId}}</td>
+          <td>{{t.product.productName}}</td>
+        </tr>
+       
+      </table>
