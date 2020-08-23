@@ -1,14 +1,31 @@
-<div class="container">
-    <div class="left">
-        <div class="functionality"><h3 (click)="viewProfile()"> View Your Profile </h3> </div>
-        <div class="functionality"><h3 (click)="updateProfile()"> Update Your Profile</h3></div>
-        <div class="functionality"><h3 (click)="viewCard()"> View Your Card </h3></div>
-        <div class="functionality"><h3 (click)="viewTransactions()"> View your Transactions</h3></div>
-        <div class="functionality"><h3 (click)="viewCardTransactions()"> View your Card Transactions</h3></div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="right">
-        {{display}}
-        <router-outlet></router-outlet>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+
+            <header> My Profile</header>
+            <ul>
+                <li><a (click)="viewProfile()"><i class="fa fa-user-circle-o"></i> View Your Profile</a></li>
+                <li><a (click)="viewCard()"><i class="fa fa-credit-card"></i>View Your Card </a></li>
+                <li><a (click)="viewTransactions()"><i class="fa fa-calculator"></i> Transactions</a></li>
+                <li><a (click)="viewCardTransactions()"><i class="fa fa-calendar-check-o"></i> Card Transactions</a>
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+            {{display}}
+            <router-outlet></router-outlet>
+        </div>
+
     </div>
-</div>
+</body>
+
+</html>
