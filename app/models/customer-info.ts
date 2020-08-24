@@ -11,4 +11,5 @@ export class CustomerInfo{
     ifsc:string;
     customerAadharCard:string;
     registrationDate: Date;
+    isValidCustomer: number;
  }

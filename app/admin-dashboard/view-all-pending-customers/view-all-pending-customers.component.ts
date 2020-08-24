@@ -8,22 +8,57 @@ import { CustomerInfo } from "src/app/models/customer-info";
 })
 export class ViewAllPendingCustomersComponent implements OnInit {
 
-  pendingCustomersList= new Array<CustomerInfo>();
+  pendingCustomersList = new Array<CustomerInfo>();
+  pendingCustomersMainList = new Array<CustomerInfo>();
+  search = '';
   constructor(private pendingService: ViewAllPendingCustomersService) { }
 
   ngOnInit(): void {
     this.pendingService.viewAllPendingCustomers().subscribe(
-      data=>{
-        this.pendingCustomersList=data;
+      data => {
+        this.pendingCustomersList = data;
+        this.pendingCustomersMainList = [...this.pendingCustomersList];
       }
     )
   }
 
-  validateCustomerAndIssueEmiCard(customerId){
-
+  searchByName() {
+    var regex = new RegExp(this.search, "i");
+    if (this.search != '') {
+      this.pendingCustomersList.splice(0, this.pendingCustomersList.length);
+      this.pendingCustomersList = this.pendingCustomersMainList.filter(customer => regex.test(customer.customerFirstName));
+    }
+    else {
+      this.pendingCustomersList = [...this.pendingCustomersMainList];
+    }
   }
 
-  rejectACustomer(customerId){
+  findIndex(list, customerId) {
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].customerId == customerId)
+        return i;
+    }
+    return -1;
+  }
+
+  deleteFromBothLists(customerId) {
+    var index = this.findIndex(this.pendingCustomersList, customerId);
+    this.pendingCustomersList.splice(index, 1);
+    var indexMain = this.findIndex(this.pendingCustomersMainList, customerId);
+    this.pendingCustomersMainList.splice(indexMain, 1);
+  }
+
+  validateCustomerAndIssueEmiCard(customerId) {
+    this.pendingService.validateCustomerAndIssueEmiCard(customerId).subscribe(
+      data => {
+        alert(JSON.stringify(data));
+        if (data.cardNumber > 0)
+          this.deleteFromBothLists(customerId);
+      }
+    )
+  }
+
+  rejectACustomer(customerId) {
 
   }
 
