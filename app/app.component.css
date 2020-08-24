@@ -23,7 +23,11 @@ body{
 }
 
 
+.nmn{
+    color: white;
+    font-weight: 600;
 
+}
 .site-logo {
     float: left;
     padding: 20px 0;

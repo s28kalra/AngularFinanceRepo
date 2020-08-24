@@ -31,6 +31,7 @@
        
       </ul>
       <ul class="header-right">
+        <li *ngIf='isLogin()' class="nmn">Hi {{customerName}}</li>
         <li><a [routerLink]="['contactUsLink']"><i class="fa fa-fw fa-address-book"></i> Contact</a></li>
         
         <li *ngIf='isLogin()'><a class="dropdown" (click)="logout()"><i class="fa fa-fw fa-user"></i>

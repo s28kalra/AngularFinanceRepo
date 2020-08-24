@@ -12,6 +12,7 @@ export class AppComponent {
   a:any;
   //collapsed = true;
   constructor(private route: Router) { }
+  customerName=sessionStorage.getItem("customerName")
   isLogin() {
     if (sessionStorage.getItem("customerId") != null) {
       this.dashboard = "customerDashboardLink";
