@@ -3,7 +3,7 @@
 <div class="loginbox">  
 	<h3 style="color: red;">{{ message }}</h3>
 	<h2>Login here</h2>
-	<form (ngSubmit)="loginCustomer()">
+	<form>
 	<label class="lblemail" for="email"> Email</label>
 	<input class="txtemail" placeholder="Email" type="text" name="email" [(ngModel)]="login.customerEmail"> 
 	
@@ -11,13 +11,13 @@
 	<input class="txtpass" placeholder="Password" type="password" name="pass" [(ngModel)]="login.customerPassword">
 	
 	<br>
-	<button class="btnsubmit">
+	<button class="btnsubmit" (click)="loginCustomer()">
 		Login
 	</button>
-	<button class="btnsubmit">
+	<button class="btnsubmit" (click)="loginAdmin()">
 		Login As Admin
 	</button>
-	<a  [routerLink]="['forgotPasswordLink']"  class="btnforget">
+	<a  [routerLink]="['/forgotPasswordLink']"  class="btnforget">
 		Forgot Password?
 	</a>
 </form>

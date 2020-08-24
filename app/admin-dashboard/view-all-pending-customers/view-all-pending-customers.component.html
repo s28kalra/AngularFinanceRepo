@@ -1,1 +1,26 @@
-<p>view-all-pending-customers works!</p>
+<h1>PENDING CUSTOMERS</h1>
+ Search: <input type="text" (keyup)='searchByName()' [(ngModel)]="search" placeholder="Search">
+<table style="width: 100%">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Id</th>
+        <th>Mobile No</th>
+        <th>Aadhar Card No</th>
+        <th>Card Choosen</th>
+        <th>Registration Date</th>
+        <th>Validate</th>
+        <th>Reject</th>
+    </tr>
+    <tr *ngFor='let c of pendingCustomersList'>
+        <td>{{c.customerFirstName}}</td>
+        <td>{{c.customerLastName}}</td>
+        <td>{{c.customerEmail}}</td>
+        <td>{{c.customerMobile}}</td>
+        <td>{{c.customerAadharCard}}</td>
+        <td>{{c.cardType}}</td>
+        <td>{{c.registrationDate}}</td>
+        <td *ngIf='c.customerId>0'><button (click)='validateCustomerAndIssueEmiCard(c.customerId)'>Validate</button></td>
+        <td *ngIf='c.customerId>0'><button (click)='rejectACustomer(c.customerId)'>Reject</button></td>
+    </tr>
+</table>

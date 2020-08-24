@@ -14,22 +14,34 @@ import { Router } from '@angular/router';
 })
 export class ViewProfileComponent implements OnInit {
 
-  customerInfo=new CustomerInfo;
-customerId=0;
-  constructor(private viewProfile:ViewProfileService,private route: Router) {
-    if(sessionStorage.getItem("customerId")!=null)
-    this.customerId=parseInt(sessionStorage.getItem("customerId"));
-    else{
+  customerInfo = new CustomerInfo();
+  customerId = 0;
+  message="";
+  reason="";
+  constructor(private viewProfile: ViewProfileService, private route: Router) {
+    if (sessionStorage.getItem("customerId") != null)
+      this.customerId = parseInt(sessionStorage.getItem("customerId"));
+    else {
       this.route.navigateByUrl('/userLoginLink')
     }
-   }
+  }
 
   ngOnInit(): void {
-    if(this.customerId>0){
-this.viewProfile.viewProfile(this.customerId).subscribe(data=>{
-  this.customerInfo=data;
-  })
-}
+    if (this.customerId > 0) {
+      this.viewProfile.viewProfile(this.customerId).subscribe(data => {
+        this.customerInfo = data;
+        if(this.customerInfo.isValidCustomer==-1){
+          this.message="Rejected";
+          this.reason="Invalid Aadhar Card";
+        }
+        else if(this.customerInfo.isValidCustomer==0){
+          this.message="Pending";
+        }
+        else 
+          this.message="Succeeded"
+      })
+    }
+
   }
 }
-  
+
