@@ -28,6 +28,7 @@ customerId=0;
     if(this.customerId>0){
 this.viewProfile.viewProfile(this.customerId).subscribe(data=>{
   this.customerInfo=data;
+  console.log(this.customerInfo)
   })
 }
   }

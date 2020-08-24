@@ -4,10 +4,10 @@ body{
 }
 
 .footer {
-    position: relative;
+    
     width: 100%;
     left: 0;
-    height: 12%;
+    height: 10%;
     overflow: hidden;
     color: white;
     padding-top: 20px;
