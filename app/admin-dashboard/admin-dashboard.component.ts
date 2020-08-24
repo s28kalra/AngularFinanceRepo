@@ -10,11 +10,15 @@ export class AdminDashboardComponent implements OnInit {
 
   
   display;
-  customerId=0;
-  constructor(private router : ActivatedRoute, private route:Router) { }
+  adminId=0;
+  constructor(private router : ActivatedRoute, private route:Router) { 
+    if(sessionStorage.getItem("adminId")!=null)
+      this.adminId=parseInt(sessionStorage.getItem("adminId"));
+    else
+      route.navigateByUrl('/userLoginLink');
+  }
 
   ngOnInit(): void {
-    this.customerId=1;
     this.display="AdminProfile";
     this.route.navigate(['viewAdminProfile'],{relativeTo: this.router});
   }

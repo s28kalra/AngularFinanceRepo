@@ -6,7 +6,7 @@ import { HttpClient } from "@angular/common/http";
   providedIn: 'root'
 })
 export class ViewProfileService {
-  //customerInfo=newCustomerInfo()
+  
   constructor(private http:HttpClient) { }
 
   viewProfile(customerId):Observable<any>{
