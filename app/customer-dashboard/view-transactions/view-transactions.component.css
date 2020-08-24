@@ -1,0 +1,28 @@
+a{
+  color: white;
+}
+
+#viewTransaction {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border: 3px solid;
+  width: 100%;
+}
+
+#viewTransaction td, #viewTransaction th {
+  border: 3px solid;
+  padding: 8px;
+}
+
+#viewTransaction tr:nth-child(even){background-color: #ebe2e2;}
+
+#viewTransaction tr:hover {background-color: #ddd;}
+
+#viewTransaction th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4CAF50;
+  border: 3px solid black;
+  font-size: 14px;
+  color: white;
+}

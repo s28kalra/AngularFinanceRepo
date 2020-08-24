@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { EmiCard } from "src/app/models/emi-card";
+import { CardDetails } from "src/app/models/CardDetails";
+import { Router } from '@angular/router';
+import { GetCardDetailsService } from "../../services/get-card-details.service";
+
 @Component({
   selector: 'app-view-card',
   templateUrl: './view-card.component.html',
@@ -7,27 +10,39 @@ import { EmiCard } from "src/app/models/emi-card";
 })
 export class ViewCardComponent implements OnInit {
 
-  emiCard= new EmiCard();
-  cardType="";
-  month;
+  cardDetails= new CardDetails();
   customerId=0;
-  constructor() { 
+  month;
+  year;
+  cardImageSource;
+
+  constructor(private service :GetCardDetailsService, private route:Router) {
+    if(sessionStorage.getItem("customerId")!=null)
     this.customerId=parseInt(sessionStorage.getItem("customerId"));
-  }
+    else{
+      this.route.navigateByUrl('/userLoginLink');
+    }
+   }
 
   ngOnInit(): void {
-    this.emiCard.cardNumber="12345678";
-    this.emiCard.cardNumberStart="10012002";
-    if(this.emiCard.cardNumberStart=="10012002")
-      this.cardType="Titanium";
-    else
-      this.cardType="Gold";
-    this.emiCard.cardExpiry= new Date("2025-08-31");
-    this.month= this.emiCard.cardExpiry.getMonth();
-    this.emiCard.cardCvv=234;
-    this.emiCard.cardBalance=50000;
-    this.emiCard.cardStatus=true;
-    this.emiCard.amountToBePaid=0;
+    if(this.customerId>0) {
+      this.service.getCardDetails(this.customerId).subscribe(
+        data=>{
+          this.cardDetails=data;
+          this.month=this.cardDetails.cardExpiry.valueOf().toString().substring(5,7);
+          this.year=this.cardDetails.cardExpiry.valueOf().toString().substring(2,4);
+          if(this.cardDetails.cardType=="Gold")
+            this.cardImageSource = "assets/visa.png";
+          else
+            this.cardImageSource = "";
+
+        }
+      )
+    }
+    else {
+      this.route.navigateByUrl('/userLoginLink');
+    }
+
   }
 
 }

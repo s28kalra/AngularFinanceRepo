@@ -1,29 +1,28 @@
-<p>view-card-transactions works!</p>
-<h1>{{status.status}}</h1>
-<h1>{{status.message}}</h1>
-<table *ngIf='status.status=="SUCCESS"' style="width: 100%" >
+
+<table style="width: 90%" align="center" id="cardTransaction">
     <tr>
-        <th>Trans Id</th>
-        <th>Amount</th>
+        <th><a (click)="orderByTransactionId()">Transaction Id </a><i class="fa fa-angle-down"></i></th>
+        <th><a (click)="orderByHighToLowAmount()">Amount </a><i class="fa fa-angle-down"></i></th>
+        <th><a (click)="orderByDate()">Date </a><i class="fa fa-angle-down"></i></th>
+        <th><a (click)="orderByTenure()">Tenure </a><i class="fa fa-angle-down"></i></th>
+        <th><a (click)="orderByNoOfEmisLeft()">No of Emi Left </a><i class="fa fa-angle-down"></i></th>
+        <th><a (click)="orderByProductQuantity()">Product Quantity </a><i class="fa fa-angle-down"></i></th>
         <th>Address</th>
-        <th>Date</th>
-        <th>Tenure</th>
-        <th>No of Emi Left</th>
         <th>Name Of Product</th>
-        <th>product Quantity</th>
     </tr>
     <tr *ngFor='let t of status.transactions'>
         <td>{{t.transactionId}}</td>
         <td>{{t.amount}}</td>
-        <td>{{t.shippingAddress}}</td>
         <td>{{t.transactionDate}}</td>
         <td>{{t.emiTenure}}</td>
         <td>{{t.noOfEmisLeft}}</td>
-        <td>{{t.productName}}</td>
         <td>{{t.productQuantity}}</td>
+        <td>{{t.shippingAddress}}</td>
+        <td>{{t.productName}}</td>
     </tr>
 </table>
-<button *ngIf='status.status=="SUCCESS"' (click)="orderByDate()">Order By Date</button>
-<button *ngIf='status.status=="SUCCESS"' (click)="orderByNoOfEmisLeft()">Order By Emis Left</button>
-<button *ngIf='status.status=="SUCCESS"' (click)="orderByLowToHighAmount()">Order By Low To High Amount</button>
-<button *ngIf='status.status=="SUCCESS"' (click)="orderByHighToLowAmount()">Order By High To Low</button>
+
+<!--<button (click)="orderByDate()">Order By Date</button>
+<button (click)="orderByNoOfEmisLeft()">Order By Emis Left</button>
+<button (click)="orderByLowToHighAmount()">Order By Low To High Amount</button>
+<button (click)="orderByHighToLowAmount()">Order By High To Low</button>-->

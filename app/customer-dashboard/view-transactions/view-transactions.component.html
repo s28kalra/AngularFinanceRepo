@@ -1,17 +1,17 @@
 
-    <table style="width:100%" border="3px">
+    <table style="width:90%" id="viewTransaction" align="center">
         <tr>
-          <th>Transaction Id</th>
-          <th>Amount</th>
-          <th>EMI Tenure</th>
-          <th>Number of EMI's Left</th>
-          <th>Product Quantity</th>
+          <th><a (click)="orderByTransactionId()">Transaction Id </a><i class="fa fa-angle-down"></i></th>
+          <th><a (click)="orderByHighToLowAmount()">Amount </a><i class="fa fa-angle-down"></i></th>
+          <th><a (click)="orderByTenure()">Tenure </a><i class="fa fa-angle-down"></i></th>
+          <th><a (click)="orderByNoOfEmisLeft()">Number of EMI's Left </a><i class="fa fa-angle-down"></i></th>
+          <th><a (click)="orderByProductQuantity()">Product Quantity </a><i class="fa fa-angle-down"></i></th>
           <th>Purchase Date</th>
           <th>Shipping Address</th>
           <th>Product Id</th>
           <th>Product Name</th>
-
         </tr>
+
         <tr *ngFor="let t of transactions">
           <td>{{t.transactionId}}</td>
           <td>Rs. {{t.amount}}/-</td>

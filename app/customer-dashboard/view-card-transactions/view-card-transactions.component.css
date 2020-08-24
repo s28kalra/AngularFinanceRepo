@@ -1,3 +1,41 @@
-table,th,td{
-    border: 1px solid black;
+/*table,td{
+    border: 3px solid black;
+    height: 30px;
 }
+
+th{
+    border: 3px solid;
+    text-align: center;
+    color: black;
+    height: 50px;
+    font-size: 18px;
+}*/
+
+a{
+    color: white;
+}
+
+#cardTransaction {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border: 3px solid;
+    width: 100%;
+  }
+  
+  #cardTransaction td, #cardTransaction th {
+    border: 3px solid;
+    padding: 8px;
+  }
+  
+  #cardTransaction tr:nth-child(even){background-color: #ebe2e2;}
+  
+  #cardTransaction tr:hover {background-color: #ddd;}
+  
+  #cardTransaction th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #4CAF50;
+    border: 3px solid black;
+    font-size: 18px;
+    color: white;
+  }
