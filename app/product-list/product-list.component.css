@@ -2,3 +2,57 @@
     padding-top: 80px;
     padding-bottom: 40px
 }
+.product-list{
+    background-color: #dfe6e9;
+    padding: 1cm;
+}
+.product-list .card{
+    background-color: white;
+    border-radius: 10px;
+    padding: 1cm;
+    box-shadow: 0px 10px 5px grey;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card .title
+{
+    font-size: 18px;
+    font-weight: bold;
+}
+.card img{
+    max-width: 100%;
+    max-height: 150px;
+    border-radius: 5px;
+}
+.card .text {
+    text-align:left;
+    margin-left: 2em;
+    margin-bottom: 0.5em;
+    font-size: 22px;
+}
+.buy-button
+{
+    background-color: #f9ca24;
+    border: none;
+    padding: 1em;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 100%;
+}
+.buy-button:hover
+{
+  box-shadow: 0px 5px 5px #b2bec3;
+  color: brown;
+}
+.product-container
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 40px;
+}
+.align-center{
+    text-align: center;
+    font-weight: bold;
+}

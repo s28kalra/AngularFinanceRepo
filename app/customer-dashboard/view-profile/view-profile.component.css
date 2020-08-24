@@ -16,6 +16,14 @@
     padding: 20px;
 }
 .content p{
-    color: #4b4fe2;
+   
     margin-right: 16px;
+}
+.lab{
+    color: black;
+    float: left;
+}
+.val{
+    color: #4b4fe2;
+    
 }
