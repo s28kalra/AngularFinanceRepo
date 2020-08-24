@@ -10,4 +10,5 @@ export class CustomerInfo{
     accountNumber:string;
     ifsc:string;
     customerAadharCard:string;
+    registrationDate: Date;
  }
