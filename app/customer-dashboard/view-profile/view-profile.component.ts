@@ -30,6 +30,7 @@ export class ViewProfileComponent implements OnInit {
         this.customerInfo = data;
       })
     }
+
   }
 }
 

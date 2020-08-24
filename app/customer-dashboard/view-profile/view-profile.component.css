@@ -1,6 +1,29 @@
-.cimage{
-    padding-right: 90px;
+.profilecard{
+    width: 400px;
+    margin:auto;
+    background:white;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
 }
-.con{
-    padding-right: 20px;
+/* .content{
+    padding: 20px;
+    float: left;
+}
+.content p{
+    color: #4b4fe2;
+    margin-right: 16px;
+} */
+.content{
+    padding: 20px;
+}
+.content p{
+   
+    margin-right: 16px;
+}
+.lab{
+    color: black;
+    float: left;
+}
+.val{
+    color: #4b4fe2;
+    
 }
