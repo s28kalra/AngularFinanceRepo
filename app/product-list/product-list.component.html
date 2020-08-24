@@ -1,128 +1,19 @@
-<div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-5">
+<section class=product-list>
+    <h1 class="align-center">Products</h1>
+    <div class="product-container">
+      <div class="card" *ngFor="let p of products" (click)="onSelected(p)">
+          <div class="title">{{p.productName}} </div>
+          <div class="image">
+            <img [src]=p.productImageSource alt="{{p.productName}}"  >
+          </div>
+          <div class="text">Our Price: ₹ {{p.productPrice}} /-</div>
+         
+     
+     
+          <button class="buy-button" (click)='navigateToProductDetail()'>
+              Buy Now
+          </button>
 
-
-<div class="row">
-    <div class="col-xs-12">
-        <button class="btn btn-success">Go to Cart</button>
-    </div>
+    </div>  
 </div>
-<hr>
-<div class="row">
-    <div class="col-xs-12">
-
- <!-- <app-product-search> -->
-    <div class="row">
-        <div class="col-xs-12">
-        <h4>Search by Product name:</h4>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <form>
-                <div class="row">
-                    <div class="col-sm-5 form-gropu">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" class="form-control">
-                    </div>
-                    <div class="col-sm-2 form-group">
-                        <label for="amount">Amount</label>
-                        <input type="number" id="amount" class="form-control">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <button class="btn btn-light" type="submit"(keyup)="onKey($event)">Search</button>
-                        <button class="btn btn-warning" type="reset">clear</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        </div>
-
-<!-- </app-product-search> -->
-    </div>
-</div>
-<hr>
-<div class="row">
-    <div class="col-xs-12">
-        <a class="list-group-item clearfix" *ngFor="let p of products" (click)="onSelected($event,p)" >
-            <div class="pull-left" >
-                <h4 class="list-group-item-heading">{{p.productName}}</h4>
-                <p class="list-group-item-text">{{p.productId}}</p>
-                <p class="list-group-item-text">RS. {{p.productPrice}} /-</p>
-                
-            </div>
-            <span class="pull-right">
-                <img [src]=p.productImageSource alt="{{p.productName}}" class="img-responsive" style=" max-height: 80px;">
-            </span>
-        </a>
-       <!-- <app-product-item>
-
-       </app-product-item> -->
-    </div>
-</div>
-
-</div>
-
-
-<div class="col-md-7 spacer">
-
-  <!-- <app-product-detail
-  *ngIf ="selectedProduct; else infoText"
-    [product]="selectedProduct"> -->
-    <div *ngIf ="selectedProduct; else infoText">
-    <div class="row">
-        <div class="col-xs-12 spacer">
-            <img [src]='selectedProduct.productImageSource' alt="{{selectedProduct.productName}}" class="img-responsive" style="max-height: 350px; padding-top: 100px;">
-        </div>
-        </div>
-        <div class="row spacer" >
-            <div class="col-xs-12 spacer">
-                <h1>{{selectedProduct.productName}}</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-            <div class="btn-group">
-                <button type="button" class="btn btn-primary dropdown-toggle">About Product
-                    <span class="caret"></span>
-                </button>
-                <button type="button" class="btn btn-success">Add to Cart</button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Description</a></li>
-                    <li><a href="#">T&C</a></li>
-                    <li><a href="#">Report</a></li>
-                </ul>
-            </div>
-            </div>
-        </div>
-        <div class="col-xs-12">
-            <div class="btn-group">
-                {{selectedProduct.productDescription}}
-            </div>
-        </div>
-        <div class="col-xs-12">
-            <div class="btn-group">
-               <h4>MRP:     Rs- {{selectedProduct.productPrice}}  /-  </h4>
-            </div>
-            <!-- <div><a class="btn btn-info" [routerLink]="['productDetailLink']">Open in New Tab</a></div> -->
-            <div><a class="btn btn-info" (click)='navigateToProductDetail()'>Open in New Tab</a></div>
-        </div>
-        </div>
-        
-        
-
-<!-- </app-product-detail> -->
-    <ng-template #infoText>
-        <p>Please Select a Product to display</p>
-    </ng-template>
-</div>
-</div>
-</div>
-</div>
-</div>
- 
+</section>

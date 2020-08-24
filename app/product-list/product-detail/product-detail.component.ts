@@ -45,10 +45,13 @@ addedToWishlist:boolean;
     c1.productPrice =60000;
     c1.productQuantity=1;
     this.products.push(c1);
+
    }
 
   ngOnInit(): void {
+    console.log(sessionStorage.getItem("productDetailId"));
   }
+  
   onSubmitRate(form: NgForm) {
     const newrate = parseInt(form.value.rate, 10);
     form.reset();
