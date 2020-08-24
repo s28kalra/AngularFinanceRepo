@@ -6,6 +6,9 @@ body{
 background-image: url(/assets/regist.jpg);
   background-size: cover;
 }
+#hd{
+  margin-top: 0px;
+}
 *{
   margin: 0;
   padding: 0;
@@ -19,7 +22,7 @@ h2{
   padding: 20px;
 }
 .register{
-  margin-top: 10px;
+  margin-top: 2px;
   background-color: rgb(0, 0, 0,0.6);
   width:900px;
   color: white;
@@ -30,7 +33,7 @@ h2{
   padding-bottom: 30px;
 }
 .frm{
-  margin-top: 15px;
+  margin-top: 10px;
 }
 #register{
   margin-left: 50px;
@@ -62,7 +65,7 @@ input[type=date]{
 }
 input[type=password]{
   width: 240px;
-  margin-left: 151px;
+  margin-left: 148px;
   border-radius: 10px;
 }
 #fn{
@@ -77,19 +80,19 @@ input[type=password]{
   margin-left: 186px;
 }
 #userMobile{
-  margin-left: 180px;
+  margin-left: 176px;
 }
 #confirmPassword{
-  margin-left: 82px;
+  margin-left: 80px;
 }
 #userAccount{
   margin-left: 100px;
 }
 #ifsc{
-  margin-left: 150px;
+  margin-left: 147px;
 }
 #userAadhar{
-  margin-left: 110px;
+  margin-left: 104px;
 }
 #Gold{
   margin-left: 150px;
