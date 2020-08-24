@@ -12,7 +12,7 @@
 <p><b class="lab">Account Number:</b><b  class="val pull-right">{{ customerInfo. accountNumber}}</b></p><br>
 <p><b class="lab">IFSC :</b><b class="val pull-right">{{ customerInfo. ifsc}}</b></p><br>
 <p><b class="lab">Aadhar:</b><b class="val pull-right">{{ customerInfo.customerAadharCard}}</b></p><br>
- 
-
+<p><b class="lab">Verification:</b><b class="val pull-right">{{ message }}</b></p><br>
+<p *ngIf='message=="Rejected"'><b class="lab">Reason:</b><b class="val pull-right">{{ reason }}</b></p><br>
 </div> 
 </div> 
