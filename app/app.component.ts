@@ -13,6 +13,7 @@ export class AppComponent {
   //collapsed = true;
   constructor(private route: Router) { }
   customerName=sessionStorage.getItem("customerName")
+  adminName=sessionStorage.getItem("adminName");
   isLogin() {
     if (sessionStorage.getItem("customerId") != null) {
       this.dashboard = "customerDashboardLink";
@@ -37,7 +38,9 @@ export class AppComponent {
   }
   logout(){
     sessionStorage.removeItem("customerId");
+    sessionStorage.removeItem("customerName");
     sessionStorage.removeItem("adminId");
+    sessionStorage.removeItem("adminName");
     this.route.navigateByUrl('/userLoginLink');
   }
 }

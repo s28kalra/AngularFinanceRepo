@@ -26,7 +26,9 @@ body{
 .nmn{
     color: white;
     font-weight: 600;
-
+     margin-right: 100px; 
+    font-size: 20px;
+    text-align: center;
 }
 .site-logo {
     float: left;
@@ -58,7 +60,7 @@ body{
 
 .header-right {
     float: right;
-    padding-right: 120px;
+    padding-right: 10px;
     padding-top: 0px;
 }
 
@@ -72,7 +74,7 @@ body{
     color: #ffffff;
     font-weight: 600;
     padding-top: 35px;
-    margin-right: 55px;
+    margin-right: 65px;
 }
 
 .header-right li a:hover,
