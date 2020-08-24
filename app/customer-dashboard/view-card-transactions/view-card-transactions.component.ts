@@ -33,6 +33,10 @@ export class ViewCardTransactionsComponent implements OnInit {
     }
   }
 
+  orderByTransactionId(){
+    this.status.transactions.sort((a,b)=>b.transactionId.valueOf()-a.transactionId.valueOf());
+  }
+
   orderByDate(){
     this.status.transactions.sort((a,b)=> b.transactionDate.valueOf()-a.transactionDate.valueOf());
   }
@@ -49,6 +53,12 @@ export class ViewCardTransactionsComponent implements OnInit {
     this.status.transactions.sort((a,b)=>b.amount-a.amount);
   }
 
+  orderByProductQuantity(){
+    this.status.transactions.sort((a,b)=>b.productQuantity.valueOf()-a.productQuantity.valueOf());
+  }
 
+  orderByTenure(){
+    this.status.transactions.sort((a,b)=>b.emiTenure.valueOf()-a.emiTenure.valueOf());
+  }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewtransactionsService } from "../../services/viewtransactions.service";
 import { CustomerInfo } from "../../models/customer-info";
+import { ViewCardTransactionsStatus } from "src/app/status/ViewCardTransactionsStatus";
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./view-transactions.component.css']
 })
 export class ViewTransactionsComponent implements OnInit {
+  status= new ViewCardTransactionsStatus();
   transactions:any;
   customerId=0;
   constructor(private service : ViewtransactionsService, private route:Router) {
@@ -31,5 +33,31 @@ export class ViewTransactionsComponent implements OnInit {
       this.route.navigateByUrl('/userLoginLink');
     }
   }
+  orderByTransactionId(){
+    this.transactions.sort((a,b)=>b.transactionId.valueOf()-a.transactionId.valueOf());
+  }
 
+  orderByDate(){
+    this.transactions.sort((a,b)=> b.transactionDate.valueOf()-a.transactionDate.valueOf());
+  }
+  
+  orderByNoOfEmisLeft(){
+    this.transactions.sort((a,b)=>b.noOfEmisLeft-a.noOfEmisLeft);
+  }
+
+  orderByLowToHighAmount(){
+    this.transactions.sort((a,b)=>a.amount-b.amount);
+  }
+
+  orderByHighToLowAmount(){
+    this.transactions.sort((a,b)=>b.amount-a.amount);
+  }
+
+  orderByProductQuantity(){
+    this.transactions.sort((a,b)=>b.productQuantity.valueOf()-a.productQuantity.valueOf());
+  }
+
+  orderByTenure(){
+    this.transactions.sort((a,b)=>b.emiTenure.valueOf()-a.emiTenure.valueOf());
+  }
 }

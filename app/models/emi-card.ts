@@ -1,12 +1,12 @@
 export class EmiCard{
-    cardNumber: string;
+    cardNumber: number;
     cardNumberStart: string;
-    cardExpiry: Date;
+    cardExiry: Date;
     cardCvv: number;
     cardBalance: number;
-    cardLimit: number;
+    cardLimit: number;  
     emiPerMonth: number;
-    cardStatus: boolean;
+    cardStatus: boolean;  
     joiningFees: number;
     joiningFeesDate: Date;
     amountToBePaid: number;
