@@ -20,7 +20,7 @@ export class CustomerDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.customerId=1;
-    this.display="CustomerProfile";
+    //this.display="CustomerProfile";
     this.route.navigate(['viewProfile'],{relativeTo: this.router});
   }
 

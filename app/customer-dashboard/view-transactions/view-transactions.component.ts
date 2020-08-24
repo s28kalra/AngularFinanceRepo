@@ -15,7 +15,7 @@ export class ViewTransactionsComponent implements OnInit {
     if(sessionStorage.getItem("customerId")!=null)
     this.customerId=parseInt(sessionStorage.getItem("customerId"));
     else{
-      this.route.navigateByUrl('/userLoginLink')
+      this.route.navigateByUrl('/userLoginLink');
     }
    }
 
