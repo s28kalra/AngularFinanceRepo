@@ -44,7 +44,7 @@ body{
     color: #ffffff;
     font-weight: 600;
     padding: 33px 5px;
-    margin-right: 55px;
+    margin-right: 65px;
 }
 
 .main-menu li a:hover,
@@ -54,7 +54,7 @@ body{
 
 .header-right {
     float: right;
-    padding-right: 50px;
+    padding-right: 120px;
     padding-top: 0px;
 }
 
