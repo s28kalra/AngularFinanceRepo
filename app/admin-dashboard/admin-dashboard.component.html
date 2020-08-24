@@ -1,14 +1,20 @@
-<div class="container">
-    <div class="left">
-        <div class="functionality"><h3 (click)="viewProfile()"> View Your Profile </h3> </div>
-        <div class="functionality"><h3 (click)="updateProfile()"> Update Your Profile</h3></div>
-        <div class="functionality"><h3 (click)="viewAllCustomers()"> View All Customers </h3></div>
-        <div class="functionality"><h3 (click)="viewAllPendingCustomers()"> View All Pending Customers</h3></div>
-        <div class="functionality"><h3 (click)="addNewProduct()"> Add New Product</h3></div>
-    </div>
 
-    <div class="right">
-        {{display}}
-        <router-outlet></router-outlet>
+
+<div class="container">
+    <div class="sidebar">
+
+        <header> My Profile</header>
+        <ul>
+        <li><a (click)="viewProfile()"><i class="fa fa-user-circle-o"></i> View Your Profile</a></li>
+        <li><a (click)="viewAllCustomers()"><i class="fa fa-fw fa-user"></i>View All Customers </a></li>
+         <li><a  (click)="viewAllPendingCustomers()"><i class="fa fa-fw fa-user-plus"></i> View Pending Customer</a></li>
+        <li><a (click)="addNewProduct()"><i class="fa fa-calendar-check-o"></i> Add New Product</a></li>
+       
+            </ul>
+        </div>
+        <div class="right" >
+            {{display}}
+            <router-outlet></router-outlet>
+        </div>
+
     </div>
-</div>
