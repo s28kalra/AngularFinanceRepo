@@ -1,38 +1,39 @@
-
-
-    <div class="body">
+<div class="body">
     <div class="register">
         <div class="frm">
-        <form #registerForm='ngForm' id="register" (ngSubmit)='registerCustomer(registerForm)'>
-            <label for="userFirstName" id="nm">Name *</label>
-            <input type="text" id="fn" placeholder="First-Name" name="userFirstName" (keypress)='isAName($event)'
-                [(ngModel)]="customer.customerFirstName" required>
+            <div class="hd">
+            <h1 >Customer Registration Form</h1>
+        </div>
+            <form #registerForm='ngForm' id="register" (ngSubmit)='registerCustomer(registerForm)'>
+                <label for="userFirstName" id="nm">Name *</label>
+                <input type="text" id="fn" placeholder="First-Name" name="userFirstName" (keypress)='isAName($event)'
+                    [(ngModel)]="customer.customerFirstName" required>
                 <input type="text" id="ln" placeholder="Last-Name" name="userLastName" (keypress)='isAName($event)'
-                [(ngModel)]="customer.customerLastName"><br><br>
-            <span class="error">First Name Required</span>
+                    [(ngModel)]="customer.customerLastName"><br><br>
+                <span class="error">First Name Required</span>
 
-            
 
-            <label for="dob">Date Of Birth *</label>
-            <input type="date" name="dob" [(ngModel)]="customer.dateOfBirth" required>
-            <span class="error">Choose Your Correct Birth Details</span><br><br>
 
-            <label for="userEmail">Email *</label>
-            <input type="text" name="userEmail" id="em" [(ngModel)]="customer.customerEmail"
-                pattern="^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{1,3})+$" placeholder="Email" required>
-            <span class="error">Oops!! Invalid Email Address</span><br><br>
+                <label for="dob">Date Of Birth *</label>
+                <input type="date" name="dob" [(ngModel)]="customer.dateOfBirth" required >
+                <span class="error">Choose Your Correct Birth Details</span><br><br>
 
-            <label for="userMobile"> Mobile *</label>
-            <input type="text" placeholder="Mobile"  name="userMobile" id="userMobile"
-            (keypress)='isNumber($event,"userMobile",10)' (keyup)='manageMobile()' value="" minlength="11"
-            [(ngModel)]="customer.customerMobile" required>
-        <span class="error">Oops!! Invalid Mobile Number</span><br><br>
+                <label for="userEmail">Email *</label>
+                <input type="text" name="userEmail" id="em" [(ngModel)]="customer.customerEmail"
+                    pattern="^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{1,3})+$" placeholder="Email" required>
+                <span class="error">Oops!! Invalid Email Address</span><br><br>
 
-        <label for="password" mat-raised-button matTooltipClass="mattp" matTooltipPosition="above"
+                <label for="userMobile"> Mobile *</label>
+                <input type="text" placeholder="Mobile" name="userMobile" id="userMobile"
+                    (keypress)='isNumber($event,"userMobile",10)' (keyup)='manageMobile()' value="" minlength="11"
+                    [(ngModel)]="customer.customerMobile" required>
+                <span class="error">Oops!! Invalid Mobile Number</span><br><br>
+
+                <label for="password" mat-raised-button matTooltipClass="mattp" matTooltipPosition="above"
                     matTooltip="Choose a combination of a small,capital Alphabets, a Number and a special Symbol (! @ # $ % ^ & *)">Password
                     *</label>
 
-<input type="password" name="password" placeholder="Password" [(ngModel)]="customer.customerPassword"
+                <input type="password" name="password" placeholder="Password" [(ngModel)]="customer.customerPassword"
                     minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{8,15}$" required
                     mat-raised-button matTooltipClass="mattp" matTooltipPosition="above"
                     matTooltip="Choose a combination of a small,capital Alphabets, a Number and a special Symbol (! @ # $ % ^ & *)">
@@ -53,14 +54,14 @@
                 <label for="ifsc" mat-raised-button matTooltipClass="mattp"
                     matTooltip="First 4 characters must be Capital">IFSC
                     Code:</label>
-                     <input type="text" name="ifsc" id="ifsc" placeholder="IFSC Code" pattern="^[A-Z]{4}[0-9]{7}$"
+                <input type="text" name="ifsc" id="ifsc" placeholder="IFSC Code" pattern="^[A-Z]{4}[0-9]{7}$"
                     [(ngModel)]="customer.ifsc" maxlength="11" required mat-raised-button
                     matTooltip="First 4 characters must be Capital" matTooltipClass="mattp">
                 <span class="error">Oops!! Invalid IFSC Code</span><br><br>
 
                 <label for="userAadhar">Aadhar Number:</label>
-            
-            
+
+
                 <input type="text" placeholder="Aadhar Card Number" name="userAadhar" id="userAadhar"
                     (keypress)='isNumber($event,"userAadhar",13)' (keyup)='manageAadharCard()' value="" minlength="14"
                     [(ngModel)]="customer.customerAadharCard" required>
@@ -68,31 +69,23 @@
 
                 <label for="cardType">Card Type:</label>
                 <input type="radio" id="Gold" name="cardType" value="Gold" class="cardType"
-                [(ngModel)]="customer.cardType" required> <span class="cardType" mat-raised-button
-                matTooltipPosition="above" matTooltipClass="mattp" matTooltip="One Lakh Credit ">Gold</span>&nbsp;&nbsp;
+                    [(ngModel)]="customer.cardType" required> <span class="cardType" mat-raised-button
+                    matTooltipPosition="above" matTooltipClass="mattp"
+                    matTooltip="One Lakh Credit ">Gold</span>&nbsp;&nbsp;
                 <input type="radio" id="Titanium" name="cardType" value="Titanium" class="cardType"
                     [(ngModel)]="customer.cardType" required checked> <span class="cardType" mat-raised-button
                     matTooltipClass="mattp" matTooltipPosition="above" matTooltip="Two Lakh Credit ">Titanium</span>
                 <span class=" error">Please Select Card of your Choice</span><br>
                 <input type="checkbox" id="terms" name="termsbtn" value="terms" checked>
                 <a (click)='navigateToTerms()' class="btnterms">
-                    <label for="terms">Accept Terms and Conditions</label> </a><br>
-                <button type="submit" class="btnn" id="Btnn" [disabled]='!registerForm.valid || !confirmPassword()'>Register</button>
-                <button type="reset" class="btnn" id="rbtn">Reset</button>
-                
 
-        </form>
-    </div>
+                    <label  id="atc" for="terms">Accept Terms and Conditions</label> </a><br>
+                <button type="submit" class="btnn" id="Btnn"
+                    [disabled]='!registerForm.valid || !confirmPassword()'>Register</button>
+                <button type="reset" class="btnn" id="rbtn">Reset</button>
+
+
+            </form>
+        </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-

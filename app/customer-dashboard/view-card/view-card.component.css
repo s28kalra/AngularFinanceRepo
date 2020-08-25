@@ -1,7 +1,6 @@
 
 body {
   font: 16px "Helvetica Neue", Helvetica, sans-serif;
-  background: #fbfbfb;
   color: #666;
 }
 
@@ -123,4 +122,20 @@ a {
   p.heading {
     padding-left: 50px;
     padding-top: 18px;
+  }
+
+  #success{
+    background: green;
+    color: white;
+    height: 6%;
+    padding-top: 13px;
+    text-align: center;
+  }
+
+  #failure{
+    background: red;
+    color: white;
+    height: 6%;
+    padding-top: 13px;
+    text-align: center;
   }

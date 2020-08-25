@@ -6,9 +6,8 @@
           <th><a (click)="orderByTenure()">Tenure </a><i class="fa fa-angle-down"></i></th>
           <th><a (click)="orderByNoOfEmisLeft()">Number of EMI's Left </a><i class="fa fa-angle-down"></i></th>
           <th><a (click)="orderByProductQuantity()">Product Quantity </a><i class="fa fa-angle-down"></i></th>
-          <th>Purchase Date</th>
+          <th><a (click)="orderByDate()">Purchase Date </a><i class="fa fa-angle-down"></i></th>
           <th>Shipping Address</th>
-          <th>Product Id</th>
           <th>Product Name</th>
         </tr>
 
@@ -20,7 +19,6 @@
           <td>{{t.productQuantity}}</td>
           <td>{{t.transactionDate}}</td>
           <td>{{t.shippingAddress}}</td>
-          <td>{{t.product.productId}}</td>
           <td>{{t.product.productName}}</td>
         </tr>
        

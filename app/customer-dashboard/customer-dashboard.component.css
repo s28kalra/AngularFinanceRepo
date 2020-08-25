@@ -11,11 +11,12 @@
   } */
 
  .right{
+     
     width: 75%;
     text-align: center;
     scroll-behavior: auto;
     padding-top: 20px;
-     background-color: white; 
+    
 }  
 
     *{
@@ -66,6 +67,9 @@
         margin-right: 16px;
     } 
      
+    a:hover{
+        cursor: pointer;
+    }
     
     /* .container{
         min-height: 100%;

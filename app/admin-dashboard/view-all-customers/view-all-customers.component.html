@@ -1,1 +1,25 @@
-<p>view-all-customers works!</p>
+<h1>Rejected Or Accepted CUSTOMERS</h1>
+ Search: <input type="text" (keyup)='searchByName()' [(ngModel)]="search" placeholder="Search">
+<table style="width: 100%">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Id</th>
+        <th>Mobile No</th>
+        <th>Aadhar Card No</th>
+        <th>Card Choosen</th>
+        <th>Registration Date</th>
+        <th>Status</th>
+    </tr>
+    <tr *ngFor='let c of customersList'>
+        <td>{{c.customerFirstName}}</td>
+        <td>{{c.customerLastName}}</td>
+        <td>{{c.customerEmail}}</td>
+        <td>{{c.customerMobile}}</td>
+        <td>{{c.customerAadharCard}}</td>
+        <td>{{c.cardType}}</td>
+        <td>{{c.registrationDate}}</td>
+        <td *ngIf='c.isValidCustomer==-1' style="background-color: red;">Rejected</td>
+        <td *ngIf='c.isValidCustomer==1' style="background-color: green;">Accepted</td>
+    </tr>
+</table>
