@@ -49,5 +49,8 @@ export class CartComponent implements OnInit {
     this.subTotal-=this.cartProduct.productQuantity* this.cartProduct.productPrice;
     sessionStorage.removeItem('selectedItem');
   }
+  gotoCheckout(){
+    sessionStorage.setItem("selectedItem",JSON.stringify(this.cartProduct));
+  }
 
 }

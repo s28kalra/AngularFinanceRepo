@@ -95,7 +95,7 @@
                             (keypress)='isNumber($event,"cvv",2)' [(ngModel)]='checkout.cvv' required />
                         <span class="error">OOps!! Incorrect CVV</span>
                     </div>
-                    <button type="submit" [disabled]='!checkoutForm.valid'>Confirm and Pay</button>
+                    <button type="submit" [disabled]='!checkoutForm.valid' (click)="confirmAndPay()">Confirm and Pay</button>
                 </form>
             </div>
         </div>
