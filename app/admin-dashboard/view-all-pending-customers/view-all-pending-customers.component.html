@@ -1,6 +1,8 @@
-<h1>PENDING CUSTOMERS</h1>
- Search: <input type="text" (keyup)='searchByName()' [(ngModel)]="search" placeholder="Search">
-<table style="width: 100%">
+
+ Search: <input type="text" (keyup)='searchByName()' [(ngModel)]="search" placeholder="Search Name">
+ <br>
+ <br>
+<table style="width: 90%" id="pendingCustomer" align="center">
     <tr>
         <th>First Name</th>
         <th>Last Name</th>
@@ -20,7 +22,7 @@
         <td>{{c.customerAadharCard}}</td>
         <td>{{c.cardType}}</td>
         <td>{{c.registrationDate}}</td>
-        <td *ngIf='c.customerId>0'><button (click)='validateCustomerAndIssueEmiCard(c.customerId)'>Validate</button></td>
-        <td *ngIf='c.customerId>0'><button (click)='rejectACustomer(c.customerId)'>Reject</button></td>
+        <td *ngIf='c.customerId>0'><button (click)='validateCustomerAndIssueEmiCard(c.customerId)' style="background-color: yellowgreen; color: white;">Validate</button></td>
+        <td *ngIf='c.customerId>0'><button (click)='rejectACustomer(c.customerId)' style="background-color: red; color: white;">Reject</button></td>
     </tr>
 </table>

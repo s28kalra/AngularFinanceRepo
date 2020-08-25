@@ -145,3 +145,11 @@ color: black;
     padding: 2px;
   }
 
+  label:last-child{
+    font-size: 15px;
+  }
+  label:last-child:hover{
+    cursor: pointer;
+    color: hotpink;
+    font-size: 15px;
+  }
