@@ -15,6 +15,6 @@ export class ViewAdminProfileService {
   }
   generateBill(){
     var url="http://localhost:8080/generateBill"
-    //return this.http.post(url);
+    return this.http.get(url);
   }
 }

@@ -13,9 +13,7 @@ export class AppComponent {
   
   name="";
   constructor(private route: Router) { }
-
  
-  
   isLogin() {
     if (sessionStorage.getItem("customerId") != null) {
       this.dashboard = "customerDashboardLink";
@@ -32,10 +30,10 @@ export class AppComponent {
   
   navigation(){
     if(this.isLogin()==true && this.dashboard== "customerDashboardLink"){
-      this.route.navigateByUrl("/viewProfile");
+      this.route.navigateByUrl("customerDashboardLink/viewProfile");
     }
     if(this.isLogin()==true && this.dashboard== "adminDashboardLink"){
-      this.route.navigateByUrl("/viewAdminProfile");
+      this.route.navigateByUrl("adminDashboardLink/viewAdminProfile");
     }
   }
   logout(){
