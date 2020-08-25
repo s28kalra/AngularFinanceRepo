@@ -12,7 +12,7 @@ import { NgForm } from '@angular/forms';
 export class ProductDetailComponent implements OnInit {
 
   
-  p=new Product();
+  product=new Product();
   //selectedProductimg="./assets/1.jpg";
 //@Input() product: Product;
 //addedToWishlist:boolean;
@@ -23,7 +23,8 @@ export class ProductDetailComponent implements OnInit {
    }
 
   ngOnInit(): void {
-     this.p=JSON.parse(sessionStorage.getItem('selectedItem'));
+     this.product=JSON.parse(sessionStorage.getItem('selectedItem'));
+     alert(this.product.productName);
      
    
   }
