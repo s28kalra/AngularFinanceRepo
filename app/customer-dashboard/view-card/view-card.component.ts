@@ -32,10 +32,10 @@ export class ViewCardComponent implements OnInit {
           this.month=this.cardDetails.cardExpiry.valueOf().toString().substring(5,7);
           this.year=this.cardDetails.cardExpiry.valueOf().toString().substring(2,4);
           if(this.cardDetails.cardType=="Gold")
-            this.cardImageSource = "assets/visa.png";
+            this.cardImageSource = "assets/gold2.jpeg";
           else
-            this.cardImageSource = "";
-
+            this.cardImageSource = "assets/titanium.jpg";
+          
         }
       )
     }
@@ -43,6 +43,13 @@ export class ViewCardComponent implements OnInit {
       this.route.navigateByUrl('/userLoginLink');
     }
 
+  }
+
+  ifTrue() {
+    if(this.cardDetails.amountToBePaid==0)
+      return true;
+    else 
+      return false;
   }
 
 }
