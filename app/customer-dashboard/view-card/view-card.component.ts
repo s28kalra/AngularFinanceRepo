@@ -15,6 +15,7 @@ export class ViewCardComponent implements OnInit {
   month;
   year;
   cardImageSource;
+  valid;
 
   constructor(private service :GetCardDetailsService, private route:Router) {
     if(sessionStorage.getItem("customerId")!=null)
@@ -32,10 +33,9 @@ export class ViewCardComponent implements OnInit {
           this.month=this.cardDetails.cardExpiry.valueOf().toString().substring(5,7);
           this.year=this.cardDetails.cardExpiry.valueOf().toString().substring(2,4);
           if(this.cardDetails.cardType=="Gold")
-            this.cardImageSource = "assets/gold2.jpeg";
+            this.cardImageSource = "assets/gold.PNG";
           else
-            this.cardImageSource = "assets/titanium.jpg";
-          
+            this.cardImageSource = "assets/titanium.PNG";
         }
       )
     }
@@ -50,6 +50,10 @@ export class ViewCardComponent implements OnInit {
       return true;
     else 
       return false;
+  }
+
+  payNow(){
+    this.route.navigate(['payCreditAmountLink']);
   }
 
 }

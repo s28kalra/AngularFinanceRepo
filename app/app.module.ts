@@ -29,15 +29,11 @@ import { ViewAllPendingCustomersComponent } from './admin-dashboard/view-all-pen
 import { AddNewProductComponent } from './admin-dashboard/add-new-product/add-new-product.component';
 import { ViewAdminProfileComponent } from './admin-dashboard/view-admin-profile/view-admin-profile.component';
 import { UpdateAdminProfileComponent } from './admin-dashboard/update-admin-profile/update-admin-profile.component';
-
-
-
 import { TermsAndConditionComponent } from './terms-and-condition/terms-and-condition.component';
 import { CardDetailsComponent } from './card-details/card-details.component';
 import { SchemesComponent } from './schemes/schemes.component';
 import { StatisticsComponent } from './admin-dashboard/statistics/statistics.component';
-
-
+import { PayCreditAmountComponent } from './pay-credit-amount/pay-credit-amount.component';
 
 @NgModule({
   declarations: [
@@ -64,15 +60,11 @@ import { StatisticsComponent } from './admin-dashboard/statistics/statistics.com
     AddNewProductComponent,
     ViewAdminProfileComponent,
     UpdateAdminProfileComponent,
-
-    
-
     TermsAndConditionComponent,
     CardDetailsComponent,
     SchemesComponent,
     StatisticsComponent,
-
-
+    PayCreditAmountComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,7 +73,6 @@ import { StatisticsComponent } from './admin-dashboard/statistics/statistics.com
     BrowserAnimationsModule,
     MatTooltipModule,
     HttpClientModule
-
   ],
   
   providers: [],

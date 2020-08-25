@@ -1,4 +1,29 @@
- <div class="profilecard">
+<div class="card">
+<div>
+        <div class="card-image">
+            <img src="assets/pebbles.jpg">
+        </div>
+        <div class="profile-image">
+            <img src="assets/viewPage.png" style="width: 40%; height: 70%;">
+        </div>
+        <div class="card-content">
+            <p><b class="lab">FirstName:</b><b id="fn">{{ customerInfo.customerFirstName }}</b> </p><br>
+            <p><b class="lab">LastName :</b><b id="ln">{{ customerInfo.customerLastName }}</b></p><br>
+            <p><b class="lab">Date Of Birth: </b><b id="dob">{{ customerInfo.dateOfBirth }}</b></p><br>
+            <p><b class="lab">Email :</b><b id="em">{{ customerInfo.customerEmail}}</b></p><br>
+            <p><b class="lab">Mobile :</b><b id="mb">{{ customerInfo. customerMobile}}</b></p><br>
+            <p><b class="lab">Card Type :</b><b id="ct">{{ customerInfo. cardType}}</b></p><br>
+            <p><b class="lab">Account Number:</b><b id="an">{{ customerInfo. accountNumber}}</b></p><br>
+            <p><b class="lab">IFSC :</b><b id="ifsc">{{ customerInfo. ifsc}}</b></p><br>
+            <p><b class="lab">Aadhar:</b><b id="ad">{{ customerInfo.customerAadharCard}}</b></p><br>
+            <p><b class="lab">Verification:</b><b id="msg">{{ message }}</b></p><br>
+            <p *ngIf='message=="Rejected"'><b class="lab">Reason:</b><b class="val pull-right">{{ reason }}</b></p><br>
+        </div>
+    </div>
+
+</div>
+
+<!-- <div class="profilecard">
 <div class="cimage">
 <img  src="assets/viewPage.png" style="width: 20%; height: 15%;">
 </div>
@@ -15,4 +40,4 @@
 <p><b class="lab">Verification:</b><b class="val pull-right">{{ message }}</b></p><br>
 <p *ngIf='message=="Rejected"'><b class="lab">Reason:</b><b class="val pull-right">{{ reason }}</b></p><br>
 </div> 
-</div> 
+</div>  -->

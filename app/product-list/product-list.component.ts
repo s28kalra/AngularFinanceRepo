@@ -16,7 +16,7 @@ export class ProductListComponent implements OnInit {
   // @Output()  productSelected=new EventEmitter<Product>(); 
   //  products=new Array<Product>();
   products: any;
-  productDetailId: any;
+  //productDetailId: any;
 
 
   constructor(private route:Router,private service: ProductListService) {
@@ -35,9 +35,5 @@ export class ProductListComponent implements OnInit {
     this.route.navigateByUrl('productDetailLink');
   }
   
-  navigateToProductDetail(){
-   // JSON.parse(sessionStorage.getItem('selectedItem'));
-    
-    
-  }
+
 }

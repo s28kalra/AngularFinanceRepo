@@ -1,4 +1,29 @@
-table, th, td{
-    border: 1px solid black;
+a{
+    color: white;
+    cursor: pointer;
+  }
+  
+  #pendingCustomer {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border: 3px solid;
+    width: 100%;
+  }
+  
+  #pendingCustomer td, #pendingCustomer th {
+    border: 3px solid;
+    padding: 8px;
+  }
+  
+  #pendingCustomer tr:nth-child(even){background-color: #ebe2e2;}
+  
+  #pendingCustomer tr:hover {background-color: #ddd;}
+  
+  #pendingCustomer th {
+    padding-top: 12px;
+    padding-bottom: 12px;
     text-align: center;
-}
+    background-color: #4CAF50;
+    border: 3px solid black;
+    font-size: 14px;
+    color: white;
+  }

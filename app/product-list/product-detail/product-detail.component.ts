@@ -24,9 +24,15 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit(): void {
      this.product=JSON.parse(sessionStorage.getItem('selectedItem'));
-     alert(this.product.productName);
+     //alert(this.product.productName);
      
    
+  }
+  onBuy(){
+   // sessionStorage.setItem("selectedItem",JSON.stringify(this.product));
+    this.route.navigateByUrl('cartLink');
+    
+
   }
 }
   
