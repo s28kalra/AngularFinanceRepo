@@ -18,7 +18,7 @@
       <ul class="main-menu">
         
         <li><a [routerLink]="['']"><i class="fa fa-fw fa-home"></i>Home</a></li>
-        <li><a [routerLink]="['registerLink']"><i class="fa fa-fw fa-user-plus"></i>Register</a></li>
+        <li *ngIf='!isLogin()'><a [routerLink]="['registerLink']"><i class="fa fa-fw fa-user-plus"></i>Register</a></li>
         <!-- <li><a [routerLink]="['contactUsLink']"><i class="fa fa-fw fa-address-book"></i> Contact</a></li> -->
         <li *ngIf='!isLogin()'><a class="dropdown" [routerLink]="['userLoginLink']"><i class="fa fa-fw fa-user"></i>
             Login

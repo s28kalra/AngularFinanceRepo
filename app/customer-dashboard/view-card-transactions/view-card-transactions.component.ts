@@ -9,56 +9,101 @@ import { ViewCardTransactionsStatus } from "src/app/status/ViewCardTransactionsS
 })
 export class ViewCardTransactionsComponent implements OnInit {
 
-  status= new ViewCardTransactionsStatus();
-  customerId=0;
+  status = new ViewCardTransactionsStatus();
+  customerId = 0;
+  sortTransactionid = true;
+  sortDate = true;
+  sortNoOfEmisLeft = true;
+  sortAmount = true;
+  sortTenure = true;
+  sortProductQuantity = true;
   constructor(private service: ViewCardTransactionsService, private route: Router) {
-    if(sessionStorage.getItem("customerId")!=null)
-      this.customerId= parseInt(sessionStorage.getItem("customerId"));
-    else{
+    if (sessionStorage.getItem("customerId") != null)
+      this.customerId = parseInt(sessionStorage.getItem("customerId"));
+    else {
       this.route.navigateByUrl('/userLoginLink');
     }
-   }
+  }
 
   ngOnInit(): void {
-    if(this.customerId>0){
+    if (this.customerId > 0) {
       this.service.viewCardTransactions(this.customerId).subscribe(
-        data=>{
-          this.status=data;
+        data => {
+          this.status = data;
         }
       )
 
     }
-    else{
+    else {
       this.route.navigateByUrl('/userLoginLink');
     }
   }
 
-  orderByTransactionId(){
-    this.status.transactions.sort((a,b)=>b.transactionId.valueOf()-a.transactionId.valueOf());
+  orderByTransactionId() {
+    if (this.sortTransactionid) {
+      this.status.transactions.sort((a, b) => b.transactionId.valueOf() - a.transactionId.valueOf());
+      this.sortTransactionid = false;
+    }
+    else {
+      this.status.transactions.sort((a, b) => a.transactionId.valueOf() - b.transactionId.valueOf());
+      this.sortTransactionid = true;
+    }
   }
 
-  orderByDate(){
-    this.status.transactions.sort((a,b)=> b.transactionDate.valueOf()-a.transactionDate.valueOf());
-  }
-  
-  orderByNoOfEmisLeft(){
-    this.status.transactions.sort((a,b)=>b.noOfEmisLeft-a.noOfEmisLeft);
+  orderByDate() {
+    if (this.sortDate) {
+      this.status.transactions.sort((a, b) => b.transactionDate.valueOf() - a.transactionDate.valueOf());
+      this.sortDate = false;
+    }
+    else {
+      this.status.transactions.sort((a, b) => a.transactionDate.valueOf() - b.transactionDate.valueOf());
+      this.sortDate = true;
+    }
+
   }
 
-  orderByLowToHighAmount(){
-    this.status.transactions.sort((a,b)=>a.amount-b.amount);
+  orderByNoOfEmisLeft() {
+    if (this.sortNoOfEmisLeft) {
+      this.status.transactions.sort((a, b) => b.noOfEmisLeft - a.noOfEmisLeft);
+      this.sortNoOfEmisLeft = false;
+    }
+    else {
+      this.status.transactions.sort((a, b) => a.noOfEmisLeft - b.noOfEmisLeft);
+      this.sortNoOfEmisLeft = true;
+    }
   }
 
-  orderByHighToLowAmount(){
-    this.status.transactions.sort((a,b)=>b.amount-a.amount);
+  orderByAmount() {
+    if (this.sortAmount) {
+      this.status.transactions.sort((a, b) => a.amount - b.amount);
+      this.sortAmount = false;
+    }
+    else {
+      this.status.transactions.sort((a, b) => b.amount - a.amount);
+      this.sortAmount = true;
+    }
   }
 
-  orderByProductQuantity(){
-    this.status.transactions.sort((a,b)=>b.productQuantity.valueOf()-a.productQuantity.valueOf());
+  orderByProductQuantity() {
+    if (this.sortProductQuantity) {
+      this.status.transactions.sort((a, b) => b.productQuantity.valueOf() - a.productQuantity.valueOf());
+      this.sortProductQuantity = false;
+    }
+    else {
+      this.status.transactions.sort((a, b) => a.productQuantity.valueOf() - b.productQuantity.valueOf());
+      this.sortProductQuantity = true;
+    }
   }
 
-  orderByTenure(){
-    this.status.transactions.sort((a,b)=>b.emiTenure.valueOf()-a.emiTenure.valueOf());
+  orderByTenure() {
+    if (this.sortTenure) {
+      this.status.transactions.sort((a, b) => b.emiTenure.valueOf() - a.emiTenure.valueOf());
+      this.sortTenure = false;
+    }
+    else {
+      this.status.transactions.sort((a, b) => a.emiTenure.valueOf() - b.emiTenure.valueOf());
+      this.sortTenure = true;
+    }
   }
 
 }
