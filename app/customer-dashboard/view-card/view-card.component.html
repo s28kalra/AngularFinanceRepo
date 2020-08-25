@@ -14,3 +14,14 @@
       </div>
     </div>
   </div>
+
+  <table style="width: 90%" align="center" id="pay">
+    <tr>
+      <th><h2><p class="heading">Payable amount for this month is Rs. {{cardDetails.amountToBePaid}}</p></h2></th>
+      <th><button id="paybtn" name="paybtn" [disabled]="ifTrue()">Pay Now</button></th>
+    </tr>
+  </table>
+  <br>
+  <br>
+  <br>
+
