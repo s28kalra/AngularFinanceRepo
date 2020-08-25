@@ -11,11 +11,12 @@
   } */
 
  .right{
+     
     width: 75%;
     text-align: center;
     scroll-behavior: auto;
     padding-top: 20px;
-     background-color: white; 
+    
 }  
 
     *{

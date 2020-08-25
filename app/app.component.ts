@@ -32,10 +32,10 @@ export class AppComponent {
   
   navigation(){
     if(this.isLogin()==true && this.dashboard== "customerDashboardLink"){
-      this.route.navigateByUrl("/customerDashboardLink");
+      this.route.navigateByUrl("/viewProfile");
     }
     if(this.isLogin()==true && this.dashboard== "adminDashboardLink"){
-      this.route.navigateByUrl("/adminDashboardLink");
+      this.route.navigateByUrl("/viewAdminProfile");
     }
   }
   logout(){
