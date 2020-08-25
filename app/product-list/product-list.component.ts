@@ -30,17 +30,14 @@ export class ProductListComponent implements OnInit {
     )
   }
   onSelected(product){ 
-    sessionStorage.setItem('selectedItem',JSON.stringify(product));
-   
+    sessionStorage.setItem("selectedItem",JSON.stringify(product));
+    //alert(JSON.stringify(product));
+    this.route.navigateByUrl('productDetailLink');
   }
-  onKey(event) {
-    const inputValue = event.target.value;
-  console.log(inputValue);
-  }
-
+  
   navigateToProductDetail(){
    // JSON.parse(sessionStorage.getItem('selectedItem'));
-    this.route.navigateByUrl('productDetailLink');
+    
     
   }
 }
