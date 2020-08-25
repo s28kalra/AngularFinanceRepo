@@ -25,7 +25,10 @@ import { ViewAdminProfileComponent } from './admin-dashboard/view-admin-profile/
 import { PayCreditAmountComponent } from "./pay-credit-amount/pay-credit-amount.component";
 import { TermsAndConditionComponent } from "./terms-and-condition/terms-and-condition.component";
 import { CardDetailsComponent } from "./card-details/card-details.component";
+import { SchemesComponent } from "./schemes/schemes.component";
+
 import { StatisticsComponent } from './admin-dashboard/statistics/statistics.component';
+
 
 
 const routes: Routes = [
@@ -52,6 +55,9 @@ const routes: Routes = [
   },
   {
     path: 'checkoutLink', component: CheckoutComponent
+  },
+  {
+    path: 'schemesLink', component: SchemesComponent
   },
   {
     path: 'productDetailLink', component: ProductDetailComponent
