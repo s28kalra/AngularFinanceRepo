@@ -2,9 +2,10 @@
   <h1>Congratulations!! Your Card is Activated</h1>
 </div>
 <div *ngIf="cardDetails.cardStatus==false" id="failure">
-  <h1>Please pay your Joing Fees to Activat Card</h1>
+  <h1>Please pay your Joing Fees to Activated Card</h1>
 </div>
 <br>
+
 
 <div class="card card--front">
   <h1 style="text-align: center;">Easy Credit</h1>
@@ -52,10 +53,12 @@
           <p class="heading">Pay Your Joining Fees To Start Using Card</p>
         </h2>
       </th>
-      <th><button id="paybtn" name="paybtn" (click)="payNow()">Pay Now</button></th>
+      <th><button id="paybtn" name="paybtn" (click)="activateEmiCard(customerId)">Pay Now</button></th>
     </tr>
   </table>
 </div>
+
+
 
 <br>
 <br>
