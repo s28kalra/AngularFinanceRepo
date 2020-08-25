@@ -26,7 +26,7 @@ body{
 .nmn{
     color: white;
     font-weight: 600;
-     margin-right: 100px; 
+     margin-right: 85px; 
     font-size: 20px;
     text-align: center;
 }
@@ -37,7 +37,7 @@ body{
 
 .main-menu {
     display: inline;
-    padding-right: 50px;
+    padding-right: 40px;
 }
 
 .main-menu li {
@@ -51,6 +51,7 @@ body{
     font-weight: 600;
     padding: 33px 5px;
     margin-right: 65px;
+    margin-left: 10px;
 }
 
 .main-menu li a:hover,

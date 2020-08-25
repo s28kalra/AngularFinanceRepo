@@ -10,19 +10,22 @@ export class AppComponent {
   dashboard = "";
   title = 'Finance';
   a:any;
+  customerName="";
+  adminName="";
   //collapsed = true;
   constructor(private route: Router) { }
-  customerName=sessionStorage.getItem("customerName")
-  adminName=sessionStorage.getItem("adminName");
+ 
+  
   isLogin() {
     if (sessionStorage.getItem("customerId") != null) {
       this.dashboard = "customerDashboardLink";
-       this.a=this.dashboard;
-      //this.route.navigateByUrl("/customerDashboardLink");
+      this.customerName=sessionStorage.getItem("customerName")
+      
       return true;
     }
     else if (sessionStorage.getItem("adminId") != null) {
       this.dashboard = "adminDashboardLink";
+      this.adminName=sessionStorage.getItem("adminName");
       return true;
     }
     return false;
