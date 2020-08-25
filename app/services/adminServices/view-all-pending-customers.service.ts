@@ -19,4 +19,9 @@ export class ViewAllPendingCustomersService {
     return this.http.post(url, customerId);
   }
 
+  rejectACustomer(customerId): Observable<any>{
+    var url="http://localhost:8080/rejectACustomer";
+    return this.http.post(url,customerId);
+  }
+
 }

@@ -67,6 +67,9 @@
         margin-right: 16px;
     } 
      
+    a:hover{
+        cursor: pointer;
+    }
     
     /* .container{
         min-height: 100%;

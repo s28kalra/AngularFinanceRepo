@@ -22,9 +22,7 @@ import { ViewAllCustomersComponent } from './admin-dashboard/view-all-customers/
 import { ViewAllPendingCustomersComponent } from './admin-dashboard/view-all-pending-customers/view-all-pending-customers.component';
 import { AddNewProductComponent } from './admin-dashboard/add-new-product/add-new-product.component';
 import { ViewAdminProfileComponent } from './admin-dashboard/view-admin-profile/view-admin-profile.component';
-
-
-
+import { PayCreditAmountComponent } from "./pay-credit-amount/pay-credit-amount.component";
 import { TermsAndConditionComponent } from "./terms-and-condition/terms-and-condition.component";
 import { CardDetailsComponent } from "./card-details/card-details.component";
 
@@ -88,6 +86,9 @@ const routes: Routes = [
   },
   {
     path: 'cardTourLink', component: CardDetailsComponent
+  },
+  {
+    path: 'payCreditAmountLink', component: PayCreditAmountComponent
   }
 ];
 
