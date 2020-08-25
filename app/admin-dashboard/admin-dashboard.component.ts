@@ -47,4 +47,9 @@ export class AdminDashboardComponent implements OnInit {
     this.route.navigate(['addNewProduct'], {relativeTo: this.router});
   }
 
+  statistics(){
+    this.display="Statistics";
+    this.route.navigate(['statistics'] , {relativeTo:this.router});
+  }
+
 }

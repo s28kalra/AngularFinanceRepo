@@ -35,6 +35,7 @@ import { UpdateAdminProfileComponent } from './admin-dashboard/update-admin-prof
 import { TermsAndConditionComponent } from './terms-and-condition/terms-and-condition.component';
 import { CardDetailsComponent } from './card-details/card-details.component';
 import { SchemesComponent } from './schemes/schemes.component';
+import { StatisticsComponent } from './admin-dashboard/statistics/statistics.component';
 
 
 
@@ -69,6 +70,7 @@ import { SchemesComponent } from './schemes/schemes.component';
     TermsAndConditionComponent,
     CardDetailsComponent,
     SchemesComponent,
+    StatisticsComponent,
 
 
   ],

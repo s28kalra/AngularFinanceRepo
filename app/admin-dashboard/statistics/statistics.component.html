@@ -1,0 +1,31 @@
+<form (ngSubmit)="calculateStatistics()">
+    <div>
+        <select name="dates" id="dates" [(ngModel)]='selected' required>
+            <option value="30"> Last 30 Days</option>
+            <option value="60"> Last 60 Days</option>
+            <option value="90"> last 90 Days</option>
+            <option value="custom">Custom</option>
+        </select>
+    </div>
+
+    <div *ngIf='selected=="custom"'>
+        From <input type="date" name="date1" [(ngModel)]='statisticsDate.from' required><span> </span>
+        To <input type="date" name="date2" [(ngModel)]='statisticsDate.to' required>
+    </div>
+
+    <button type="submit">Get Statistics</button>
+    <h1>{{invalidInputs}}</h1>
+</form>
+<div *ngIf='valueReterieved'>
+    <h1>Total No Of Registrations</h1>
+    <h2>{{statistics.registrations}}</h2>
+
+    <h1>Joining Fees</h1>
+    <h2>{{statistics.joiningFees}}</h2>
+
+    <h1>Processing Fees</h1>
+    <h2>{{statistics.processingFees}}</h2>
+
+    <h1>Total Profit</h1>
+    <h2>{{statistics.totalProfit}}</h2>
+</div>

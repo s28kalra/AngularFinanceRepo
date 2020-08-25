@@ -1,1 +1,8 @@
-<p>add-new-product works!</p>
+<form #productForm='ngForm' (ngSubmit)='addProduct(productForm)'>
+    Product Name *<input type="text" name="productName" [(ngModel)]='product.productName' required> <br>
+    Price * <input type="text" placeholder="Price" (keypress)='isNumber($event)' name="price"
+        [(ngModel)]='product.productPrice' required> <br>
+    Description * <input type="text" placeholder="Description" name="description"
+        [(ngModel)]='product.productDescription' required>
+    <button type="submit" [disabled]='!productForm.valid'>Add Product</button>
+</form>

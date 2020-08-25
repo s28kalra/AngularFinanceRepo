@@ -27,6 +27,7 @@ import { ViewAdminProfileComponent } from './admin-dashboard/view-admin-profile/
 
 import { TermsAndConditionComponent } from "./terms-and-condition/terms-and-condition.component";
 import { CardDetailsComponent } from "./card-details/card-details.component";
+import { StatisticsComponent } from './admin-dashboard/statistics/statistics.component';
 
 
 const routes: Routes = [
@@ -80,7 +81,8 @@ const routes: Routes = [
       { path: 'updateadminProfile', component: UpdateProfileComponent },
       { path: 'viewAllCustomers', component: ViewAllCustomersComponent },
       { path: 'viewAllPendingCustomers', component: ViewAllPendingCustomersComponent },
-      { path: 'addNewProduct', component: AddNewProductComponent }
+      { path: 'addNewProduct', component: AddNewProductComponent },
+      { path: 'statistics', component: StatisticsComponent}
     ]  
   },
   {
