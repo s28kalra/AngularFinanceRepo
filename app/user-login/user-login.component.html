@@ -5,10 +5,14 @@
 	<h2>Login here</h2>
 	<form>
 	<label class="lblemail" for="email"> Email</label>
-	<input class="txtemail" placeholder="Email" type="text" name="email" [(ngModel)]="login.customerEmail"> 
+	<input class="txtemail" placeholder="Email" type="text" required name="email" 
+	[(ngModel)]="login.customerEmail" > 
+	<span class="error">Email Required</span><br>
 	
 	<label class="lblpass" for="password"> Password</label>
-	<input class="txtpass" placeholder="Password" type="password" name="pass" [(ngModel)]="login.customerPassword">
+	<input class="txtpass" placeholder="Password" type="password"  minlength="8"
+	required name="pass" [(ngModel)]="login.customerPassword" >
+	<span class="error">Password Required </span>
 	
 	<br>
 	<button class="btnsubmit" (click)="loginCustomer()">

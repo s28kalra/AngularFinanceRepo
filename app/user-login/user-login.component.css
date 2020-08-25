@@ -13,7 +13,7 @@ background-image: url(/assets/user-login.jpg);
   transform: translate(-50%,-50%);
   width: 390px;
   height: 450px;
-  padding: 45px 40px;
+  padding: 25px 40px;
   box-sizing:border-box;
   background:rgba(0, 0, 0, .5);
 }
@@ -69,4 +69,16 @@ margin-bottom: 20px;
 }
 .btnforget:hover{
   text-decoration: underline;
+}
+.error{
+  display: none;
+  
+}
+input.ng-invalid.ng-touched{
+  border-color: red;
+}
+
+input.ng-invalid.ng-touched +.error{
+ display: inline; 
+ color: red;
 }
