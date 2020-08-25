@@ -33,11 +33,7 @@ export class ProductListComponent implements OnInit {
     sessionStorage.setItem('selectedItem',JSON.stringify(product));
    
   }
-  onKey(event) {
-    const inputValue = event.target.value;
-  console.log(inputValue);
-  }
-
+  
   navigateToProductDetail(){
    // JSON.parse(sessionStorage.getItem('selectedItem'));
     this.route.navigateByUrl('productDetailLink');
