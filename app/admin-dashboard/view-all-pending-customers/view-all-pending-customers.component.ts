@@ -59,7 +59,12 @@ export class ViewAllPendingCustomersComponent implements OnInit {
   }
 
   rejectACustomer(customerId) {
-
+    this.pendingService.rejectACustomer(customerId).subscribe(
+      data=>{
+        if(data.customerId>0)
+          this.deleteFromBothLists(customerId);
+      }
+    )
   }
 
 }
