@@ -15,16 +15,20 @@ export class RegisterComponent implements OnInit {
 
   customer= new CustomerInfo();
   status= new RegisterStatus();
-  confirmPass="";
+  confirmPass;
+  mobile="";
+  account="";
+  aadhar="";
   constructor(private route: Router, private registerService:RegisterService) { }
 
   ngOnInit(): void {
   }
 
   registerCustomer(form:NgForm) {
-   this.customer.customerMobile=this.customer.customerMobile.replace(/ /g,'');
-   this.customer.accountNumber=this.customer.accountNumber.replace(/ /g,'');
-   this.customer.customerAadharCard= this.customer.customerAadharCard.replace(/ /g,'');
+   this.customer.customerMobile=this.mobile.replace(/ /g,'');
+   this.customer.accountNumber=this.account.replace(/ /g,'');
+   this.customer.customerAadharCard=this.aadhar.replace(/ /g,'');
+   alert(JSON.stringify(this.customer));
    this.registerService.registerCustomer(this.customer).subscribe(
      data=>{
         this.status=data;
@@ -34,35 +38,35 @@ export class RegisterComponent implements OnInit {
 
 
   manageAccount() {
-    var data = this.customer.accountNumber;
+    var data = this.account;
     data = data.replace(/ /g, '');
     if (data.length == 10)
-    this.customer.accountNumber = data.substring(0, 5) + ' ' + data.substring(5, 10);
+    this.account = data.substring(0, 5) + ' ' + data.substring(5, 10);
     else {
       var n = data.length / 4;
-      this.customer.accountNumber = data.substring(0, 4);
+      this.account = data.substring(0, 4);
       for (var i = 1; i < n; i++) {
-        this.customer.accountNumber += ' ' + data.substring(4 * i, 4 * (i + 1));
+        this.account += ' ' + data.substring(4 * i, 4 * (i + 1));
       }
     }
   }
 
   manageMobile() {
-    var data = this.customer.customerMobile;
+    var data = this.mobile;
     data = data.replace(/ /g, "");
     if (data.length <= 5)
-    this.customer.customerMobile = data;
+    this.mobile = data;
     else
-    this.customer.customerMobile = data.substring(0, 5) + " " + data.substring(5, data.length);
+    this.mobile = data.substring(0, 5) + " " + data.substring(5, data.length);
   }
 
   manageAadharCard(){
-    var data= this.customer.customerAadharCard;
+    var data= this.aadhar;
     data = data.replace(/ /g, "");
     var n = data.length / 4;
-    this.customer.customerAadharCard = data.substring(0, 4);
+    this.aadhar = data.substring(0, 4);
       for (var i = 1; i < n; i++) {
-        this.customer.customerAadharCard += ' ' + data.substring(4 * i, 4 * (i + 1));
+        this.aadhar += ' ' + data.substring(4 * i, 4 * (i + 1));
       }
   }
 
