@@ -1,7 +1,7 @@
 <div class="container">
     <div class="wrapper">
         <div class="payment">
-            <h1>Awesome, that's <span>₹</span>56700 !</h1>
+            <h1>Awesome, that's <span>₹</span>{{finalAmount}} !</h1>
             <div class="form">
                 <form #checkoutForm='ngForm' (ngSubmit)='checkoutFunction(checkoutForm)'>
                     <div class="card">

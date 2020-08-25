@@ -17,6 +17,7 @@ export class CheckoutComponent implements OnInit {
   customerId:any;
   transactionId:any;
   paid=false;
+  finalAmount;
   constructor(private route: Router, private buyAProduct:BuyAProductService) {
     if(sessionStorage.getItem("customerId")!=null)
     this.customerId=parseInt(sessionStorage.getItem("customerId"));
@@ -29,6 +30,7 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.product=JSON.parse(sessionStorage.getItem('selectedItem'));
+    this.finalAmount=this.product.productPrice;
   }
 
   checkoutFunction(form: NgForm) {

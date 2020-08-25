@@ -35,16 +35,18 @@ export class ViewCardComponent implements OnInit {
           this.cardDetails=data;
           this.month=this.cardDetails.cardExpiry.valueOf().toString().substring(5,7);
           this.year=this.cardDetails.cardExpiry.valueOf().toString().substring(2,4);
+          this.cardDetails.cardBalance=Math.floor(this.cardDetails.cardBalance);
           if(this.cardDetails.cardType=="Gold")
-            this.cardImageSource = "assets/gold.PNG";
+            this.cardImageSource = "assets/gold.png";
           else
-            this.cardImageSource = "assets/titanium.PNG";
+            this.cardImageSource = "assets/titanium.png";
         }
       )
     }
     else {
       this.route.navigateByUrl('/userLoginLink');
     }
+   
   }
 
   ifTrue() {

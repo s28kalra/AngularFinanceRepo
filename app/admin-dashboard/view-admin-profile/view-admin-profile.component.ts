@@ -13,6 +13,7 @@ export class ViewAdminProfileComponent implements OnInit {
   adminId=0;
   designation="";
   email="";
+  status:any;
   constructor(private viewAdminProfileService: ViewAdminProfileService, private route : Router) {
     if(sessionStorage.getItem("adminId")!=null)
       this.adminId=parseInt(sessionStorage.getItem("adminId"));
@@ -20,14 +21,19 @@ export class ViewAdminProfileComponent implements OnInit {
       route.navigateByUrl('/userLoginLink');
    }
 generateBill(){
-  
+  this.viewAdminProfileService.generateBill().subscribe(
+    data=>{
+      this.status=data;
+    }
+  )
 }
   ngOnInit(): void {    
     this.viewAdminProfileService.viewAdminProfile(this.adminId).subscribe(
       data=>{
         this.admin=data;
         this.imgSrc="assets/"+this.admin.adminId+".jpg";
-        this.email=this.admin.adminName.toLowerCase()+"@easy_credit.in"
+        this.email=this.admin.adminName.toLowerCase().replace(/ /g,'_')+"@easy_credit.in"
+
       }
     )
   }
