@@ -55,7 +55,10 @@ a {
   .card__logo {
     position: absolute;
     right: 20px;
-    bottom: 20px;
+    bottom: 10px;
+    width: 120px;
+    height: 70px;
+    background-color: black;
   }
 
   .card__strip {
@@ -87,4 +90,37 @@ a {
   .card {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  #pay {
+    border: 1.5px solid black;
+    text-align: right;
+  }
+
+  #paybtn {
+    background: #6675df;
+    color: white;
+    font-size: 22px;
+    border-radius: 10px;
+  }
+
+  #paybtn:hover {
+    background-color: darkgreen;
+    width: calc(53%);
+  }
+
+  #paybtn:disabled {
+    background: grey;
+    color: white;
+    font-size: 22px;
+    border-radius: 10px;
+  }
+
+  #paybtn:hover:disabled {  
+    width: calc(49.5%);
+  }
+
+  p.heading {
+    padding-left: 50px;
+    padding-top: 18px;
   }
