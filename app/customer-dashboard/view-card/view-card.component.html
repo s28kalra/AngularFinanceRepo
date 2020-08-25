@@ -4,7 +4,7 @@
 </div>
 
 <div *ngIf="cardDetails.cardStatus==false" id="failure">
-  <h1>Please pay your Joing Fees to Activat Card</h1>
+  <h1>Please pay your Joing Fees to Activated Card</h1>
 </div>
 
 <br>
@@ -15,7 +15,7 @@
       <div class="card__number">{{cardDetails.cardNumber}}</div>
       <div class="card__expiry-date"> Valid Upto: {{month}} / {{year}}</div>
       <div class="card__owner">{{cardDetails.customerName}}</div>
-      <img class="card__logo"  [src]=cardImageSource/>
+      <img class="card__logo"  [src]=cardImageSource alt="Not Assigned"/>
     </div>
     <div class="card card--back">
       <div class="card__strip"></div>
@@ -48,7 +48,7 @@
     <table style="width: 90%" align="center" id="pay">
       <tr>
         <th><h2><p class="heading">Pay Your Joining Fees To Start Using Card</p></h2></th>
-        <th><button id="paybtn" name="paybtn" (click)="payNow()">Pay Now</button></th>
+        <th><button id="paybtn" name="paybtn" (click)="activateEmiCard(customerId)">Pay Now</button></th>
       </tr>
     </table>
   </div>
