@@ -1,18 +1,15 @@
 
-body {
-  font: 16px "Helvetica Neue", Helvetica, sans-serif;
-  color: #666;
-}
 
 a {
   color: #000;
 }
 
 .panel {
-  width: 600px;
+  
   margin: 0 auto;
   margin-bottom: 50px;
   text-align: center;
+  
 }
 
 

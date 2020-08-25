@@ -1,13 +1,10 @@
 <div id="container">	
 	
-  <!-- Start	Product details -->
     <div class="product-details">
       
-      <!-- 	Product Name -->
     <h1>{{product.productName}}</h1>
-  <!-- 		<span class="hint new">New</span> -->
-  <!-- 		<span class="hint free-shipping">Free Shipping</span> -->
-  <!-- 		the Product rating -->
+    <hr>  
+  
     <span class="hint-star star">
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
@@ -17,53 +14,39 @@
     </span>
       
     
-  <!-- The most important information about the product -->
       <p class="information">{{product.productDescription}}</p>
-  
+           <div class="space"></div>
       
-      
-  <!-- 		Control -->
   <div class="control">
     
-  <!-- Start Button buying -->
     <button class="btn">
-  <!-- 		the Price -->
-     <span class="price">{{product.productPrice}}</span>
-  <!-- 		shopping cart icon-->
+      
+     <span class="price">₹ {{product.productPrice}}</span>
      <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
-  <!-- 		Buy Now / ADD to Cart-->
-     <span class="buy">Buy Now</span>
-   </button>
-    <!-- End Button buying -->
-    
+     <span class="buy"  (click)="onBuy()">Buy Now</span>
+   </button>  
   </div>
-        
   </div>
     
-  <!-- 	End	Product details   -->
-    
-    
-    
-  <!-- 	Start product image & Information -->
     
   <div class="product-image">
     
     <img src={{product.productImageSource}} alt="{{product.productName}}">
     
-  <!-- 	product Information-->
+
   <div class="info">
-    <h2>The Description</h2>
+    <h2>About Product</h2>
     <ul>
-      <li><strong>Sun Needs: </strong>Full Sun</li>
-      <li><strong>Soil Needs: </strong>Damp</li>
-      <li><strong>Zones: </strong>9 - 11</li>
-      <li><strong>Height: </strong>2 - 3 feet</li>
-      <li><strong>Blooms in: </strong>Mid‑Summer - Mid‑Fall</li>
-      <li><strong>Features: </strong>Tolerates heat</li>
+      <li><strong>Best Price: </strong>₹ {{product.productPrice}}</li>
+      <li><strong>Product Quality </strong>4.6/5</li>
+      <li><strong>Admin's Choice: </strong><i class="fa fa-check" aria-hidden="true"></i></li>
+      <li><strong>Warrenty: </strong>1 Year</li>
+      <li><strong>Replace in </strong>14 days</li>
+      <li><strong>Shipping in:</strong>3-4 Business Days.</li>
     </ul>
   </div>
   </div>
-  <!--  End product image  -->
+  
   
   
   </div>

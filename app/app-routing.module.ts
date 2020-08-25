@@ -27,6 +27,10 @@ import { TermsAndConditionComponent } from "./terms-and-condition/terms-and-cond
 import { CardDetailsComponent } from "./card-details/card-details.component";
 import { SchemesComponent } from "./schemes/schemes.component";
 
+import { StatisticsComponent } from './admin-dashboard/statistics/statistics.component';
+
+
+
 const routes: Routes = [
   {
     path: '', component: HomepageComponent
@@ -81,7 +85,8 @@ const routes: Routes = [
       { path: 'updateadminProfile', component: UpdateProfileComponent },
       { path: 'viewAllCustomers', component: ViewAllCustomersComponent },
       { path: 'viewAllPendingCustomers', component: ViewAllPendingCustomersComponent },
-      { path: 'addNewProduct', component: AddNewProductComponent }
+      { path: 'addNewProduct', component: AddNewProductComponent },
+      { path: 'statistics', component: StatisticsComponent}
     ]  
   },
   {

@@ -1,58 +1,62 @@
-
 <div *ngIf="cardDetails.cardStatus==true" id="success">
   <h1>Congratulations!! Your Card is Activated</h1>
 </div>
-
 <div *ngIf="cardDetails.cardStatus==false" id="failure">
   <h1>Please pay your Joing Fees to Activat Card</h1>
 </div>
-
 <br>
 
-  <div class="panel">
-    <div class="card card--front">
-      <h1 style="text-align: center;">Easy Credit</h1>
-      <div class="card__number">{{cardDetails.cardNumber}}</div>
-      <div class="card__expiry-date"> Valid Upto: {{month}} / {{year}}</div>
-      <div class="card__owner">{{cardDetails.customerName}}</div>
-      <img class="card__logo"  [src]=cardImageSource/>
-    </div>
-    <div class="card card--back">
-      <div class="card__strip"></div>
-      <div class="card__strip2">
-      <div class="card__ccv">{{cardDetails.cardCvv}}</div>
-      </div>
-    </div>
+<div class="card card--front">
+  <h1 style="text-align: center;">Easy Credit</h1>
+  <div class="card__number">{{cardDetails.cardNumber}}</div>
+  <div class="card__expiry-date"> Valid Upto: {{month}} / {{year}}</div>
+  <div class="card__owner">{{cardDetails.customerName}}</div>
+  <img class="card__logo" [src]=cardImageSource />
+</div><br><br>
+<div class="card card--back">
+  <div class="card__strip"></div>
+  <div class="card__strip2">
+    <div class="card__ccv">{{cardDetails.cardCvv}}</div>
   </div>
 
-  <div id="limit">
-    <h2 style="float: left; padding-left: 60px;">Credit Limit Rs. {{cardDetails.cardLimit}}/- </h2>
-    <h2 style="float: right; padding-right: 70px;">Remaining Balance Rs. {{cardDetails.cardBalance}}/- </h2>
-  </div>
+</div>
 
-  <br>
-  <br>
-  <br>
+<div id="limit">
+  <h2 style="float: left; padding-left: 60px;">Credit Limit Rs. {{cardDetails.cardLimit}}/- </h2>
+  <h2 style="float: right; padding-right: 70px;">Remaining Balance Rs. {{cardDetails.cardBalance}}/- </h2>
+</div>
 
-  <div *ngIf="cardDetails.cardStatus==true" id="activated">
-    <table style="width: 90%" align="center" id="pay">
-      <tr>
-        <th><h2><p class="heading">Payable amount for this month is Rs. {{cardDetails.amountToBePaid}}/-</p></h2></th>
-        <th><button id="paybtn" name="paybtn" [disabled]="ifTrue()" (click)="payNow()">Pay Now</button></th>
-      </tr>
-    </table>
-  </div>
+<br>
+<br>
+<br>
+
+<div *ngIf="cardDetails.cardStatus==true" id="activated">
+  <table style="width: 90%" align="center" id="pay">
+    <tr>
+      <th>
+        <h2>
+          <p class="heading">Payable amount for this month is Rs. {{cardDetails.amountToBePaid}}/-</p>
+        </h2>
+      </th>
+      <th><button id="paybtn" name="paybtn" [disabled]="ifTrue()" (click)="payNow()">Pay Now</button></th>
+    </tr>
+  </table>
+</div>
 
 
-  <div *ngIf="cardDetails.cardStatus==false" id="notActivated">
-    <table style="width: 90%" align="center" id="pay">
-      <tr>
-        <th><h2><p class="heading">Pay Your Joining Fees To Start Using Card</p></h2></th>
-        <th><button id="paybtn" name="paybtn" (click)="payNow()">Pay Now</button></th>
-      </tr>
-    </table>
-  </div>
+<div *ngIf="cardDetails.cardStatus==false" id="notActivated">
+  <table style="width: 90%" align="center" id="pay">
+    <tr>
+      <th>
+        <h2>
+          <p class="heading">Pay Your Joining Fees To Start Using Card</p>
+        </h2>
+      </th>
+      <th><button id="paybtn" name="paybtn" (click)="payNow()">Pay Now</button></th>
+    </tr>
+  </table>
+</div>
 
-  <br>
-  <br>
-  <br>
+<br>
+<br>
+<br>
