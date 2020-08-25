@@ -7,22 +7,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  dashboard = "";
+  dashboard = ""; 
   title = 'Finance';
   a:any;
-  //collapsed = true;
+  
+  name="";
   constructor(private route: Router) { }
-  customerName=sessionStorage.getItem("customerName")
-  adminName=sessionStorage.getItem("adminName");
+
+ 
+  
   isLogin() {
     if (sessionStorage.getItem("customerId") != null) {
       this.dashboard = "customerDashboardLink";
-       this.a=this.dashboard;
-      //this.route.navigateByUrl("/customerDashboardLink");
+      this.name=sessionStorage.getItem("customerName")
       return true;
     }
     else if (sessionStorage.getItem("adminId") != null) {
       this.dashboard = "adminDashboardLink";
+      this.name=sessionStorage.getItem("adminName");
       return true;
     }
     return false;
