@@ -4,63 +4,53 @@
             <div class="hd">
                 <h1>Customer Details Update Form</h1>
             </div>
-<form #updateForm='ngForm' id="update" (ngSubmit)='updateCustomer(updateForm)'>
-    <label for="userFirstName" id="nm">Name *</label>
-    <input type="text" id="fn" placeholder="First-Name" name="userFirstName" (keypress)='isAName($event)'
-        [(ngModel)]="customerInfo.customerFirstName" required>
-        <input type="text" id="ln" placeholder="Last-Name" name="userLastName" (keypress)='isAName($event)'
-        [(ngModel)]="customerInfo.customerLastName"><br><br>
-    <span class="error">First Name Required</span>
+            <form #updateForm='ngForm' id="update" (ngSubmit)='updateCustomer(updateForm)'>
+                <label for="userFirstName" id="nm">Name *</label>
+                <input type="text" id="fn" placeholder="First-Name" name="userFirstName" (keypress)='isAName($event)'
+                    [(ngModel)]="customerInfo.customerFirstName" required>
+                <input type="text" id="ln" placeholder="Last-Name" name="userLastName" (keypress)='isAName($event)'
+                    [(ngModel)]="customerInfo.customerLastName"><br><br>
+                <span class="error">First Name Required</span>
 
 
 
-    <label for="dob">Date Of Birth *</label>
-    <input type="date" name="dob" [(ngModel)]="customerInfo.dateOfBirth" required>
-    <span class="error">Choose Your Correct Birth Details</span><br><br>
+                <label for="dob">Date Of Birth *</label>
+                <input id="rgt"  type="date" name="dob"  [(ngModel)]="customerInfo.dateOfBirth" required>
+                <span class="error">Choose Your Correct Birth Details</span><br><br>
 
-    <label for="userEmail">Email *</label>
-   {{customerInfo.customerEmail}}
-   <br>
+                <label for="password"  mat-raised-button matTooltipClass="mattp" matTooltipPosition="above"
+                    matTooltip="Choose a combination of a small,capital Alphabets, a Number and a special Symbol (! @ # $ % ^ & *)">Password
+                    *</label>
 
-    <label for="userMobile"> Mobile *</label>
-    <p>{{customerInfo.customerMobile}}</p>
-
-    <label for="password" mat-raised-button matTooltipClass="mattp" matTooltipPosition="above"
-        matTooltip="Choose a combination of a small,capital Alphabets, a Number and a special Symbol (! @ # $ % ^ & *)">Password
-        *</label>
-
-    <input type="password" name="password" placeholder="Password" [(ngModel)]="customerInfo.customerPassword"
-        minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{8,15}$" required
-        mat-raised-button matTooltipClass="mattp" matTooltipPosition="above"
-        matTooltip="Choose a combination of a small,capital Alphabets, a Number and a special Symbol (! @ # $ % ^ & *)">
-    <span class="error">Oops!! Password is not Strong </span><br><br>
+                    <input id="rgt" type="password" name="password" placeholder="Password"
+                    [(ngModel)]="customerInfo.customerPassword"  minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{8,15}$" required
+                    mat-raised-button matTooltipClass="mattp" matTooltipPosition="above"
+                    matTooltip="Choose a combination of a small,capital Alphabets, a Number and a special Symbol (! @ # $ % ^ & *)">
+                <span class="error">Oops!! Password is not Strong </span><br><br>
 
 
-    <label for="confirmPassword">Confirm Password:</label>
-    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"
-        [(ngModel)]='confirmPass' required><br><br>
-    <!-- <span *ngIf='!confirmPassword()' style="color: red; display:inline;">Oops!! Password mismatch</span> -->
+                <label for="confirmPassword" id="psd">Confirm Password:</label>
+                 <input id="rgt" type="password" name="confirmPassword"  placeholder="Confirm Password"
+                    [(ngModel)]='confirmPass' required><br><br>
 
-    <label for="userAccount">Account Number</label>
-    <input type="text" placeholder="Account Number" name="userAccount" id="userAccount"
-        (keypress)='isNumber($event,"userAccount",18)' (keyup)='manageAccount()' value="" minlength="11"
-        [(ngModel)]="account" required>
-    <span class="error">Oops!! Invalid Account Number</span><br><br>
 
-    <label for="ifsc" mat-raised-button matTooltipClass="mattp"
-        matTooltip="First 4 characters must be Capital">IFSC
-        Code:</label>
-    <input type="text" name="ifsc" id="ifsc" placeholder="IFSC Code" pattern="^[A-Z]{4}[0-9]{7}$"
-        [(ngModel)]="customerInfo.ifsc" maxlength="11" required mat-raised-button
-        matTooltip="First 4 characters must be Capital" matTooltipClass="mattp">
-    <span class="error">Oops!! Invalid IFSC Code</span><br><br>
+                <label id="ua" for="userAccount">Account Number</label>
+                <input id="rgt" type="text" placeholder="Account Number" name="userAccount" 
+                (keypress)='isNumber($event,"userAccount",18)' (keyup)='manageAccount()' value="" minlength="11"
+                    [(ngModel)]="account" required>
+                <span class="error">Oops!! Invalid Account Number</span><br><br>
 
-    <label for="userAadhar">Aadhar Number:</label>
-    <p>{{customerInfo.customerAadharCard}}</p>
+                <label id="ifs" for="ifsc" mat-raised-button matTooltipClass="mattp"
+                    matTooltip="First 4 characters must be Capital">IFSC
+                    Code:</label>
+                    <input type="text" name="ifsc"  id="rgt" placeholder="IFSC Code" pattern="^[A-Z]{4}[0-9]{7}$"
+                    [(ngModel)]="customerInfo.ifsc" maxlength="11" required mat-raised-button matTooltip="First 4 characters must be Capital" matTooltipClass="mattp">
+                    <span class="error">Oops!! Invalid IFSC Code</span><br><br>
 
-    
-    <button type="submit" class="btnn" id="Btnn">Save and Submit</button>
-</form>
-</div>
-</div>
+                <div class="btn">
+                <button type="submit" id="btnn" >Save and Submit</button>
+            </div>
+            </form>
+        </div>
+    </div>
 </div>

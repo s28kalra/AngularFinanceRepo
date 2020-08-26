@@ -1,24 +1,4 @@
-/* .profilecard{
-    width: 400px;
-    margin:auto;
-    background:white;
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
-} */
-/* .content{
-    padding: 20px;
-    float: left;
-}
-.content p{
-    color: #4b4fe2;
-    margin-right: 16px;
-} */
-/* .content{
-    padding: 20px;
-}
-.content p{
-   
-    margin-right: 16px;
-} */
+
 .lab{
     color: black;
     float: left;
@@ -28,15 +8,15 @@
     
 } */
 .card{
-    width: 390px;
+    width: 440px;
     overflow: hidden;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    display: flex;
     flex-direction: column;
     margin-left: 350px;
     height: 750px;
+    
    
     
   }
@@ -78,7 +58,7 @@
   }
   #an{
       color: #4b4fe2; 
-      padding-right: 30px;
+      padding-right: 5px;
   }
   #em{
     color: #4b4fe2; 
