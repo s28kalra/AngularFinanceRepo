@@ -30,6 +30,7 @@ export class ViewProfileComponent implements OnInit {
     if (this.customerId > 0) {
       this.viewProfile.viewProfile(this.customerId).subscribe(data => {
         this.customerInfo = data;
+        sessionStorage.setItem("customerInfo",JSON.stringify(this.customerInfo));
         if(this.customerInfo.isValidCustomer==-1){
           this.message="Rejected";
           this.reason="Invalid Aadhar Card";
