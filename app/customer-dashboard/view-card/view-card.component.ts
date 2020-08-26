@@ -3,7 +3,7 @@ import { CardDetails } from "src/app/models/CardDetails";
 import { Router } from '@angular/router';
 import { GetCardDetailsService } from "../../services/get-card-details.service";
 import { ActivateEmiCardService } from "../../services/activate-emi-card.service";
-
+import { PayMyEmiService } from "../../services/pay-my-emi.service";
 
 @Component({
   selector: 'app-view-card',
@@ -19,8 +19,9 @@ export class ViewCardComponent implements OnInit {
   cardImageSource;
   valid;
   activate:boolean;
+  pay;
 
-  constructor(private service : GetCardDetailsService,  private activateService : ActivateEmiCardService,private route:Router) {
+  constructor(private service : GetCardDetailsService,  private activateService : ActivateEmiCardService, private payServie : PayMyEmiService, private route:Router) {
     if(sessionStorage.getItem("customerId")!=null)
     this.customerId=parseInt(sessionStorage.getItem("customerId"));
     else{
@@ -56,14 +57,17 @@ export class ViewCardComponent implements OnInit {
       return false;
   }
 
-  payNow(){
-    this.route.navigate(['payCreditAmountLink']);
+  payMyEmi(customerId){
+    this.payServie.payEmiCard(customerId).subscribe(
+      data=> {
+        window.location.reload();
+      }
+    )
   }
 
   activateEmiCard(customerId) {
     this.activateService.activateEmiCard(customerId).subscribe(
       data=> {
-        alert(JSON.stringify(data));
         window.location.reload();
       }
     )

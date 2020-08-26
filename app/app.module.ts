@@ -34,7 +34,13 @@ import { CardDetailsComponent } from './card-details/card-details.component';
 import { SchemesComponent } from './schemes/schemes.component';
 import { StatisticsComponent } from './admin-dashboard/statistics/statistics.component';
 import { PayCreditAmountComponent } from './pay-credit-amount/pay-credit-amount.component';
+
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+
+import { OrderConfirmedComponent } from './order-confirmed/order-confirmed.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +71,12 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
     SchemesComponent,
     StatisticsComponent,
     PayCreditAmountComponent,
+
     LoadingSpinnerComponent,
+
+    OrderConfirmedComponent,
+    ResetPasswordComponent,
+
   ],
   imports: [
     BrowserModule,

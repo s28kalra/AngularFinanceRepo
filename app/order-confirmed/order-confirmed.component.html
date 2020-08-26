@@ -1,0 +1,19 @@
+<br>
+<br>
+<br>
+<div *ngIf="display==true">
+<h1 style="text-align: center;">Congratulations!! Your order is successfully placed with transaction Id : <b><u>{{transactionId}}</u></b></h1>
+</div>
+
+<div *ngIf="display==false">
+    <h1 style="text-align: center;">Unable to complete purchase due to insufficent balance</h1>
+</div>
+
+<br>
+<div class="button" id="confirmed">
+<button type="button" id="shop" (click)="returnToProducts()">Let's Shop More</button>
+<button type="button" id="dashboard" (click)="returnToDashboard()">Return to Dashboard</button>
+</div>
+<br>
+<br>
+<br>

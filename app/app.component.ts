@@ -37,10 +37,7 @@ export class AppComponent {
     }
   }
   logout(){
-    sessionStorage.removeItem("customerId");
-    sessionStorage.removeItem("customerName");
-    sessionStorage.removeItem("adminId");
-    sessionStorage.removeItem("adminName");
+    sessionStorage.clear();
     this.route.navigateByUrl('/userLoginLink');
   }
 }

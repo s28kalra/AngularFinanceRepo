@@ -32,7 +32,7 @@ section .screen:hover
 
 
 section .screen:nth-child(1){
-    background: #fff;
+    background: rgb(230,232,250)
 }
 section .screen:nth-child(2){
     background: #ff0;
@@ -64,7 +64,7 @@ section .screen .card a
 {
     padding: 10px 20px;
     background: #262626;
-    color: #fff;
+    color: rgb(230,232,250);
     text-decoration: none;
 }
 .content
@@ -76,7 +76,7 @@ section .screen .card a
     bottom: 0;
     margin: 0;
     padding: 100px;
-    background: #fff;
+    background: rgb(230,232,250);
     transition: 0.5s;
     opacity: 0;
     visibility: hidden;
