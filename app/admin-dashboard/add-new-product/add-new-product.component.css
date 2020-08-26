@@ -4,6 +4,17 @@
     padding-left: 32%;
 }
 
-#price{
-    padding-right: 12px;
+label{
+    
+    float: left;
+}
+
+input{
+    
+    float: right;
+    margin-left: 40px;
+    border-radius: 5px;
+}
+button :hover{
+    color: green;
 }
