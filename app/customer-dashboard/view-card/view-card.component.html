@@ -22,14 +22,30 @@
 
 </div>
 
+<hr style="border-top: 1px solid black;">
+
 <div id="limit">
   <h2 style="float: left; padding-left: 60px;">Credit Limit Rs. {{cardDetails.cardLimit}}/- </h2>
   <h2 style="float: right; padding-right: 70px;">Remaining Balance Rs. {{cardDetails.cardBalance}}/- </h2>
 </div>
+<br>
+<br>
+
+
+
+<div id="try">
+  <h2>Credit Limit Bar</h2>
+   0
+  <progress max="{{cardDetails.cardLimit}}" value="{{cardDetails.cardBalance}}"></progress>
+  {{cardDetails.cardLimit}}
+</div>
 
 <br>
+<hr style="border-top: 1px solid black;">
 <br>
 <br>
+
+
 
 <div *ngIf="cardDetails.cardStatus==true" id="activated">
   <table style="width: 90%" align="center" id="pay">
