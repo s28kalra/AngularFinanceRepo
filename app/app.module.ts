@@ -34,7 +34,7 @@ import { CardDetailsComponent } from './card-details/card-details.component';
 import { SchemesComponent } from './schemes/schemes.component';
 import { StatisticsComponent } from './admin-dashboard/statistics/statistics.component';
 import { PayCreditAmountComponent } from './pay-credit-amount/pay-credit-amount.component';
-
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +65,7 @@ import { PayCreditAmountComponent } from './pay-credit-amount/pay-credit-amount.
     SchemesComponent,
     StatisticsComponent,
     PayCreditAmountComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +73,7 @@ import { PayCreditAmountComponent } from './pay-credit-amount/pay-credit-amount.
     FormsModule,
     BrowserAnimationsModule,
     MatTooltipModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   
   providers: [],

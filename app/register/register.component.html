@@ -42,8 +42,8 @@
 
                 <label for="confirmPassword">Confirm Password:</label>
                 <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"
-                    [(ngModel)]='confirmPass' required><br><br>
-                <!-- <span *ngIf='!confirmPassword()' style="color: red; display:inline;">Oops!! Password mismatch</span> -->
+                    [(ngModel)]='confirmPass' required>
+                 <span *ngIf='!confirmPassword()' style="color: red;" >Oops!! Password mismatch</span><br><br> 
 
                 <label for="userAccount">Account Number</label>
                 <input type="text" placeholder="Account Number" name="userAccount" id="userAccount"

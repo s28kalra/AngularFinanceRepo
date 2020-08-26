@@ -6,6 +6,7 @@ import { LoginInfo } from '../models/login-info';
 import { NgForm } from "@angular/forms";
 import { AdminStatus } from "src/app/status/adminStatus";
 import { AdminLoginInfo } from "src/app/models/adminLoginInfo";
+import { NgxSpinnerService } from "ngx-spinner";
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
@@ -17,11 +18,16 @@ export class UserLoginComponent implements OnInit {
   adminStatus= new AdminStatus();
   adminLoginInfo= new AdminLoginInfo();
   message: string;
-  constructor(private route: Router, private loginService: LoginService) { }
-
+  showSpinner=false;
+  constructor(private route: Router, private loginService: LoginService) {
+   
+   }
+ 
   loginCustomer() {
+    this.showSpinner=true;
     this.loginService.loginCustomer(this.login).subscribe(data => {
       this.customerStatus=data;
+      
       if (this.customerStatus.status == 'SUCCESS') {
         sessionStorage.setItem('customerId', this.customerStatus.customerId.toString());
         sessionStorage.setItem('customerName', this.customerStatus.customerFirstName);
@@ -30,12 +36,18 @@ export class UserLoginComponent implements OnInit {
       else {
         this.message = this.customerStatus.message;
       }
+      this.showSpinner=false;
     })
+    // this.showSpinner=true;
+    // setTimeout(()=>{
+    //   this.showSpinner=false
+    // },5000)
   }
   ngOnInit(): void {
   }
 
   loginAdmin(){
+    this.showSpinner=true;
     this.adminLoginInfo.adminId=this.login.customerEmail;
     this.adminLoginInfo.adminPassword= this.login.customerPassword;
     this.loginService.loginAdmin(this.adminLoginInfo).subscribe(
@@ -49,6 +61,7 @@ export class UserLoginComponent implements OnInit {
         else{
           this.message=this.adminStatus.message;
         }
+        this.showSpinner=true;
       }
     )
   }

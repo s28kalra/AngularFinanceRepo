@@ -6,9 +6,12 @@
 
 
  .serv h1{
-  font-family: 'Allura', cursive;
-   margin-left: 550px;
+  
+   margin-left: 510px;
    margin-top: 30px;
+   font-family: 'Allura', cursive;
+  font-size: 52px;
+  
 } 
 .container h1{
   font-family: 'Allura', cursive;
@@ -147,11 +150,12 @@ top:0; */
   background: rgba(0, 0, 0, .6);
   text-align: center;
   position: absolute;
-  top: 52%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   color:white;
   padding-right: 30px;
+  padding-top: 30px;
 }
 
 *{
@@ -166,7 +170,7 @@ body{
 }
 
 .wrapper{
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .wrapper h1{
