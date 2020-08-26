@@ -12,10 +12,10 @@ import { JsonPipe } from '@angular/common';
 })
 export class ProductListComponent implements OnInit {
   selectedProduct: Product;
-  // @Input() product: Product;
-  // @Output()  productSelected=new EventEmitter<Product>(); 
-  //  products=new Array<Product>();
-  products: any;
+ 
+  products = new Array<Product>();
+  searchedProducts:any= new Array<Product>();
+  search = '';
   //productDetailId: any;
 
 
@@ -25,9 +25,20 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     this.service.getAllProducts().subscribe(
       data=>{
-        this.products=data;
+        this.searchedProducts=data;
+        this.products = [...this.searchedProducts];
       }
     )
+  }
+  searchByName() {
+    var regex = new RegExp(this.search, "i");
+    if (this.search != '') {
+      this.searchedProducts.splice(0, this.searchedProducts.length);
+      this.searchedProducts = this.products.filter(product => regex.test(product.productName));
+    }
+    else {
+      this.searchedProducts = [...this.products];
+    }
   }
   onSelected(product){ 
     sessionStorage.setItem("selectedItem",JSON.stringify(product));
