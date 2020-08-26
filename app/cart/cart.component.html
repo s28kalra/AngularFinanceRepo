@@ -19,9 +19,9 @@
                 {{cartProduct.productDescription}}
             </div>
             <footer class="content">
-                <span class="qt-minus" (click)='reduceQuantity(cartProduct.productId)' >-</span>
+                <span class="qt-minus" (click)='reduceQuantity(cartProduct.productId)' ><i class="fa fa-minus" aria-hidden="true" style="color: red;"></i></span>
                 <span class="qt">{{cartProduct.productQuantity}}</span>
-                <span class="qt-plus" (click)='addQuantity(cartProduct.productId)' >+</span>
+                <span class="qt-plus" (click)='addQuantity(cartProduct.productId)' ><i class="fa fa-plus" aria-hidden="true" style="color: green;"></i></span>
                 <h2 class="full-price">
                     <span>₹</span> {{cartProduct.productPrice * cartProduct.productQuantity}}
                 </h2>

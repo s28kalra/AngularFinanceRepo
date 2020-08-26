@@ -120,11 +120,12 @@ a:hover {
 .qt, .qt-plus, .qt-minus {
 	display: block;
 	float: left;
+	
 }
 
 .qt {
 	font-size: 19px;
-	line-height: 50px;
+	line-height: 30px;
 	width: 70px;
 	text-align: center;
 }
@@ -135,6 +136,7 @@ a:hover {
 	font-size: 30px;
 	font-weight: 300;
 	height: 100%;
+	padding-top: 5px;
 	padding: 0 20px;
 }
 
