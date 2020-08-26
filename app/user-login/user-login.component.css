@@ -82,7 +82,3 @@ input.ng-invalid.ng-touched +.error{
  display: inline; 
  color: red;
 }
-#spin{
-  size: 5px;
-  color: #fff;
-}

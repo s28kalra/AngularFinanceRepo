@@ -6,7 +6,6 @@ import { LoginInfo } from '../models/login-info';
 import { NgForm } from "@angular/forms";
 import { AdminStatus } from "src/app/status/adminStatus";
 import { AdminLoginInfo } from "src/app/models/adminLoginInfo";
-import { NgxSpinnerService } from "ngx-spinner";
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
@@ -61,7 +60,7 @@ export class UserLoginComponent implements OnInit {
         else{
           this.message=this.adminStatus.message;
         }
-        this.showSpinner=true;
+        this.showSpinner=false;
       }
     )
   }
