@@ -1,7 +1,10 @@
 <section class=product-list>
-    <h1 class="align-center">Products</h1>
+    <h1 class="align-center ">Products</h1>
+    Search: <input type="text" (keyup)='searchByName()' [(ngModel)]="search" placeholder="Search Name">
+ <br>
+ <br>
     <div class="product-container">
-      <div class="card" *ngFor="let p of products" >
+      <div class="card" *ngFor="let p of searchedProducts" >
           <div class="title">{{p.productName}} </div>
           <div class="image">
             <img [src]=p.productImageSource alt="{{p.productName}}"  >

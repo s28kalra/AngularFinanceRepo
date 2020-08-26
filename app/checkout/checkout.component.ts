@@ -30,7 +30,7 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.product=JSON.parse(sessionStorage.getItem('selectedItem'));
-    this.finalAmount=this.product.productPrice;
+    this.finalAmount=this.product.productPrice * this.product.productQuantity;
   }
 
   checkoutFunction(form: NgForm) {

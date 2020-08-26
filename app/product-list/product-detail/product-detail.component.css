@@ -53,7 +53,7 @@ background: #DFC2F2;
 	content: '';
 	right: 0%; 
 	top: 0%;
-	transform: translate(25px, -15px);
+	transform: translate(20px,-15px);
 	font-family: 'Farsan', cursive;
 	display: inline-block;
 	background: #FFA69E;
@@ -63,7 +63,6 @@ background: #DFC2F2;
 	color: #FFF;
 	margin: 0;
 	animation: chan-sh 6s ease infinite;
-
 }
 
 
