@@ -19,20 +19,21 @@ export class RegisterComponent implements OnInit {
   mobile="";
   account="";
   aadhar="";
-  
+  showSpinner=false;
   constructor(private route: Router, private registerService:RegisterService) { }
 
   ngOnInit(): void {
   }
 
   registerCustomer(form:NgForm) {
-   
+   this.showSpinner=true;
    this.customer.customerMobile=this.mobile.replace(/ /g,'');
    this.customer.accountNumber=this.account.replace(/ /g,'');
    this.customer.customerAadharCard=this.aadhar.replace(/ /g,'');
    this.registerService.registerCustomer(this.customer).subscribe(
      data=>{
         this.status=data;
+        this.showSpinner=false;
      }
    )
    this.route.navigateByUrl("/userLoginLink");

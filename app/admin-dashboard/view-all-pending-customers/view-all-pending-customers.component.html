@@ -1,4 +1,6 @@
-
+<div *ngIf="showSpinner" style="text-align: center;">
+		<app-loading-spinner></app-loading-spinner>
+	</div>
  Search: <input type="text" (keyup)='searchByName()' [(ngModel)]="search" placeholder="Search Name">
  <br>
  <br>
