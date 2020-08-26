@@ -35,6 +35,12 @@ import { SchemesComponent } from './schemes/schemes.component';
 import { StatisticsComponent } from './admin-dashboard/statistics/statistics.component';
 import { PayCreditAmountComponent } from './pay-credit-amount/pay-credit-amount.component';
 
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+
+import { OrderConfirmedComponent } from './order-confirmed/order-confirmed.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +71,12 @@ import { PayCreditAmountComponent } from './pay-credit-amount/pay-credit-amount.
     SchemesComponent,
     StatisticsComponent,
     PayCreditAmountComponent,
+
+    LoadingSpinnerComponent,
+
+    OrderConfirmedComponent,
+    ResetPasswordComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -72,7 +84,7 @@ import { PayCreditAmountComponent } from './pay-credit-amount/pay-credit-amount.
     FormsModule,
     BrowserAnimationsModule,
     MatTooltipModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   
   providers: [],

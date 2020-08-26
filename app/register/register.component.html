@@ -1,4 +1,7 @@
 <div class="body">
+    <div *ngIf="showSpinner" style="text-align: center;">
+		<app-loading-spinner></app-loading-spinner>
+	</div>
     <div class="register">
         <div class="frm">
             <div class="hd">
@@ -15,7 +18,7 @@
 
 
                 <label for="dob">Date Of Birth *</label>
-                <input type="date" name="dob" [(ngModel)]="customer.dateOfBirth" required>
+                <input  type="date" name="dob" [(ngModel)]="customer.dateOfBirth" required>
                 <span class="error">Choose Your Correct Birth Details</span><br><br>
 
                 <label for="userEmail">Email *</label>
@@ -42,8 +45,8 @@
 
                 <label for="confirmPassword">Confirm Password:</label>
                 <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"
-                    [(ngModel)]='confirmPass' required><br><br>
-                <!-- <span *ngIf='!confirmPassword()' style="color: red; display:inline;">Oops!! Password mismatch</span> -->
+                    [(ngModel)]='confirmPass' required>
+                 <span *ngIf='!confirmPassword()' style="color: red;" >Oops!! Password mismatch</span><br><br> 
 
                 <label for="userAccount">Account Number</label>
                 <input type="text" placeholder="Account Number" name="userAccount" id="userAccount"
@@ -80,7 +83,7 @@
                     <label id="atc" for="terms">Accept Terms and Conditions</label> </a><br>
                 <button type="submit" class="btnn" id="Btnn"
                     [disabled]='!registerForm.valid || !confirmPassword()'>Register</button>
-                <button type="reset" class="btnn" id="rbtn">Reset</button>
+                <button  type="reset" class="btnn" id="rbtn">Reset</button>
 
 
             </form>

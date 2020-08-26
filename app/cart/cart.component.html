@@ -4,7 +4,7 @@
     </div>
 </header>
 
-<div class="container">
+<div *ngIf="display" class="container">
 
     <section id="cart" > 
         <article class="product">
@@ -46,7 +46,7 @@
 
         <div class="right">
             <h1 class="total">Total: <span>₹</span>{{subTotal}}</h1>
-            <a class="btn" [routerLink]='["/checkoutLink"]' (click)="gotoCheckout()">Checkout</a>
+            <a class="btn" (click)="gotoCheckout()">Checkout</a>
         </div>
 
     </div>

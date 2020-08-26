@@ -1,0 +1,29 @@
+a{
+    color: white;
+    cursor: pointer;
+  }
+  
+  #allCustomer{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border: 3px solid;
+    width: 100%;
+  }
+  
+  #allCustomer td, #allCustomer th {
+    border: 3px solid;
+    padding: 8px;
+  }
+  
+  #allCustomer tr:nth-child(even){background-color: #ebe2e2;}
+  
+  #allCustomer tr:hover {background-color: #ddd;}
+  
+  #allCustomer th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #4CAF50;
+    border: 3px solid black;
+    font-size: 14px;
+    color: white;
+  }
