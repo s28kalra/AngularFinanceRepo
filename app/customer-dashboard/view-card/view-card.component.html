@@ -12,7 +12,7 @@
   <div class="card__number">{{cardDetails.cardNumber}}</div>
   <div class="card__expiry-date"> Valid Upto: {{month}} / {{year}}</div>
   <div class="card__owner">{{cardDetails.customerName}}</div>
-  <img class="card__logo" [src]=cardImageSource />
+  <img class="card__logo" [src]=cardImageSource alt="Not Assigned"/>
 </div><br><br>
 <div class="card card--back">
   <div class="card__strip"></div>
@@ -39,7 +39,7 @@
           <p class="heading">Payable amount for this month is Rs. {{cardDetails.amountToBePaid}}/-</p>
         </h2>
       </th>
-      <th><button id="paybtn" name="paybtn" [disabled]="ifTrue()" (click)="payNow()">Pay Now</button></th>
+      <th><button id="paybtn" name="paybtn" [disabled]="ifTrue()" (click)="payMyEmi(customerId)">Pay Now</button></th>
     </tr>
   </table>
 </div>

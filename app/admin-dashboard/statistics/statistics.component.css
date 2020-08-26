@@ -1,0 +1,42 @@
+a{
+    color: white;
+    cursor: pointer;
+  }
+  
+  #statistics{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border: 3px solid;
+    width: 100%;
+  }
+  
+  #statistics td, #statistics th {
+    border: 3px solid;
+    padding: 8px;
+  }
+  
+  #statistics tr:nth-child(even){background-color: #ebe2e2;}
+  
+  #statistics tr:hover {background-color: #ddd;}
+  
+  #statistics th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #4CAF50;
+    border: 3px solid black;
+    font-size: 14px;
+    color: white;
+  }
+
+  #dates{
+      padding-right: 60px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+  }
+
+  #submitbtn {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }

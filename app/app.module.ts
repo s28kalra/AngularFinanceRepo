@@ -34,6 +34,8 @@ import { CardDetailsComponent } from './card-details/card-details.component';
 import { SchemesComponent } from './schemes/schemes.component';
 import { StatisticsComponent } from './admin-dashboard/statistics/statistics.component';
 import { PayCreditAmountComponent } from './pay-credit-amount/pay-credit-amount.component';
+import { OrderConfirmedComponent } from './order-confirmed/order-confirmed.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +67,8 @@ import { PayCreditAmountComponent } from './pay-credit-amount/pay-credit-amount.
     SchemesComponent,
     StatisticsComponent,
     PayCreditAmountComponent,
+    OrderConfirmedComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,

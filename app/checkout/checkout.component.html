@@ -3,7 +3,7 @@
         <div class="payment">
             <h1>Awesome, that's <span>₹</span>{{finalAmount}} !</h1>
             <div class="form">
-                <form #checkoutForm='ngForm' (ngSubmit)='checkoutFunction(checkoutForm)'>
+                <form #checkoutForm='ngForm'>
                     <div class="card">
                         <label class="labelbox">Select EMI Tenure </label>
                         <select id="emiTenure" name="emiTenure" [(ngModel)]='checkout.emiTenure' required>

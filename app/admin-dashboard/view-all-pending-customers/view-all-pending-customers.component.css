@@ -3,7 +3,7 @@ a{
     cursor: pointer;
   }
   
-  #pendingCustomer {
+  #pendingCustomer{
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border: 3px solid;
     width: 100%;

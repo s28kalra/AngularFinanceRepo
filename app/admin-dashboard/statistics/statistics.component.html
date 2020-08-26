@@ -12,20 +12,24 @@
         From <input type="date" name="date1" [(ngModel)]='statisticsDate.from' required><span> </span>
         To <input type="date" name="date2" [(ngModel)]='statisticsDate.to' required>
     </div>
-
-    <button type="submit">Get Statistics</button>
+    <br>
+    <button type="submit" id="submitbtn">Get Statistics</button>
     <h1>{{invalidInputs}}</h1>
 </form>
+
 <div *ngIf='valueReterieved'>
-    <h1>Total No Of Registrations</h1>
-    <h2>{{statistics.registrations}}</h2>
-
-    <h1>Joining Fees</h1>
-    <h2>{{statistics.joiningFees}}</h2>
-
-    <h1>Processing Fees</h1>
-    <h2>{{statistics.processingFees}}</h2>
-
-    <h1>Total Profit</h1>
-    <h2>{{statistics.totalProfit}}</h2>
+    <table style="width: 90%" align="center" id="statistics">
+        <tr>
+            <th>Total No Of Registrations</th>
+            <th>Joining Fees</th>
+            <th>Processing Fees</th>
+            <th>Total Profit</th>
+        </tr>
+        <tr>
+            <td>{{statistics.registrations}}</td>
+            <td>{{statistics.joiningFees}}</td>
+            <td>{{statistics.processingFees}}</td>
+            <td>{{statistics.totalProfit}}</td>
+        </tr>
+    </table>
 </div>
