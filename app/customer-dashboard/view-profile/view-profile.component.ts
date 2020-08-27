@@ -18,6 +18,7 @@ export class ViewProfileComponent implements OnInit {
   customerId = 0;
   message="";
   reason="";
+  showSpinner=false; 
   constructor(private viewProfile: ViewProfileService, private route: Router) {
     if (sessionStorage.getItem("customerId") != null)
       this.customerId = parseInt(sessionStorage.getItem("customerId"));
@@ -27,10 +28,12 @@ export class ViewProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.showSpinner=true; 
     if (this.customerId > 0) {
       this.viewProfile.viewProfile(this.customerId).subscribe(data => {
         this.customerInfo = data;
         sessionStorage.setItem("customerInfo",JSON.stringify(this.customerInfo));
+        this.showSpinner=false; 
         if(this.customerInfo.isValidCustomer==-1){
           this.message="Rejected";
           this.reason="Invalid Aadhar Card";

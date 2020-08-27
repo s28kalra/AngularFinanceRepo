@@ -12,7 +12,7 @@ import { JsonPipe } from '@angular/common';
 })
 export class ProductListComponent implements OnInit {
   selectedProduct: Product;
- 
+  showSpinner=false; 
   products = new Array<Product>();
   searchedProducts:any= new Array<Product>();
   search = '';
@@ -23,10 +23,12 @@ export class ProductListComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.showSpinner=true; 
     this.service.getAllProducts().subscribe(
       data=>{
         this.searchedProducts=data;
         this.products = [...this.searchedProducts];
+        this.showSpinner=false; 
       }
     )
   }

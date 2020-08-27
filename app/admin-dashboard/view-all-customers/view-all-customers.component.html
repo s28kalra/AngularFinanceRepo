@@ -1,3 +1,6 @@
+<div *ngIf="showSpinner" style="text-align: center;">
+    <app-loading-spinner></app-loading-spinner>
+</div>
 <h1>Rejected Or Accepted CUSTOMERS</h1>
  Search: <input type="text" (keyup)='searchByName()' [(ngModel)]="search" placeholder="Search">
 <br><br>

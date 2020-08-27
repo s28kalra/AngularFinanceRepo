@@ -14,6 +14,7 @@ export class ViewAdminProfileComponent implements OnInit {
   designation="";
   email="";
   status:any;
+  showSpinner=false; 
   constructor(private viewAdminProfileService: ViewAdminProfileService, private route : Router) {
     if(sessionStorage.getItem("adminId")!=null)
       this.adminId=parseInt(sessionStorage.getItem("adminId"));
@@ -27,13 +28,14 @@ generateBill(){
     }
   )
 }
-  ngOnInit(): void {    
+  ngOnInit(): void {   
+    this.showSpinner=true; 
     this.viewAdminProfileService.viewAdminProfile(this.adminId).subscribe(
       data=>{
         this.admin=data;
         this.imgSrc="assets/"+this.admin.adminId+".jpg";
-        this.email=this.admin.adminName.toLowerCase().replace(/ /g,'_')+"@easy_credit.in"
-
+        this.email=this.admin.adminName.toLowerCase().replace(/ /g,'_')+"@easy_credit.in";
+        this.showSpinner=false; 
       }
     )
   }

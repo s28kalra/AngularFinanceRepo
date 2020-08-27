@@ -14,12 +14,14 @@ export class StatisticsComponent implements OnInit {
   selected="30";
   invalidInputs="";
   valueReterieved=false;
+  showSpinner=false;
   constructor(private statisticsService: StatisticsService) { }
  
   ngOnInit(): void {
   }
 
   calculateStatistics(){
+    this.showSpinner=true;
     if(this.selected!="custom"){
       this.statisticsDate.to=new Date();
       this.statisticsDate.from= new Date();
@@ -37,6 +39,7 @@ export class StatisticsComponent implements OnInit {
        data=>{
          this.statistics= data;
          this.valueReterieved=true;
+         this.showSpinner=false;
        }
      )
   }

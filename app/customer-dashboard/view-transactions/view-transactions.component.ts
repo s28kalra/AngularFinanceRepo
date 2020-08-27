@@ -13,6 +13,7 @@ export class ViewTransactionsComponent implements OnInit {
   status= new ViewCardTransactionsStatus();
   transactions:any;
   customerId=0;
+  showSpinner=false; 
   constructor(private service : ViewtransactionsService, private route:Router) {
     if(sessionStorage.getItem("customerId")!=null)
     this.customerId=parseInt(sessionStorage.getItem("customerId"));
@@ -22,10 +23,12 @@ export class ViewTransactionsComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.showSpinner=true; 
     if(this.customerId>0){
     this.service.getListOfTransactionsOfCustomer(this.customerId).subscribe(
       data=>{
         this.transactions=data;
+        this.showSpinner=false; 
       }
       )
     }
