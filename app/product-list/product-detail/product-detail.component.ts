@@ -13,26 +13,18 @@ export class ProductDetailComponent implements OnInit {
 
   
   product=new Product();
-  //selectedProductimg="./assets/1.jpg";
-//@Input() product: Product;
-//addedToWishlist:boolean;
 
   constructor(private route: Router) {
-   
-
    }
 
   ngOnInit(): void {
      this.product=JSON.parse(sessionStorage.getItem('selectedItem'));
-     //alert(this.product.productName);
+    
      
    
   }
   onBuy(){
-   // sessionStorage.setItem("selectedItem",JSON.stringify(this.product));
     this.route.navigateByUrl('cartLink');
-    
-
   }
 }
   

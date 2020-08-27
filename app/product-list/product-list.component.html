@@ -18,10 +18,10 @@
   <br>
   <div class="product-container">
     <div class="card" *ngFor="let p of searchedProducts">
-      <div class="title">{{p.productName}} </div>
+      <div class="title">{{p.productName}} </div><hr>
       <div class="image">
         <img [src]=p.productImageSource alt="{{p.productName}}">
-      </div>
+      </div><hr>
       <div class="text">Our Price: ₹ {{p.productPrice}} /-</div>
 
 
