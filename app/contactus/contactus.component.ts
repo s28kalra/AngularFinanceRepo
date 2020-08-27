@@ -10,6 +10,7 @@ export class ContactusComponent implements OnInit {
 
   query= new ContactUs();
   mobile="";
+  message;
   constructor() { }
 
   ngOnInit(): void {
@@ -43,7 +44,7 @@ export class ContactusComponent implements OnInit {
   }
 
   submitQuery(){
-    alert(JSON.stringify(this.query));
+    this.message = "Your query has been recorded we will revert back soon."
   }
 
 }
