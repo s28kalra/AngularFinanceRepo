@@ -8,7 +8,7 @@ import { ProductService } from "src/app/services/adminServices/product.service";
   styleUrls: ['./add-new-product.component.css']
 })
 export class AddNewProductComponent implements OnInit {
-
+  showSpinner=false;
   product = new Product();
   constructor(private productService: ProductService) { }
 
@@ -16,12 +16,13 @@ export class AddNewProductComponent implements OnInit {
   }
 
   addProduct(form: NgForm) {
+    this.showSpinner=true;
     this.product.productImageSource = "assets/" + this.product.productName + ".jpg";
-    alert(JSON.stringify(this.product));
     this.productService.addProduct(this.product).subscribe(
       data => {
         this.product = data;
-        alert(JSON.stringify(this.product));
+        this.showSpinner=false;
+        this.product=new Product();
       }
     )
   }

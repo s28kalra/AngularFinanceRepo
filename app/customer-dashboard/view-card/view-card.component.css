@@ -136,3 +136,8 @@ a {
     padding-top: 13px;
     text-align: center;
   }
+
+  progress{
+    width: 50%;
+    height: 30px;
+  }
