@@ -17,14 +17,11 @@ export class OrderConfirmedComponent implements OnInit {
 
   ngOnInit(): void {
     this.transactionId = Number(sessionStorage.getItem("transactionId"));
-    alert(this.transactionId);
     if (this.transactionId > 0) {
       this.display = true;
-      alert(this.display);
     }
     else {
       this.display = false;
-      alert(this.display);
     }
 
   }
