@@ -145,6 +145,11 @@ color: black;
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 2px;
   }
+
+  #Btnn:disabled{
+    cursor: not-allowed;
+  }
+  
   #atc{
     color: slategray;
     font-weight: 30px;

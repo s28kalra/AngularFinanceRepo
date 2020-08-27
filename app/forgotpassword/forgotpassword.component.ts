@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { ValidateAnOtp } from "src/app/models/validate-an-otp";
 import { ForgotPasswordService } from "src/app/services/forgot-password.service";
+import { templateSourceUrl } from '@angular/compiler';
 @Component({
   selector: 'app-forgotpassword',
   templateUrl: './forgotpassword.component.html',
@@ -12,12 +13,16 @@ export class ForgotpasswordComponent implements OnInit {
   validateAnOtp = new ValidateAnOtp();
   status="";
   validEmail=false;
-  constructor(private Route: Router, private forgotPasswordService: ForgotPasswordService) { }
+  notAValidOtp="";
+  showSpinner=false;
+  constructor(private route: Router, private forgotPasswordService: ForgotPasswordService) { }
 
   ngOnInit(): void {
   }
 
   forgotPassword() {
+    this.showSpinner=true;
+    this.status="";
     this.forgotPasswordService.forgotPassword(this.validateAnOtp.email).subscribe(
       data => {
         this.status = data;
@@ -25,19 +30,23 @@ export class ForgotpasswordComponent implements OnInit {
           this.validEmail=false;
         else
           this.validEmail=true; 
+        this.showSpinner=false;
       }
     )
   }
 
   checkOtp() {
+    this.showSpinner=true;
+    this.notAValidOtp="";
     this.forgotPasswordService.validateAnOtp(this.validateAnOtp).subscribe(
       data => {
         if(data>0){
           sessionStorage.setItem("resetCustomerId",data);
-          alert("Reset password page");
+          this.route.navigateByUrl("/resetPasswordLink");
         }
         else
-          alert("Not valid otp");
+          this.notAValidOtp="Not a Valid Otp";
+        this.showSpinner=false;
       }
     )
   }
