@@ -63,6 +63,9 @@
         margin-right: 16px;
     } 
      
+    a{
+        cursor: pointer;
+    }
     
     /* .container{
         min-height: 100%;

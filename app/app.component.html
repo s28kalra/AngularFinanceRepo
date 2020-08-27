@@ -10,12 +10,10 @@
       <li><a [routerLink]="['']"><i class="fa fa-fw fa-home"></i>Home</a></li>
       <li *ngIf='!isLogin()'><a [routerLink]="['registerLink']"><i class="fa fa-fw fa-user-plus"></i>Register</a></li>
       
-      <li *ngIf='!isLogin()'><a class="dropdown" [routerLink]="['userLoginLink']"><i class="fa fa-fw fa-user"></i>
-          Login
+      <li *ngIf='!isLogin()'><a class="dropdown" [routerLink]="['userLoginLink']"><i class="fa fa-fw fa-user"></i>Login
         </a>
       </li>
-      <li *ngIf='isLogin()'><a class="dropdown" (click)="navigation()"><i class="fa fa-fw fa-user"></i>
-          DashBoard
+      <li *ngIf='isLogin()'><a class="dropdown" (click)="navigation()"><i class="fa fa-fw fa-user"></i>DashBoard
         </a>
       </li>
 
@@ -23,10 +21,9 @@
     <ul class="header-right">
       <li *ngIf='isLogin()' class="nmn">Hi, {{name}} </li>
       <li><a [routerLink]="['aboutus']"><i class="fa fa-fw fa-info-circle"></i>About Us</a></li>
-      <li><a [routerLink]="['contactUsLink']"><i class="fa fa-fw fa-address-book"></i> Contact</a></li>
+      <li><a [routerLink]="['contactUsLink']"><i class="fa fa-fw fa-address-book"></i>Contact</a></li>
       <li><a [routerLink]="['cartLink']"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-      <li *ngIf='isLogin()'><a class="dropdown" (click)="logout()"><i class="fa fa-fw fa-user"></i>
-          LogOut
+      <li *ngIf='isLogin()'><a class="dropdown" (click)="logout()"><i class="fa fa-fw fa-user"></i>LogOut
         </a>
       </li>
     </ul>
