@@ -1,5 +1,4 @@
 <div class="body">
-  
     <div class="register">
         <div class="frm">
             <div class="hd">
@@ -67,10 +66,12 @@
                 <span class=" error">Oops!! Invalid Aadhar Number</span><br><br>
 
                 <label for="cardType">Card Type:</label>
+                
                 <input type="radio" id="Gold" name="cardType" value="Gold" class="cardType"
                     [(ngModel)]="customer.cardType" required> <span class="cardType" mat-raised-button
                     matTooltipPosition="above" matTooltipClass="mattp"
                     matTooltip="One Lakh Credit ">Gold</span>&nbsp;&nbsp;
+
                 <input type="radio" id="Titanium" name="cardType" value="Titanium" class="cardType"
                     [(ngModel)]="customer.cardType" required checked> <span class="cardType" mat-raised-button
                     matTooltipClass="mattp" matTooltipPosition="above" matTooltip="Two Lakh Credit ">Titanium</span>
