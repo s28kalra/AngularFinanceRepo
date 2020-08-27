@@ -28,7 +28,7 @@ import { CardDetailsComponent } from "./card-details/card-details.component";
 import { SchemesComponent } from "./schemes/schemes.component";
 import { OrderConfirmedComponent } from "./order-confirmed/order-confirmed.component";
 import { StatisticsComponent } from './admin-dashboard/statistics/statistics.component';
-
+import { ResetPasswordComponent } from "src/app/reset-password/reset-password.component";
 
 
 const routes: Routes = [
@@ -70,6 +70,9 @@ const routes: Routes = [
   },
   {
     path: 'contactUsLink', component: ContactusComponent
+  },
+  {
+    path: 'resetPasswordLink', component: ResetPasswordComponent
   },
   {
     path: 'customerDashboardLink', component: CustomerDashboardComponent,

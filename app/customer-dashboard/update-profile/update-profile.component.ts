@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UpdatecustomerService } from "../../services/updatecustomer.service";
+import { UpdateCustomerService } from "../../services/updateCustomer.service";
 import { Router } from "@angular/router";
 import { NgForm } from "@angular/forms";
 import { CustomerInfo } from "../../models/customer-info";
@@ -15,11 +15,11 @@ export class UpdateProfileComponent implements OnInit {
   customerId = 0;
   confirmPass;
   account;
-  constructor(private updateProfile:UpdatecustomerService , private route: Router) { 
+  constructor(private updateProfile:UpdateCustomerService , private route: Router) { 
      if (sessionStorage.getItem("customerId") != null)
   this.customerId = parseInt(sessionStorage.getItem("customerId"));
 else {
-  this.route.navigateByUrl('/userLoginLink')
+  this.route.navigateByUrl('/userLoginLink');
 }}
 
   ngOnInit(): void {
@@ -69,8 +69,7 @@ else {
   }
 
   updateCustomer(form:NgForm) {
-    alert(JSON.stringify(this.customerInfo));
-    this.updateProfile.updatecustomer(this.customerInfo).subscribe(
+    this.updateProfile.updateCustomer(this.customerInfo).subscribe(
       data=>{
          this.customerInfo=data;
       }

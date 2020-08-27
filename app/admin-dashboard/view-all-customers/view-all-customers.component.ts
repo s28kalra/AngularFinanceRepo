@@ -7,17 +7,19 @@ import { CustomerInfo } from 'src/app/models/customer-info';
   styleUrls: ['./view-all-customers.component.css']
 })
 export class ViewAllCustomersComponent implements OnInit {
-
+  showSpinner=false;
   customersList = new Array<CustomerInfo>();
   customersMainList = new Array<CustomerInfo>();
   search = '';  
   constructor(private viewAllCustomersService: ViewAllCustomersService) { }
 
   ngOnInit(): void {
+    this.showSpinner=true;
     this.viewAllCustomersService.viewAllCustomers().subscribe(
       data=>{
          this.customersList=data;
          this.customersMainList=[...this.customersList];
+         this.showSpinner=false;
       }
     )
   }
