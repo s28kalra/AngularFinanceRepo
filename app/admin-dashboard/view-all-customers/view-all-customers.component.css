@@ -14,9 +14,13 @@ a{
     padding: 8px;
   }
   
-  #allCustomer tr:nth-child(even){background-color: #ebe2e2;}
+  #allCustomer tr:nth-child(even){
+    background-color: #ebe2e2;
+  }
   
-  #allCustomer tr:hover {background-color: #ddd;}
+  #allCustomer tr:hover {
+    background-color: #ddd;
+  }
   
   #allCustomer th {
     padding-top: 12px;

@@ -14,9 +14,13 @@ a{
     padding: 8px;
   }
   
-  #pendingCustomer tr:nth-child(even){background-color: #ebe2e2;}
+  #pendingCustomer tr:nth-child(even){
+    background-color: #ebe2e2;
+  }
   
-  #pendingCustomer tr:hover {background-color: #ddd;}
+  #pendingCustomer tr:hover {
+    background-color: #ddd;
+  }
   
   #pendingCustomer th {
     padding-top: 12px;

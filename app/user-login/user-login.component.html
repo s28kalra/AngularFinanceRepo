@@ -2,31 +2,31 @@
 	<div *ngIf="showSpinner" style="text-align: center;">
 		<app-loading-spinner></app-loading-spinner>
 	</div>
-<div class="loginbox">  
-	<h3 style="color: red;">{{ message }}</h3>
-	<h2>Login here</h2>
-	<form>
-	<label class="lblemail" for="email"> Email</label>
-	<input class="txtemail" placeholder="Email" type="text" required name="email" 
-	[(ngModel)]="login.customerEmail" > 
-	<span class="error">Email Required</span><br>
-	
-	<label class="lblpass" for="password"> Password</label>
-	<input class="txtpass" placeholder="Password" type="password"  minlength="8"
-	required name="pass" [(ngModel)]="login.customerPassword">
-	<span class="error">Password Required </span>
-	
-	<br>
-	
-	<button class="btnsubmit" (click)="loginCustomer()">
-		Login
-	</button>
-	<button class="btnsubmit" (click)="loginAdmin()">
-		Login As Admin
-	</button>
-	<a  [routerLink]="['/forgotPasswordLink']"  class="btnforget">
-		Forgot Password?
-	</a>
-</form>
-</div>
+	<div class="loginbox">
+		<h3 style="color: red;">{{ message }}</h3>
+		<h2>Login here</h2>
+		<form #loginForm='ngForm'>
+			<label class="lblemail" for="email"> Email</label>
+			<input class="txtemail" placeholder="Email" type="text" required name="email"
+				[(ngModel)]="login.customerEmail">
+			<span class="error">Email Required</span><br>
+
+			<label class="lblpass" for="password"> Password</label>
+			<input class="txtpass" placeholder="Password" type="password" minlength="8" required name="pass"
+				[(ngModel)]="login.customerPassword">
+			<span class="error">Password Required </span>
+
+			<br>
+
+			<button class="btnsubmit" [disabled]="!loginForm.valid" (click)="loginCustomer()">
+				Login
+			</button>
+			<button class="btnsubmit" [disabled]="!loginForm.valid" (click)="loginAdmin()">
+				Login As Admin
+			</button>
+			<a [routerLink]="['/forgotPasswordLink']" class="btnforget">
+				Forgot Password?
+			</a>
+		</form>
+	</div>
 </body>

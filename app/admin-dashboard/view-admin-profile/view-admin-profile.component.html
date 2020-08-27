@@ -1,24 +1,18 @@
-<!--<p>view-admin-profile works!</p>
-<h1>{{admin.adminId}}</h1>
-<h1>{{admin.adminName}}</h1>
-<img [src]=imgSrc style="max-width: 80px; max-height: 70px;">
--->
 <div *ngIf="showSpinner" style="text-align: center;">
     <app-loading-spinner></app-loading-spinner>
 </div>
 
-    <div class="card">
-        <div class="card-image">
-            <img src="assets/pebbles.jpg">
-        </div>
-        <div class="profile-image">
-            <img [src]=imgSrc style="width: 100px; height: 100px;">
-        </div>
-        <div class="card-content">
-     <div class="name">{{admin.adminName}}</div><br>
-     <div class="id">{{admin.adminId}}</div><br>
-     <div class="em">{{email}}</div><br>
-     <button (click)="generateBill()"> Generate Bill</button>
+<div class="card">
+    <div class="card-image">
+        <img src="assets/pebbles.jpg">
     </div>
+    <div class="profile-image">
+        <img [src]=imgSrc style="width: 100px; height: 100px;">
     </div>
-
+    <div class="card-content">
+        <div class="name">{{admin.adminName}}</div><br>
+        <div class="id">{{admin.adminId}}</div><br>
+        <div class="em">{{email}}</div><br>
+        <button (click)="generateBill()"> Generate Bill</button>
+    </div>
+</div>

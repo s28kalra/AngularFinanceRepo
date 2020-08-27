@@ -13,31 +13,31 @@ import { RegisterStatus } from "../status/registerStatus";
 })
 export class RegisterComponent implements OnInit {
 
-  customer= new CustomerInfo();
-  status= new RegisterStatus();
+  customer = new CustomerInfo();
+  status = new RegisterStatus();
   confirmPass;
-  mobile="";
-  account="";
-  aadhar="";
-  showSpinner=false;
-  constructor(private route: Router, private registerService:RegisterService) { }
+  mobile = "";
+  account = "";
+  aadhar = "";
+  showSpinner = false;
+  constructor(private route: Router, private registerService: RegisterService) { }
 
   ngOnInit(): void {
   }
 
-  registerCustomer(form:NgForm) {
-   this.showSpinner=true;
-   this.customer.customerMobile=this.mobile.replace(/ /g,'');
-   this.customer.accountNumber=this.account.replace(/ /g,'');
-   this.customer.customerAadharCard=this.aadhar.replace(/ /g,'');
-   this.registerService.registerCustomer(this.customer).subscribe(
-     data=>{
-        this.status=data;
-        this.showSpinner=false;
-     }
-   )
-   this.route.navigateByUrl("/userLoginLink");
-   
+  registerCustomer(form: NgForm) {
+    this.showSpinner = true;
+    this.customer.customerMobile = this.mobile.replace(/ /g, '');
+    this.customer.accountNumber = this.account.replace(/ /g, '');
+    this.customer.customerAadharCard = this.aadhar.replace(/ /g, '');
+    this.registerService.registerCustomer(this.customer).subscribe(
+      data => {
+        this.status = data;
+        this.showSpinner = false;
+      }
+    )
+    this.route.navigateByUrl("/userLoginLink");
+
   }
 
 
@@ -45,7 +45,7 @@ export class RegisterComponent implements OnInit {
     var data = this.account;
     data = data.replace(/ /g, '');
     if (data.length == 10)
-    this.account = data.substring(0, 5) + ' ' + data.substring(5, 10);
+      this.account = data.substring(0, 5) + ' ' + data.substring(5, 10);
     else {
       var n = data.length / 4;
       this.account = data.substring(0, 4);
@@ -59,19 +59,19 @@ export class RegisterComponent implements OnInit {
     var data = this.mobile;
     data = data.replace(/ /g, "");
     if (data.length <= 5)
-    this.mobile = data;
+      this.mobile = data;
     else
-    this.mobile = data.substring(0, 5) + " " + data.substring(5, data.length);
+      this.mobile = data.substring(0, 5) + " " + data.substring(5, data.length);
   }
 
-  manageAadharCard(){
-    var data= this.aadhar;
+  manageAadharCard() {
+    var data = this.aadhar;
     data = data.replace(/ /g, "");
     var n = data.length / 4;
     this.aadhar = data.substring(0, 4);
-      for (var i = 1; i < n; i++) {
-        this.aadhar += ' ' + data.substring(4 * i, 4 * (i + 1));
-      }
+    for (var i = 1; i < n; i++) {
+      this.aadhar += ' ' + data.substring(4 * i, 4 * (i + 1));
+    }
   }
 
   isNumber(event, id, l) {
@@ -91,10 +91,10 @@ export class RegisterComponent implements OnInit {
       event.preventDefault();
     }
   }
-  
+
   confirmPassword(): boolean {
-    if (this.customer.customerPassword == this.confirmPass){
-      return true;      
+    if (this.customer.customerPassword == this.confirmPass) {
+      return true;
     }
     return false;
   }

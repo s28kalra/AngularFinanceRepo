@@ -1,27 +1,27 @@
 <div *ngIf="showSpinner" style="text-align: center;">
   <app-loading-spinner></app-loading-spinner>
 </div>
-    <table style="width:90%" id="viewTransaction" align="center">
-        <tr>
-          <th><a (click)="orderByTransactionId()">Transaction Id </a><i class="fa fa-angle-down"></i></th>
-          <th><a (click)="orderByHighToLowAmount()">Amount </a><i class="fa fa-angle-down"></i></th>
-          <th><a (click)="orderByTenure()">Tenure </a><i class="fa fa-angle-down"></i></th>
-          <th><a (click)="orderByNoOfEmisLeft()">Number of EMI's Left </a><i class="fa fa-angle-down"></i></th>
-          <th><a (click)="orderByProductQuantity()">Product Quantity </a><i class="fa fa-angle-down"></i></th>
-          <th><a (click)="orderByDate()">Purchase Date </a><i class="fa fa-angle-down"></i></th>
-          <th>Shipping Address</th>
-          <th>Product Name</th>
-        </tr>
+<table style="width:90%" id="viewTransaction" align="center">
+  <tr>
+    <th><a (click)="orderByTransactionId()">Transaction Id </a><i class="fa fa-angle-down"></i></th>
+    <th><a (click)="orderByHighToLowAmount()">Amount </a><i class="fa fa-angle-down"></i></th>
+    <th><a (click)="orderByTenure()">Tenure </a><i class="fa fa-angle-down"></i></th>
+    <th><a (click)="orderByNoOfEmisLeft()">Number of EMI's Left </a><i class="fa fa-angle-down"></i></th>
+    <th><a (click)="orderByProductQuantity()">Product Quantity </a><i class="fa fa-angle-down"></i></th>
+    <th><a (click)="orderByDate()">Purchase Date </a><i class="fa fa-angle-down"></i></th>
+    <th>Shipping Address</th>
+    <th>Product Name</th>
+  </tr>
 
-        <tr *ngFor="let t of transactions">
-          <td>{{t.transactionId}}</td>
-          <td>Rs. {{t.amount}}/-</td>
-          <td>{{t.emiTenure}}</td>
-          <td>{{t.noOfEmisLeft}}</td>
-          <td>{{t.productQuantity}}</td>
-          <td>{{t.transactionDate}}</td>
-          <td>{{t.shippingAddress}}</td>
-          <td>{{t.product.productName}}</td>
-        </tr>
-       
-      </table>
+  <tr *ngFor="let t of transactions">
+    <td>{{t.transactionId}}</td>
+    <td>Rs. {{t.amount}}/-</td>
+    <td>{{t.emiTenure}}</td>
+    <td>{{t.noOfEmisLeft}}</td>
+    <td>{{t.productQuantity}}</td>
+    <td>{{t.transactionDate}}</td>
+    <td>{{t.shippingAddress}}</td>
+    <td>{{t.product.productName}}</td>
+  </tr>
+
+</table>

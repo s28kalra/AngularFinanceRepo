@@ -15,7 +15,7 @@
 
 
                 <label for="dob">Date Of Birth *</label>
-                <input  type="date" name="dob" [(ngModel)]="customer.dateOfBirth" required>
+                <input type="date" name="dob" [(ngModel)]="customer.dateOfBirth" required>
                 <span class="error">Choose Your Correct Birth Details</span><br><br>
 
                 <label for="userEmail">Email *</label>
@@ -34,7 +34,7 @@
                     *</label>
 
                 <input type="password" name="password" placeholder="Password" [(ngModel)]="customer.customerPassword"
-                    minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{8,15}$" required
+                    minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{8,}$" required
                     mat-raised-button matTooltipClass="mattp" matTooltipPosition="above"
                     matTooltip="Choose a combination of a small,capital Alphabets, a Number and a special Symbol (! @ # $ % ^ & *)">
                 <span class="error">Oops!! Password is not Strong </span><br><br>
@@ -43,7 +43,7 @@
                 <label for="confirmPassword">Confirm Password:</label>
                 <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"
                     [(ngModel)]='confirmPass' required>
-                 <span *ngIf='!confirmPassword()' style="color: red;" >Oops!! Password mismatch</span><br><br> 
+                <span *ngIf='!confirmPassword()' style="color: red;">Oops!! Password mismatch</span><br><br>
 
                 <label for="userAccount">Account Number</label>
                 <input type="text" placeholder="Account Number" name="userAccount" id="userAccount"
@@ -66,7 +66,7 @@
                 <span class=" error">Oops!! Invalid Aadhar Number</span><br><br>
 
                 <label for="cardType">Card Type:</label>
-                
+
                 <input type="radio" id="Gold" name="cardType" value="Gold" class="cardType"
                     [(ngModel)]="customer.cardType" required> <span class="cardType" mat-raised-button
                     matTooltipPosition="above" matTooltipClass="mattp"
@@ -82,7 +82,7 @@
                     <label id="atc" for="terms">Accept Terms and Conditions</label> </a><br>
                 <button type="submit" class="btnn" id="Btnn"
                     [disabled]='!registerForm.valid || !confirmPassword()'>Register</button>
-                <button  type="reset" class="btnn" id="rbtn">Reset</button>
+                <button type="reset" class="btnn" id="rbtn">Reset</button>
 
 
             </form>

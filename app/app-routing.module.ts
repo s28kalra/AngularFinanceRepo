@@ -1,5 +1,5 @@
-import { NgModule, Component } from '@angular/core';
-import { Routes, RouterModule, ChildrenOutletContexts } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 import { RegisterComponent } from "./register/register.component";
 import { HomepageComponent } from "./homepage/homepage.component";
 
@@ -88,12 +88,11 @@ const routes: Routes = [
     path: 'adminDashboardLink', component: AdminDashboardComponent,
     children: [
       { path: 'viewAdminProfile', component: ViewAdminProfileComponent },
-      { path: 'updateadminProfile', component: UpdateProfileComponent },
       { path: 'viewAllCustomers', component: ViewAllCustomersComponent },
       { path: 'viewAllPendingCustomers', component: ViewAllPendingCustomersComponent },
       { path: 'addNewProduct', component: AddNewProductComponent },
-      { path: 'statistics', component: StatisticsComponent}
-    ]  
+      { path: 'statistics', component: StatisticsComponent }
+    ]
   },
   {
     path: 'termsLink', component: TermsAndConditionComponent

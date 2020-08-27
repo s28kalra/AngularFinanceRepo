@@ -8,9 +8,9 @@ describe('ViewAllCustomersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewAllCustomersComponent ]
+      declarations: [ViewAllCustomersComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

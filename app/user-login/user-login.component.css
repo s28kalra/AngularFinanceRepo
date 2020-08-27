@@ -60,6 +60,9 @@ margin-bottom: 20px;
 .btnsubmit:hover{
   background-color: darkgreen;
 }
+.btnsubmit:disabled{
+  cursor: not-allowed;
+}
 .btnforget{
   font-size: 16px;
   font-weight: 700;

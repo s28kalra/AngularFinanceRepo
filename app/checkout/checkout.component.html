@@ -1,4 +1,7 @@
 <div class="container">
+    <div *ngIf="showSpinner" style="text-align: center;">
+		<app-loading-spinner></app-loading-spinner>
+	</div>
     <div class="wrapper">
         <div class="payment">
             <h1>Awesome, that's <span>₹</span>{{finalAmount}} !</h1>
@@ -48,9 +51,9 @@
 
                     <div class="card">
                         <label class="labelbox">Card number</label>
-                        <input type="text" class="input1" placeholder="8888 8888 8888 8888" name="userAccount"
-                            id="cardnumber" (keypress)='isNumber($event,"cardnumber",18)' (keyup)='manageCard()'
-                            value="" minlength="19" name="cardNumber" [(ngModel)]='checkout.cardNumber' required>
+                        <input type="text" class="input1" placeholder="8888 8888 8888 8888" id="cardnumber"
+                            (keypress)='isNumber($event,"cardnumber",18)' (keyup)='manageCard()' value="" minlength="19"
+                            name="cardNumber" [(ngModel)]='cardNumber' required>
                         <span class="error">Enter 16 Digits Card Number</span>
                     </div>
 
@@ -95,7 +98,8 @@
                             (keypress)='isNumber($event,"cvv",2)' [(ngModel)]='checkout.cvv' required />
                         <span class="error">OOps!! Incorrect CVV</span>
                     </div>
-                    <button type="submit" [disabled]='!checkoutForm.valid' (click)="confirmAndPay()">Confirm and Pay</button>
+                    <button type="submit" [disabled]='!checkoutForm.valid' (click)="confirmAndPay()">Confirm and
+                        Pay</button>
                 </form>
             </div>
         </div>

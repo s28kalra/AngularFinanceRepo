@@ -27,11 +27,6 @@ export class AdminDashboardComponent implements OnInit {
     this.route.navigate(['viewAdminProfile'],{relativeTo:this.router});
   }
 
-  updateProfile(){
-    this.display="UpdateProfile";
-    this.route.navigate(['updateAdminProfile'], {relativeTo: this.router});
-  }
-
   viewAllCustomers(){
     this.display="ViewAllCustomers";
     this.route.navigate(['viewAllCustomers'],{relativeTo: this.router});

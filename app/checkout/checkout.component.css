@@ -89,6 +89,11 @@ button {
  button:active {
   background-color: #139b99;
  }
+
+ button:disabled{
+   cursor: not-allowed;
+ }
+
 #expiry-month{
   width: 40px;
   color: aliceblue;

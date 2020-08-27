@@ -77,7 +77,6 @@ input[type=password]{
   width: 240px;
   border-radius: 10px;
   height: 30px;
-  /* margin-right: 276px; */
 }
 
 #fn{
@@ -88,29 +87,7 @@ input[type=password]{
   width:240px;
   margin-left: 20px;
 }
-/* #em{
-  margin-right: 100px;
-}
-#userMobile{
-  margin-left: 172px;
-} */
-/* #userA{
-  margin-right: 220px;
-} */
-/* #ua{
-  float: left;
-  margin-top: 2mm;
-}
-#ifs{
-  float: left;
-  margin-left: 50px;
-} */
-/* #ifsc{
-  margin-right: 200px;
-} */
-/* #psd{
- margin-left: 10px;
-} */
+
 #btnn{
   width: 150px;
   padding: 7px;

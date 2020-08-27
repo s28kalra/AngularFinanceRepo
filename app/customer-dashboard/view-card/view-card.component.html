@@ -1,5 +1,3 @@
-
-
 <div *ngIf="cardDetails.cardStatus==true" id="success">
   <h1>Congratulations!! Your Card is Activated</h1>
 </div>
@@ -16,7 +14,7 @@
   <div class="card__number">{{cardDetails.cardNumber}}</div>
   <div class="card__expiry-date"> Valid Upto: {{month}} / {{year}}</div>
   <div class="card__owner">{{cardDetails.customerName}}</div>
-  <img class="card__logo" [src]=cardImageSource alt="Not Assigned"/>
+  <img class="card__logo" [src]=cardImageSource alt="Not Assigned" />
 </div><br><br>
 <div class="card card--back">
   <div class="card__strip"></div>
@@ -39,7 +37,7 @@
 
 <div id="try">
   <h2>Credit Limit Bar</h2>
-   0
+  0
   <progress max="{{cardDetails.cardLimit}}" value="{{cardDetails.cardBalance}}"></progress>
   {{cardDetails.cardLimit}}
 </div>

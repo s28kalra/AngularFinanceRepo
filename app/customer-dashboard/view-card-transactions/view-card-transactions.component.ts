@@ -17,7 +17,7 @@ export class ViewCardTransactionsComponent implements OnInit {
   sortAmount = true;
   sortTenure = true;
   sortProductQuantity = true;
-  showSpinner=false; 
+  showSpinner = false;
   constructor(private service: ViewCardTransactionsService, private route: Router) {
     if (sessionStorage.getItem("customerId") != null)
       this.customerId = parseInt(sessionStorage.getItem("customerId"));
@@ -28,11 +28,11 @@ export class ViewCardTransactionsComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.customerId > 0) {
-      this.showSpinner=true; 
+      this.showSpinner = true;
       this.service.viewCardTransactions(this.customerId).subscribe(
         data => {
           this.status = data;
-          this.showSpinner=false; 
+          this.showSpinner = false;
         }
       )
 

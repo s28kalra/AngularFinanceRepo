@@ -1,24 +1,20 @@
+<div class="container">
+    <div class="sidebar">
 
-    <div class="container">
-        <div class="sidebar">
+        <header> My Profile</header>
+        <ul>
+            <li><a (click)="viewProfile()"><i class="fa fa-user-circle-o"></i> View Your Profile</a></li>
+            <li><a (click)="updateProfile()"><i class="fa fa-edit"></i> Edit Your Profile</a></li>
+            <li><a (click)="viewCard()"><i class="fa fa-credit-card"></i> View Your Card </a></li>
+            <li><a (click)="viewTransactions()"><i class="fa fa-calculator"></i> Transactions</a></li>
+            <li><a (click)="viewCardTransactions()"><i class="fa fa-calendar-check-o"></i> Card Transactions</a>
+            </li>
+        </ul>
+    </div>
 
-            <header> My Profile</header>
-            <ul>
-                <li><a (click)="viewProfile()"><i class="fa fa-user-circle-o"></i> View Your Profile</a></li>
-                <li><a (click)="updateProfile()"><i class="fa fa-edit"></i> Edit Your Profile</a></li>        
-                <li><a (click)="viewCard()"><i class="fa fa-credit-card"></i> View Your Card </a></li>
-                <li><a (click)="viewTransactions()"><i class="fa fa-calculator"></i> Transactions</a></li>
-                <li><a (click)="viewCardTransactions()"><i class="fa fa-calendar-check-o"></i> Card Transactions</a>
-                </li>
-            </ul>
-        </div>
 
-        
-        <div class="right"  style="background-image: url(assets/bg0.jpg); width: 100%;" >
-            
+    <div class="right" style="background-image: url(assets/bg0.jpg); width: 100%;">
 
-            <router-outlet></router-outlet>
-        </div>
-    
 
-   
+        <router-outlet></router-outlet>
+    </div>

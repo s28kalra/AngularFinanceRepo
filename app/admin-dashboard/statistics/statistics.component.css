@@ -1,4 +1,4 @@
-a{
+  a{
     color: white;
     cursor: pointer;
   }
@@ -14,9 +14,13 @@ a{
     padding: 8px;
   }
   
-  #statistics tr:nth-child(even){background-color: #ebe2e2;}
+  #statistics tr:nth-child(even){
+    background-color: #ebe2e2;
+  }
   
-  #statistics tr:hover {background-color: #ddd;}
+  #statistics tr:hover {
+    background-color: #ddd;
+  }
   
   #statistics th {
     padding-top: 12px;

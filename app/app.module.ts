@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { UserLoginComponent } from "./user-login/user-login.component";
-
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,15 +27,12 @@ import { ViewAllCustomersComponent } from './admin-dashboard/view-all-customers/
 import { ViewAllPendingCustomersComponent } from './admin-dashboard/view-all-pending-customers/view-all-pending-customers.component';
 import { AddNewProductComponent } from './admin-dashboard/add-new-product/add-new-product.component';
 import { ViewAdminProfileComponent } from './admin-dashboard/view-admin-profile/view-admin-profile.component';
-import { UpdateAdminProfileComponent } from './admin-dashboard/update-admin-profile/update-admin-profile.component';
 import { TermsAndConditionComponent } from './terms-and-condition/terms-and-condition.component';
 import { CardDetailsComponent } from './card-details/card-details.component';
 import { SchemesComponent } from './schemes/schemes.component';
 import { StatisticsComponent } from './admin-dashboard/statistics/statistics.component';
 import { PayCreditAmountComponent } from './pay-credit-amount/pay-credit-amount.component';
-
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
-
 import { OrderConfirmedComponent } from './order-confirmed/order-confirmed.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
@@ -65,15 +61,12 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     ViewAllPendingCustomersComponent,
     AddNewProductComponent,
     ViewAdminProfileComponent,
-    UpdateAdminProfileComponent,
     TermsAndConditionComponent,
     CardDetailsComponent,
     SchemesComponent,
     StatisticsComponent,
     PayCreditAmountComponent,
-
     LoadingSpinnerComponent,
-
     OrderConfirmedComponent,
     ResetPasswordComponent,
 

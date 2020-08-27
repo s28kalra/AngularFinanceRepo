@@ -9,23 +9,22 @@ import { Router } from "@angular/router";
 })
 export class OrderConfirmedComponent implements OnInit {
 
-  transactionId=0;
-  display:boolean;
+  transactionId = 0;
+  display: boolean;
 
-  constructor( private route:Router) { 
-   }
+  constructor(private route: Router) {
+  }
 
   ngOnInit(): void {
     this.transactionId = Number(sessionStorage.getItem("transactionId"));
     alert(this.transactionId);
-    if(this.transactionId>0)
-    {this.display=true;
+    if (this.transactionId > 0) {
+      this.display = true;
       alert(this.display);
     }
-    else
-    {
-    this.display=false;
-    alert(this.display);
+    else {
+      this.display = false;
+      alert(this.display);
     }
 
   }
