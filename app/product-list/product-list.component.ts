@@ -16,7 +16,6 @@ export class ProductListComponent implements OnInit {
   products = new Array<Product>();
   searchedProducts:any= new Array<Product>();
   search = '';
-  //productDetailId: any;
 
 
   constructor(private route:Router,private service: ProductListService) {
@@ -44,7 +43,6 @@ export class ProductListComponent implements OnInit {
   }
   onSelected(product){ 
     sessionStorage.setItem("selectedItem",JSON.stringify(product));
-    //alert(JSON.stringify(product));
     this.route.navigateByUrl('productDetailLink');
   }
   

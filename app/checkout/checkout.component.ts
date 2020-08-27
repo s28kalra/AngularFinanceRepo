@@ -62,7 +62,6 @@ export class CheckoutComponent implements OnInit {
     this.checkout.productQuantity=this.product.productQuantity;
     this.checkout.customerId=this.customerId;
     this.checkout.cardNumber=this.checkout.cardNumber.replace(/ /g,'');
-    alert(JSON.stringify(this.checkout));
     this.buyAProduct.buyAProductOnEmi(this.checkout).subscribe(
       data=>{ this.transactionId= data;
         sessionStorage.setItem("transactionId", this.transactionId);
