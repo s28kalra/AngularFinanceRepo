@@ -7,7 +7,7 @@ import { CustomerInfo } from "src/app/models/customer-info";
   styleUrls: ['./view-all-pending-customers.component.css']
 })
 export class ViewAllPendingCustomersComponent implements OnInit {
-
+  showSpinner=false;
   pendingCustomersList = new Array<CustomerInfo>();
   pendingCustomersMainList = new Array<CustomerInfo>();
   search = '';
@@ -49,20 +49,24 @@ export class ViewAllPendingCustomersComponent implements OnInit {
   }
 
   validateCustomerAndIssueEmiCard(customerId) {
+    this.showSpinner=true;
     this.pendingService.validateCustomerAndIssueEmiCard(customerId).subscribe(
       data => {
-        alert(JSON.stringify(data));
         if (data.cardNumber > 0)
           this.deleteFromBothLists(customerId);
+          this.showSpinner=false;
       }
     )
+   
   }
 
   rejectACustomer(customerId) {
+    this.showSpinner=true;
     this.pendingService.rejectACustomer(customerId).subscribe(
       data=>{
         if(data.customerId>0)
           this.deleteFromBothLists(customerId);
+          this.showSpinner=false;
       }
     )
   }
