@@ -94,3 +94,8 @@ body{
 a{
     cursor: pointer;
 }
+
+.fafas{
+    float: right;
+    margin-right: 5%;
+}
