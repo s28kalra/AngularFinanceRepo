@@ -1,5 +1,7 @@
 <body>
-	
+	<div *ngIf="showSpinner" style="text-align: center;">
+		<app-loading-spinner></app-loading-spinner>
+	</div>
 <div class="loginbox">  
 	<h3 style="color: red;">{{ message }}</h3>
 	<h2>Login here</h2>
@@ -15,6 +17,7 @@
 	<span class="error">Password Required </span>
 	
 	<br>
+	
 	<button class="btnsubmit" (click)="loginCustomer()">
 		Login
 	</button>

@@ -1,21 +1,19 @@
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
 <div class="header-section">
-  <a href="homepage.component.html" class="site-logo">
-    <img src="assets/logo.jpg" alt="">
+  <a [routerLink]="['']" class="site-logo">
+    <img  class="lg" src="assets/logo1.jpg" alt="">
   </a>
   <nav class="header-nav">
     <ul class="main-menu">
 
       <li><a [routerLink]="['']"><i class="fa fa-fw fa-home"></i>Home</a></li>
       <li *ngIf='!isLogin()'><a [routerLink]="['registerLink']"><i class="fa fa-fw fa-user-plus"></i>Register</a></li>
-      <!-- <li><a [routerLink]="['contactUsLink']"><i class="fa fa-fw fa-address-book"></i> Contact</a></li> -->
-      <li *ngIf='!isLogin()'><a class="dropdown" [routerLink]="['userLoginLink']"><i class="fa fa-fw fa-user"></i>
-          Login
+      
+      <li *ngIf='!isLogin()'><a class="dropdown" [routerLink]="['userLoginLink']"><i class="fa fa-fw fa-user"></i>Login
         </a>
       </li>
-      <li *ngIf='isLogin()'><a class="dropdown" (click)="navigation()"><i class="fa fa-fw fa-user"></i>
-          DashBoard
+      <li *ngIf='isLogin()'><a class="dropdown" (click)="navigation()"><i class="fa fa-fw fa-user"></i>DashBoard
         </a>
       </li>
 
@@ -23,10 +21,9 @@
     <ul class="header-right">
       <li *ngIf='isLogin()' class="nmn">Hi, {{name}} </li>
       <li><a [routerLink]="['aboutus']"><i class="fa fa-fw fa-info-circle"></i>About Us</a></li>
-      <li><a [routerLink]="['contactUsLink']"><i class="fa fa-fw fa-address-book"></i> Contact</a></li>
-      <li><a [routerLink]="['cartLink']"><i class="fa fa-shopping-basket"></i> Cart</a></li>
-      <li *ngIf='isLogin()'><a class="dropdown" (click)="logout()"><i class="fa fa-fw fa-user"></i>
-          LogOut
+      <li><a [routerLink]="['contactUsLink']"><i class="fa fa-fw fa-address-book"></i>Contact</a></li>
+      <li><a [routerLink]="['cartLink']"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+      <li *ngIf='isLogin()'><a class="dropdown" (click)="logout()"><i class="fa fa-fw fa-user"></i>LogOut
         </a>
       </li>
     </ul>
@@ -34,10 +31,14 @@
 </div>
 
 
-
 <router-outlet></router-outlet>
 
 
 <div class="footer">
-  <p>©Larsen & Toubro Infotech Limited</p>
+  ©Easy Credit
+  <div class="fafas">
+  <i class="fa fa-facebook-square" aria-hidden="true"></i>
+  <i class="fa fa-twitter" aria-hidden="true"></i>
+  <i class="fa fa-github" aria-hidden="true"></i>
+</div>
 </div>

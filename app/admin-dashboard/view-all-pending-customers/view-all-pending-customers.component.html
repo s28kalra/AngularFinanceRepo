@@ -1,8 +1,10 @@
-
+<div *ngIf="showSpinner" style="text-align: center;">
+		<app-loading-spinner></app-loading-spinner>
+	</div>
  Search: <input type="text" (keyup)='searchByName()' [(ngModel)]="search" placeholder="Search Name">
  <br>
  <br>
-<table style="width: 90%" id="pendingCustomer" align="center">
+<table style="width: 90%" align="center" id="pendingCustomer">
     <tr>
         <th>First Name</th>
         <th>Last Name</th>

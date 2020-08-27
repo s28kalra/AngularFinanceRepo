@@ -16,8 +16,8 @@ export class CheckoutComponent implements OnInit {
   product=new Product();
   customerId:any;
   transactionId:any;
-  paid=false;
   finalAmount;
+
   constructor(private route: Router, private buyAProduct:BuyAProductService) {
     if(sessionStorage.getItem("customerId")!=null)
     this.customerId=parseInt(sessionStorage.getItem("customerId"));
@@ -30,12 +30,13 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.product=JSON.parse(sessionStorage.getItem('selectedItem'));
-    this.finalAmount=this.product.productPrice;
+    this.finalAmount=this.product.productPrice * this.product.productQuantity;
   }
 
   checkoutFunction(form: NgForm) {
     this.checkout.cardNumber=this.checkout.cardNumber.replace(/ /g, '');
     console.log(this.checkout);
+
   }
 
   isNumber(event, id, l) {
@@ -64,8 +65,8 @@ export class CheckoutComponent implements OnInit {
     alert(JSON.stringify(this.checkout));
     this.buyAProduct.buyAProductOnEmi(this.checkout).subscribe(
       data=>{ this.transactionId= data;
-        //this.paid=true;
-
+        sessionStorage.setItem("transactionId", this.transactionId);
+        this.route.navigateByUrl("/orderConfirmedLink");
       }
     )
 

@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class CartComponent implements OnInit {
 
   subTotal=0;
+  display=false;
   cartProduct=new Product();
   customerId:any;
   constructor(private route:Router) { 
@@ -24,11 +25,10 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.cartProduct=JSON.parse(sessionStorage.getItem('selectedItem'));
     this.cartProduct.productQuantity=1;
-    sessionStorage.setItem("selectedItemQty",JSON.stringify(this.cartProduct.productQuantity));
-    this.cartProduct.productQuantity=1;
-    alert(JSON.stringify(this.cartProduct));
-   
       this.subTotal+=this.cartProduct.productPrice*this.cartProduct.productQuantity;
+
+      if(sessionStorage.getItem("selectedItem")!=null)
+      this.display=true;
       
   }
 
@@ -48,9 +48,15 @@ export class CartComponent implements OnInit {
   removeProduct(productId){
     this.subTotal-=this.cartProduct.productQuantity* this.cartProduct.productPrice;
     sessionStorage.removeItem('selectedItem');
+    window.location.reload();
   }
   gotoCheckout(){
+    if(this.subTotal>0)
+    {
+    sessionStorage.setItem("selectedItemQty",JSON.stringify(this.cartProduct.productQuantity));
     sessionStorage.setItem("selectedItem",JSON.stringify(this.cartProduct));
+    this.route.navigateByUrl("/checkoutLink");
+    }
   }
 
 }

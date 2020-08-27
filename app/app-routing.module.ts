@@ -1,5 +1,5 @@
 import { NgModule, Component } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, ChildrenOutletContexts } from '@angular/router';
 import { RegisterComponent } from "./register/register.component";
 import { HomepageComponent } from "./homepage/homepage.component";
 
@@ -26,7 +26,7 @@ import { PayCreditAmountComponent } from "./pay-credit-amount/pay-credit-amount.
 import { TermsAndConditionComponent } from "./terms-and-condition/terms-and-condition.component";
 import { CardDetailsComponent } from "./card-details/card-details.component";
 import { SchemesComponent } from "./schemes/schemes.component";
-
+import { OrderConfirmedComponent } from "./order-confirmed/order-confirmed.component";
 import { StatisticsComponent } from './admin-dashboard/statistics/statistics.component';
 
 
@@ -55,6 +55,9 @@ const routes: Routes = [
   },
   {
     path: 'checkoutLink', component: CheckoutComponent
+  },
+  {
+    path: 'orderConfirmedLink', component: OrderConfirmedComponent
   },
   {
     path: 'schemesLink', component: SchemesComponent

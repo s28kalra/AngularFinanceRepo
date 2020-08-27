@@ -1,0 +1,30 @@
+#productName{   
+    display: flex;
+    justify-content: center;
+
+}
+
+#price{
+    display: flex;
+    justify-content: center;
+}
+
+#description{
+    display: flex;
+    justify-content: center;
+}
+
+label{
+    
+    float: left;
+}
+
+input{
+    
+    float: right;
+    margin-left: 40px;
+    border-radius: 5px;
+}
+button :hover{
+    color: green;
+}

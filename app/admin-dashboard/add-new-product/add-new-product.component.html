@@ -1,8 +1,22 @@
-<form #productForm='ngForm' (ngSubmit)='addProduct(productForm)'>
-    Product Name *<input type="text" name="productName" [(ngModel)]='product.productName' required> <br>
-    Price * <input type="text" placeholder="Price" (keypress)='isNumber($event)' name="price"
-        [(ngModel)]='product.productPrice' required> <br>
-    Description * <input type="text" placeholder="Description" name="description"
-        [(ngModel)]='product.productDescription' required>
-    <button type="submit" [disabled]='!productForm.valid'>Add Product</button>
+<div *ngIf="showSpinner" style="text-align: center;">
+    <app-loading-spinner></app-loading-spinner>
+</div>
+<form #productForm='ngForm' (ngSubmit)='addProduct(productForm)' id="addNewProduct">
+
+    <label for="productName">Product Name* : </label>
+    <input type="text" placeholder="Name" name="productName" id="productName" [(ngModel)]='product.productName' required>
+    <br><br>
+
+    <label for="price">Product Price* :</label>
+    <input type="text" placeholder="Price" (keypress)='isNumber($event)' name="price" id="price"
+        [(ngModel)]='product.productPrice' required>
+        <br><br>
+
+    <label id="dp" for="description">Product Description* :</label>
+    <input type="text" placeholder="Description" name="description" id="description"
+    [(ngModel)]='product.productDescription' required> 
+    <br><br>
+
+        <button type="submit" [disabled]='!productForm.valid'>Add Product</button>
+        <button type="reset">Reset</button>
 </form>

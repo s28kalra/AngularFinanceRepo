@@ -1,19 +1,32 @@
 <section class=product-list>
-    <h1 class="align-center">Products</h1>
-    <div class="product-container">
-      <div class="card" *ngFor="let p of products" >
-          <div class="title">{{p.productName}} </div>
-          <div class="image">
-            <img [src]=p.productImageSource alt="{{p.productName}}"  >
-          </div>
-          <div class="text">Our Price: ₹ {{p.productPrice}} /-</div>
-         
-     
-     
-          <button class="buy-button" (click)="onSelected(p)">
-              Buy Now
-          </button>
+  <h1 class="align-center ">Exclusive Products</h1>
+<hr>
+  <br>
+  
+    <div class="search">
+      <div>
+      <input type="text" class="search" (keyup)='searchByName()' [(ngModel)]="search" placeholder="Search Name">
+    </div>
+    </div>
 
-    </div>  
-</div>
+
+  <br>
+<hr>
+  <br>
+  <div class="product-container">
+    <div class="card" *ngFor="let p of searchedProducts">
+      <div class="title">{{p.productName}} </div>
+      <div class="image">
+        <img [src]=p.productImageSource alt="{{p.productName}}">
+      </div>
+      <div class="text">Our Price: ₹ {{p.productPrice}} /-</div>
+
+
+
+      <button class="buy-button" (click)="onSelected(p)">
+        Buy Now
+      </button>
+
+    </div>
+  </div>
 </section>
