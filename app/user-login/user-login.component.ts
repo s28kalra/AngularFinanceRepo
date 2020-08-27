@@ -58,6 +58,7 @@ export class UserLoginComponent implements OnInit {
           this.route.navigate(['adminDashboardLink']);
         }
         else{
+          alert("wrong")
           this.message=this.adminStatus.message;
         }
         this.showSpinner=false;

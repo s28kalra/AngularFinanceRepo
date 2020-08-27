@@ -1,3 +1,6 @@
+<div *ngIf="showSpinner" style="text-align: center;">
+    <app-loading-spinner></app-loading-spinner>
+</div>
 <form (ngSubmit)="calculateStatistics()">
     <div>
         <select name="dates" id="dates" [(ngModel)]='selected' required>
