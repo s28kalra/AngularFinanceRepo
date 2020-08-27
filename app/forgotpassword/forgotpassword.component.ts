@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { ValidateAnOtp } from "src/app/models/validate-an-otp";
 import { ForgotPasswordService } from "src/app/services/forgot-password.service";
-import { templateSourceUrl } from '@angular/compiler';
+
 @Component({
   selector: 'app-forgotpassword',
   templateUrl: './forgotpassword.component.html',

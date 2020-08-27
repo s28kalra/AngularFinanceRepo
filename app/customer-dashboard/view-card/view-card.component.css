@@ -106,6 +106,7 @@ a {
   }
 
   #paybtn:disabled {
+    cursor: not-allowed;
     background: grey;
     color: white;
     font-size: 22px;
