@@ -20,6 +20,7 @@ export class RegisterComponent implements OnInit {
   account = "";
   aadhar = "";
   showSpinner = false;
+  errorMessage = "";
   constructor(private route: Router, private registerService: RegisterService) { }
 
   ngOnInit(): void {
@@ -33,10 +34,13 @@ export class RegisterComponent implements OnInit {
     this.registerService.registerCustomer(this.customer).subscribe(
       data => {
         this.status = data;
+        if (this.status.status == 'SUCCESS')
+          this.route.navigateByUrl("/userLoginLink");
+        else
+          this.errorMessage = this.status.message;
         this.showSpinner = false;
       }
     )
-    this.route.navigateByUrl("/userLoginLink");
 
   }
 
