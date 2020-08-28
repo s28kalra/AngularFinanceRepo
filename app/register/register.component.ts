@@ -9,7 +9,6 @@ import { RegisterStatus } from "../status/registerStatus";
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
   encapsulation: ViewEncapsulation.None,
-  //styleUrls: ['../app.component.css']
 })
 export class RegisterComponent implements OnInit {
 
@@ -20,6 +19,7 @@ export class RegisterComponent implements OnInit {
   account = "";
   aadhar = "";
   showSpinner = false;
+  errorMessage="";
   constructor(private route: Router, private registerService: RegisterService) { }
 
   ngOnInit(): void {
@@ -33,10 +33,14 @@ export class RegisterComponent implements OnInit {
     this.registerService.registerCustomer(this.customer).subscribe(
       data => {
         this.status = data;
+        if(this.status.status=='SUCCESS')
+          this.route.navigateByUrl("/userLoginLink");
+        else
+          this.errorMessage=this.status.message;
         this.showSpinner = false;
       }
     )
-    this.route.navigateByUrl("/userLoginLink");
+    
 
   }
 
@@ -87,7 +91,7 @@ export class RegisterComponent implements OnInit {
     if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || key == ' ') {
 
     }
-    else {
+    else { 
       event.preventDefault();
     }
   }
