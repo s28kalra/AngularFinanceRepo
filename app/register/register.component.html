@@ -54,7 +54,7 @@
 
                 <label for="ifsc" mat-raised-button matTooltipClass="mattp"
                     matTooltip="First 4 characters must be Capital">IFSC
-                    Code:</label>
+                    Code *</label>
                 <input type="text" name="ifsc" id="ifsc" placeholder="IFSC Code" pattern="^[A-Z]{4}[0-9]{7}$"
                     [(ngModel)]="customer.ifsc" maxlength="11" required mat-raised-button
                     matTooltip="First 4 characters must be Capital" matTooltipClass="mattp">
