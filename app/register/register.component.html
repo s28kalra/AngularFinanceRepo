@@ -41,12 +41,12 @@
                 <span class="error">Oops!! Password is not Strong. </span><br><br>
 
 
-                <label for="confirmPassword">Confirm Password*</label>
+                <label for="confirmPassword">Confirm Password *</label>
                 <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"
                     [(ngModel)]='confirmPass' required>
                 <span *ngIf='!confirmPassword()' style="color: red;">Oops!! Password mismatch</span><br><br>
 
-                <label for="userAccount">Account Number*</label>
+                <label for="userAccount">Account Number *</label>
                 <input type="text" placeholder="Account Number" name="userAccount" id="userAccount"
                     (keypress)='isNumber($event,"userAccount",18)' (keyup)='manageAccount()' value="" minlength="11"
                     [(ngModel)]="account" required>
@@ -60,13 +60,13 @@
                     matTooltip="First 4 characters must be Capital" matTooltipClass="mattp">
                 <span class="error">Oops!! Invalid IFSC Code.</span><br><br>
 
-                <label for="userAadhar">Aadhar Number*</label>
+                <label for="userAadhar">Aadhar Number *</label>
                 <input type="text" placeholder="Aadhar Card Number" name="userAadhar" id="userAadhar"
                     (keypress)='isNumber($event,"userAadhar",13)' (keyup)='manageAadharCard()' value="" minlength="14"
                     [(ngModel)]="aadhar" required>
                 <span class=" error">Oops!! Invalid Aadhar Number.</span><br><br>
 
-                <label for="cardType">Card Type*</label>
+                <label for="cardType">Card Type *</label>
 
                 <input type="radio" id="Gold" name="cardType" value="Gold" class="cardType"
                     [(ngModel)]="customer.cardType" required> <span class="cardType" mat-raised-button
