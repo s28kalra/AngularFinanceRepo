@@ -4,14 +4,15 @@ import { Router } from '@angular/router';
 import { GetCardDetailsService } from "../../services/get-card-details.service";
 import { ActivateEmiCardService } from "../../services/activate-emi-card.service";
 import { PayMyEmiService } from "../../services/pay-my-emi.service";
-
+import { CustomerInfo } from 'src/app/models/customer-info';
+import { RegisterService } from "../../services/register.service";
 @Component({
   selector: 'app-view-card',
   templateUrl: './view-card.component.html',
   styleUrls: ['./view-card.component.css']
 })
 export class ViewCardComponent implements OnInit {
-
+  customerInfo = new CustomerInfo();
   cardDetails= new CardDetails();
   customerId=0;
   month;
@@ -30,7 +31,7 @@ export class ViewCardComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    
+   
     if(this.customerId>0) {
       this.service.getCardDetails(this.customerId).subscribe(
         data=>{
@@ -38,6 +39,7 @@ export class ViewCardComponent implements OnInit {
           this.month=this.cardDetails.cardExpiry.valueOf().toString().substring(5,7);
           this.year=this.cardDetails.cardExpiry.valueOf().toString().substring(2,4);
           this.cardDetails.cardBalance=Math.floor(this.cardDetails.cardBalance);
+          
           if(this.cardDetails.cardType=="Gold")
             this.cardImageSource = "assets/gold.png";
           else
@@ -53,6 +55,7 @@ export class ViewCardComponent implements OnInit {
    
   }
 
+  
   ifTrue() {
     if(this.cardDetails.amountToBePaid==0)
       return true;

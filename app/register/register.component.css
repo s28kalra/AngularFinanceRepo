@@ -164,3 +164,9 @@ color: black;
     color: hotpink;
     font-size: 15px;
   }
+.btnlogin{
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  color:white;
+}

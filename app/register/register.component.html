@@ -4,6 +4,8 @@
             <div class="hd">
                 <h1>Customer Registration Form</h1>
             </div>
+           <p style="color: green; font-weight: 700;"> {{successMsg}}</p>
+           
             <p style="color: red;">{{errorMessage}}</p>
             <form #registerForm='ngForm' id="register" (ngSubmit)='registerCustomer(registerForm)'>
                 <label for="userFirstName" id="nm">Name *</label>

@@ -21,6 +21,7 @@ export class RegisterComponent implements OnInit {
   aadhar = "";
   showSpinner = false;
   errorMessage="";
+  successMsg="";
   constructor(private route: Router, private registerService: RegisterService) { }
 
   ngOnInit(): void {
@@ -34,8 +35,9 @@ export class RegisterComponent implements OnInit {
     this.registerService.registerCustomer(this.customer).subscribe(
       data => {
         this.status = data;
-        if(this.status.status=="SUCCESS")
-        this.route.navigateByUrl("/userLoginLink");
+        if(this.status.status=="SUCCESS"){
+        this.successMsg=this.status.message;  
+        }
         else
         this.errorMessage=this.status.message;
         this.showSpinner = false;

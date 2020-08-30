@@ -14,6 +14,7 @@ export class ViewTransactionsComponent implements OnInit {
   transactions: any;
   customerId = 0;
   showSpinner = false;
+  message="";
   constructor(private service: ViewtransactionsService, private route: Router) {
     if (sessionStorage.getItem("customerId") != null)
       this.customerId = parseInt(sessionStorage.getItem("customerId"));
@@ -28,6 +29,9 @@ export class ViewTransactionsComponent implements OnInit {
       this.service.getListOfTransactionsOfCustomer(this.customerId).subscribe(
         data => {
           this.transactions = data;
+          // if(this.transactions.){
+          //   this.message="No Transaction Yet";
+          // }
           this.showSpinner = false;
         }
       )
