@@ -29,9 +29,8 @@ export class ViewTransactionsComponent implements OnInit {
       this.service.getListOfTransactionsOfCustomer(this.customerId).subscribe(
         data => {
           this.transactions = data;
-          // if(this.transactions.){
-          //   this.message="No Transaction Yet";
-          // }
+          if(JSON.stringify(this.transactions).length < 3)         
+             this.message="No Transaction Yet";
           this.showSpinner = false;
         }
       )
