@@ -93,7 +93,7 @@ input[type=password]{
   margin-left: 150px;
 }
 #userAadhar{
-  margin-left: 110px;
+  margin-left: 106px;
 }
 #Gold{
   margin-left: 150px;
@@ -164,3 +164,9 @@ color: black;
     color: hotpink;
     font-size: 15px;
   }
+.btnlogin{
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  color:white;
+}

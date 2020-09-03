@@ -62,6 +62,7 @@ export class ViewCardComponent implements OnInit {
 
   }
 
+  
   ifTrue() {
     if (this.cardDetails.amountToBePaid == 0)
       return true;

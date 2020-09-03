@@ -48,4 +48,8 @@ export class CustomerDashboardComponent implements OnInit {
     this.route.navigate(['viewCardTransactions'], {relativeTo: this.router});
   }
 
+  buyProducts(){
+    this.route.navigateByUrl('/productListLink');
+  }
+
 }

@@ -18,6 +18,7 @@ export class ViewCardTransactionsComponent implements OnInit {
   sortTenure = true;
   sortProductQuantity = true;
   showSpinner = false;
+  message:any;
   constructor(private service: ViewCardTransactionsService, private route: Router) {
     if (sessionStorage.getItem("customerId") != null)
       this.customerId = parseInt(sessionStorage.getItem("customerId"));
@@ -32,6 +33,8 @@ export class ViewCardTransactionsComponent implements OnInit {
       this.service.viewCardTransactions(this.customerId).subscribe(
         data => {
           this.status = data;
+          if(JSON.stringify(this.status.transactions).length<5)         
+          this.message="No Transaction Yet";
           this.showSpinner = false;
         }
       )

@@ -19,6 +19,7 @@ export class ViewTransactionsComponent implements OnInit {
   sortAmount = true;
   sortTenure = true;
   sortProductQuantity = true;
+  message="";
   constructor(private service: ViewtransactionsService, private route: Router) {
     if (sessionStorage.getItem("customerId") != null)
       this.customerId = parseInt(sessionStorage.getItem("customerId"));

@@ -20,6 +20,7 @@ export class RegisterComponent implements OnInit {
   aadhar = "";
   showSpinner = false;
   errorMessage="";
+  successMsg="";
   constructor(private route: Router, private registerService: RegisterService) { }
 
   ngOnInit(): void {

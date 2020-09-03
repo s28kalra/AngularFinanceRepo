@@ -1,6 +1,9 @@
 <div *ngIf="pendingVerfication" id="failure">
   <h1>Your verification is Pending </h1>
 </div>
+<div *ngIf="cardDetails.cardStatus==true" id="success">
+  <h1>Congratulations!! Your Card is Activated</h1>
+</div>
 <div *ngIf="!pendingVerfication">
   <div *ngIf="cardDetails.cardStatus==true" id="success">
     <h1>Congratulations!! Your Card is Activated</h1>

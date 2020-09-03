@@ -22,12 +22,6 @@ export class UserLoginComponent implements OnInit {
   }
 
   loginCustomer() {
-    var regex = new RegExp(/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{1,3})+$/);
-    if (!regex.test(this.login.customerEmail.toString())) {
-      this.message = "Invalid Customer Email";
-      return 0;
-    }
-
     this.showSpinner = true;
     this.loginService.loginCustomer(this.login).subscribe(data => {
       this.customerStatus = data;
