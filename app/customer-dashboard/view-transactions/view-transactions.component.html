@@ -4,7 +4,7 @@
 <table style="width:90%" id="viewTransaction" align="center">
   <tr>
     <th><a (click)="orderByTransactionId()">Transaction Id </a><i class="fa fa-angle-down"></i></th>
-    <th><a (click)="orderByHighToLowAmount()">Amount </a><i class="fa fa-angle-down"></i></th>
+    <th><a (click)="orderByAmount()">Amount </a><i class="fa fa-angle-down"></i></th>
     <th><a (click)="orderByTenure()">Tenure </a><i class="fa fa-angle-down"></i></th>
     <th><a (click)="orderByNoOfEmisLeft()">Number of EMI's Left </a><i class="fa fa-angle-down"></i></th>
     <th><a (click)="orderByProductQuantity()">Product Quantity </a><i class="fa fa-angle-down"></i></th>
@@ -13,7 +13,7 @@
     <th>Product Name</th>
   </tr>
 
-  <tr *ngFor="let t of transactions">
+  <tr *ngFor="let t of status.transactions">
     <td>{{t.transactionId}}</td>
     <td>Rs. {{t.amount}}/-</td>
     <td>{{t.emiTenure}}</td>

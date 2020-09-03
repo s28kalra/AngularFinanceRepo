@@ -11,9 +11,14 @@ import { Router } from '@angular/router';
 })
 export class ViewTransactionsComponent implements OnInit {
   status = new ViewCardTransactionsStatus();
-  transactions: any;
   customerId = 0;
   showSpinner = false;
+  sortTransactionid = true;
+  sortDate = true;
+  sortNoOfEmisLeft = true;
+  sortAmount = true;
+  sortTenure = true;
+  sortProductQuantity = true;
   constructor(private service: ViewtransactionsService, private route: Router) {
     if (sessionStorage.getItem("customerId") != null)
       this.customerId = parseInt(sessionStorage.getItem("customerId"));
@@ -27,7 +32,7 @@ export class ViewTransactionsComponent implements OnInit {
     if (this.customerId > 0) {
       this.service.getListOfTransactionsOfCustomer(this.customerId).subscribe(
         data => {
-          this.transactions = data;
+          this.status.transactions = data;
           this.showSpinner = false;
         }
       )
@@ -36,31 +41,73 @@ export class ViewTransactionsComponent implements OnInit {
       this.route.navigateByUrl('/userLoginLink');
     }
   }
+
   orderByTransactionId() {
-    this.transactions.sort((a, b) => b.transactionId.valueOf() - a.transactionId.valueOf());
+    if (this.sortTransactionid) {
+      this.status.transactions.sort((a, b) => b.transactionId.valueOf() - a.transactionId.valueOf());
+      this.sortTransactionid = false;
+    }
+    else {
+      this.status.transactions.sort((a, b) => a.transactionId.valueOf() - b.transactionId.valueOf());
+      this.sortTransactionid = true;
+    }
   }
 
   orderByDate() {
-    this.transactions.sort((a, b) => b.transactionDate.valueOf() - a.transactionDate.valueOf());
+    if (this.sortDate) {
+      this.status.transactions.sort((a, b) => b.transactionDate.valueOf() - a.transactionDate.valueOf());
+      this.sortDate = false;
+    }
+    else {
+      this.status.transactions.sort((a, b) => a.transactionDate.valueOf() - b.transactionDate.valueOf());
+      this.sortDate = true;
+    }
+
   }
 
   orderByNoOfEmisLeft() {
-    this.transactions.sort((a, b) => b.noOfEmisLeft - a.noOfEmisLeft);
+    if (this.sortNoOfEmisLeft) {
+      this.status.transactions.sort((a, b) => b.noOfEmisLeft - a.noOfEmisLeft);
+      this.sortNoOfEmisLeft = false;
+    }
+    else {
+      this.status.transactions.sort((a, b) => a.noOfEmisLeft - b.noOfEmisLeft);
+      this.sortNoOfEmisLeft = true;
+    }
   }
 
-  orderByLowToHighAmount() {
-    this.transactions.sort((a, b) => a.amount - b.amount);
-  }
-
-  orderByHighToLowAmount() {
-    this.transactions.sort((a, b) => b.amount - a.amount);
+  orderByAmount() {
+    if (this.sortAmount) {
+      this.status.transactions.sort((a, b) => a.amount - b.amount);
+      this.sortAmount = false;
+    }
+    else {
+      this.status.transactions.sort((a, b) => b.amount - a.amount);
+      this.sortAmount = true;
+    }
   }
 
   orderByProductQuantity() {
-    this.transactions.sort((a, b) => b.productQuantity.valueOf() - a.productQuantity.valueOf());
+    if (this.sortProductQuantity) {
+      this.status.transactions.sort((a, b) => b.productQuantity.valueOf() - a.productQuantity.valueOf());
+      this.sortProductQuantity = false;
+    }
+    else {
+      this.status.transactions.sort((a, b) => a.productQuantity.valueOf() - b.productQuantity.valueOf());
+      this.sortProductQuantity = true;
+    }
   }
 
   orderByTenure() {
-    this.transactions.sort((a, b) => b.emiTenure.valueOf() - a.emiTenure.valueOf());
+    if (this.sortTenure) {
+      this.status.transactions.sort((a, b) => b.emiTenure.valueOf() - a.emiTenure.valueOf());
+      this.sortTenure = false;
+    }
+    else {
+      this.status.transactions.sort((a, b) => a.emiTenure.valueOf() - b.emiTenure.valueOf());
+      this.sortTenure = true;
+    }
   }
+
+  
 }

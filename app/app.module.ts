@@ -36,6 +36,9 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
 import { OrderConfirmedComponent } from './order-confirmed/order-confirmed.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ConfirmPaymentDialogComponent } from './confirm-payment-dialog/confirm-payment-dialog.component';
 
 @NgModule({
   declarations: [
@@ -69,8 +72,9 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     LoadingSpinnerComponent,
     OrderConfirmedComponent,
     ResetPasswordComponent,
-
+    ConfirmPaymentDialogComponent,
   ],
+  entryComponents:[ConfirmPaymentDialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -78,6 +82,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     BrowserAnimationsModule,
     MatTooltipModule,
     HttpClientModule,
+    MatDialogModule,
+    MatButtonModule
   ],
   
   providers: [],

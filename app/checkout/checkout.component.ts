@@ -3,7 +3,8 @@ import { Checkout } from "../models/checkout";
 import { BuyAProductService } from "../services/buy-a-product.service";
 import { Router } from '@angular/router';
 import { Product } from "../models/product";
-
+import { MatDialog } from "@angular/material/dialog";
+import { ConfirmPaymentDialogComponent } from '../confirm-payment-dialog/confirm-payment-dialog.component';
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -18,7 +19,7 @@ export class CheckoutComponent implements OnInit {
   transactionId: any;
   finalAmount;
   cardNumber = "";
-  constructor(private route: Router, private buyAProduct: BuyAProductService) {
+  constructor(private route: Router, private buyAProduct: BuyAProductService, private dialog: MatDialog) {
     if (sessionStorage.getItem("customerId") != null)
       this.customerId = parseInt(sessionStorage.getItem("customerId"));
     else {
@@ -54,14 +55,25 @@ export class CheckoutComponent implements OnInit {
     this.checkout.productQuantity = this.product.productQuantity;
     this.checkout.customerId = this.customerId;
     this.checkout.cardNumber = this.cardNumber.replace(/ /g, '');
-    this.showSpinner = true;
-    this.buyAProduct.buyAProductOnEmi(this.checkout).subscribe(
-      data => {
-        this.transactionId = data;
-        sessionStorage.setItem("transactionId", this.transactionId);
-        this.showSpinner = false;
-        this.route.navigateByUrl("/orderConfirmedLink");
+
+    var confirmPaymentDialogRef = this.dialog.open(ConfirmPaymentDialogComponent, { data: { pay: this.finalAmount } });
+
+    confirmPaymentDialogRef.afterClosed().subscribe(data => {
+      if (data == "true") {
+        this.showSpinner = true;
+        this.buyAProduct.buyAProductOnEmi(this.checkout).subscribe(
+          data => {
+            this.transactionId = data;
+            sessionStorage.setItem("transactionId", this.transactionId);
+            this.showSpinner = false;
+            this.route.navigateByUrl("/orderConfirmedLink");
+          }
+        )
       }
-    )
+      else {
+        return 0;
+      }
+    })
+
   }
 }
