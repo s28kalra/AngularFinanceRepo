@@ -1,15 +1,15 @@
 <div class="container">
-    <div class="sidebar">
+    <div class="sidebar"> 
 
         <header> My Profile</header>
         <ul>
 
-            <li><a (click)="viewProfile()"><i class="fa fa-user-circle-o"></i> View Your Profile</a></li>
-            <li><a (click)="viewAllCustomers()"><i class="fa fa-fw fa-user"></i>View All Customers </a></li>
-            <li><a (click)="viewAllPendingCustomers()"><i class="fa fa-fw fa-user-plus"></i> View Pending Customer</a>
+            <li><a routerLink="viewAdminProfile" ><i class="fa fa-user-circle-o"></i> View Your Profile</a></li>
+            <li><a routerLink="viewAllCustomers" ><i class="fa fa-fw fa-user"></i>View All Customers </a></li>
+            <li><a routerLink="viewAllPendingCustomers" ><i class="fa fa-fw fa-user-plus"></i> View Pending Customer</a>
             </li>
-            <li><a (click)="addNewProduct()"><i class="fa fa-calendar-check-o"></i> Add New Product</a></li>
-            <li><a (click)="statistics()"><i class="fa fa-bar-chart"></i>Statistics</a></li>
+            <li><a routerLink="addNewProduct" ><i class="fa fa-calendar-check-o"></i> Add New Product</a></li>
+            <li><a routerLink="statistics" ><i class="fa fa-bar-chart"></i>Statistics</a></li>
         </ul>
     </div>
 

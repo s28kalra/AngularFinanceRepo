@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-dashboard',
@@ -10,7 +10,7 @@ export class CustomerDashboardComponent implements OnInit {
 
   display;
   customerId=0;
-  constructor(private router : ActivatedRoute, private route:Router) { 
+  constructor(private route:Router) { 
     if(sessionStorage.getItem("customerId")!=null)
       this.customerId= parseInt(sessionStorage.getItem("customerId"));
     else{
@@ -19,34 +19,9 @@ export class CustomerDashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.customerId=1;
-    this.route.navigate(['viewProfile'],{relativeTo: this.router});
+    
   }
 
-  viewProfile(){
-    this.display="viewProfile";
-    this.route.navigate(['viewProfile'],{relativeTo:this.router});
-  }
-
-  updateProfile(){
-    this.display="updateProfile";
-    this.route.navigate(['updateProfile'], {relativeTo: this.router});
-  }
-
-  viewCard(){
-    this.display="viewCard";
-    this.route.navigate(['viewCard'],{relativeTo: this.router});
-  }
-
-  viewTransactions(){
-    this.display="viewTransactions";
-    this.route.navigate(['viewTransactions'], {relativeTo:this.router});
-  }
-
-  viewCardTransactions(){
-    this.display="viewCardTransactions";
-    this.route.navigate(['viewCardTransactions'], {relativeTo: this.router});
-  }
 
   buyProducts(){
     this.route.navigateByUrl('/productListLink');

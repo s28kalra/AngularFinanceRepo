@@ -23,7 +23,7 @@ export class ViewCardComponent implements OnInit {
   activate: boolean;
   pay;
   showSpinner = false;
-  pendingVerfication=true;
+  pendingVerfication = true;
   constructor(private service: GetCardDetailsService, private activateService: ActivateEmiCardService, private payServie: PayMyEmiService, private route: Router,
     private dialog: MatDialog) {
     if (sessionStorage.getItem("customerId") != null)
@@ -36,11 +36,11 @@ export class ViewCardComponent implements OnInit {
   ngOnInit(): void {
 
     if (this.customerId > 0) {
-      this.showSpinner=true;
+      this.showSpinner = true;
       this.service.getCardDetails(this.customerId).subscribe(
         data => {
           if (data != null) {
-            this.pendingVerfication=false;
+            this.pendingVerfication = false;
             this.cardDetails = data;
             this.month = this.cardDetails.cardExpiry.valueOf().toString().substring(5, 7);
             this.year = this.cardDetails.cardExpiry.valueOf().toString().substring(2, 4);
@@ -51,7 +51,7 @@ export class ViewCardComponent implements OnInit {
             else
               this.cardImageSource = "assets/titanium.png";
           }
-          this.showSpinner=false;
+          this.showSpinner = false;
         }
       )
 
@@ -62,7 +62,7 @@ export class ViewCardComponent implements OnInit {
 
   }
 
-  
+
   ifTrue() {
     if (this.cardDetails.amountToBePaid == 0)
       return true;
@@ -71,14 +71,14 @@ export class ViewCardComponent implements OnInit {
   }
 
   payMyEmi(customerId) {
-    var confirmPaymentDialogRef= this.dialog.open(ConfirmPaymentDialogComponent,{data: {pay: this.cardDetails.amountToBePaid}});
+    var confirmPaymentDialogRef = this.dialog.open(ConfirmPaymentDialogComponent, { data: { pay: this.cardDetails.amountToBePaid } });
 
-    confirmPaymentDialogRef.afterClosed().subscribe(data=>{
-      if(data=="true"){
-        this.showSpinner=true;
+    confirmPaymentDialogRef.afterClosed().subscribe(data => {
+      if (data == "true") {
+        this.showSpinner = true;
         this.payServie.payEmiCard(customerId).subscribe(
           data1 => {
-            this.showSpinner=false;
+            this.showSpinner = false;
             window.location.reload();
           }
         )
@@ -87,11 +87,22 @@ export class ViewCardComponent implements OnInit {
   }
 
   activateEmiCard(customerId) {
-    this.activateService.activateEmiCard(customerId).subscribe(
-      data => {
-        window.location.reload();
+    var fees = 0;
+    if (this.cardDetails.cardType == "Gold")
+      fees = 500;
+    else
+      fees = 1000;
+    var confirmPaymentDialogRef = this.dialog.open(ConfirmPaymentDialogComponent, { data: { pay: fees } });
+    confirmPaymentDialogRef.afterClosed().subscribe(data => {
+      if (data == "true") {
+        this.showSpinner = true;
+        this.activateService.activateEmiCard(customerId).subscribe(
+          data1 => {
+            this.showSpinner = false;
+            window.location.reload();
+          }
+        )
       }
-    )
+    })    
   }
-
 }

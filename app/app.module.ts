@@ -36,6 +36,7 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
 import { OrderConfirmedComponent } from './order-confirmed/order-confirmed.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ConfirmPaymentDialogComponent } from './confirm-payment-dialog/confirm-payment-dialog.component';
@@ -83,7 +84,9 @@ import { ConfirmPaymentDialogComponent } from './confirm-payment-dialog/confirm-
     MatTooltipModule,
     HttpClientModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule 
+
   ],
   
   providers: [],

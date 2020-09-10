@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -10,7 +10,7 @@ export class AdminDashboardComponent implements OnInit {
   
   display;
   adminId=0;
-  constructor(private router : ActivatedRoute, private route:Router) { 
+  constructor(private route:Router) { 
     if(sessionStorage.getItem("adminId")!=null)
       this.adminId=parseInt(sessionStorage.getItem("adminId"));
     else
@@ -19,32 +19,7 @@ export class AdminDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.display="AdminProfile";
-    this.route.navigate(['viewAdminProfile'],{relativeTo: this.router});
-  }
-
-  viewProfile(){
-    this.display="ViewProfile";
-    this.route.navigate(['viewAdminProfile'],{relativeTo:this.router});
-  }
-
-  viewAllCustomers(){
-    this.display="ViewAllCustomers";
-    this.route.navigate(['viewAllCustomers'],{relativeTo: this.router});
-  }
-
-  viewAllPendingCustomers(){
-    this.display="ViewAllPendingCustomers";
-    this.route.navigate(['viewAllPendingCustomers'], {relativeTo:this.router});
-  }
-
-  addNewProduct(){
-    this.display="AddNewProduct";
-    this.route.navigate(['addNewProduct'], {relativeTo: this.router});
-  }
-
-  statistics(){
-    this.display="Statistics";
-    this.route.navigate(['statistics'] , {relativeTo:this.router});
+  //  this.route.navigate(['viewAdminProfile'],{relativeTo: this.router});
   }
 
 }

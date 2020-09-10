@@ -27,11 +27,11 @@ export class OrderConfirmedComponent implements OnInit {
   }
 
   returnToDashboard() {
-    this.route.navigateByUrl("/customerDashboardLink")
+    this.route.navigateByUrl("/customerDashboardLink/viewProfile");
   }
 
   returnToProducts() {
-    this.route.navigateByUrl("/productListLink")
+    this.route.navigateByUrl("/productListLink");
   }
 
 }

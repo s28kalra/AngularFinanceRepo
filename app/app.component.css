@@ -92,6 +92,10 @@ body{
     color: #f43f00;
 }
 
+.active{
+    color: red;
+}
+
 a{
     cursor: pointer;
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewtransactionsService } from "../../services/viewtransactions.service";
-import { CustomerInfo } from "../../models/customer-info";
 import { ViewCardTransactionsStatus } from "src/app/status/ViewCardTransactionsStatus";
 import { Router } from '@angular/router';
 

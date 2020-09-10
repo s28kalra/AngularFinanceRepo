@@ -22,6 +22,12 @@ export class UserLoginComponent implements OnInit {
   }
 
   loginCustomer() {
+    var regex = new RegExp(/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{1,3})+$/);
+    if (!regex.test(this.login.customerEmail)) {
+      this.message = "Invalid Customer Email";
+      return 0;
+    }
+    
     this.showSpinner = true;
     this.loginService.loginCustomer(this.login).subscribe(data => {
       this.customerStatus = data;
@@ -29,7 +35,7 @@ export class UserLoginComponent implements OnInit {
       if (this.customerStatus.status == 'SUCCESS') {
         sessionStorage.setItem('customerId', this.customerStatus.customerId.toString());
         sessionStorage.setItem('customerName', this.customerStatus.customerFirstName);
-        this.route.navigate(['customerDashboardLink']);
+        this.route.navigate(['customerDashboardLink/viewProfile']);
       }
       else {
         this.message = this.customerStatus.message;
@@ -56,7 +62,7 @@ export class UserLoginComponent implements OnInit {
         if (this.adminStatus.status == 'SUCCESS') {
           sessionStorage.setItem("adminId", this.adminStatus.adminId.toString());
           sessionStorage.setItem("adminName", this.adminStatus.adminName);
-          this.route.navigate(['adminDashboardLink']);
+          this.route.navigate(['adminDashboardLink/viewAdminProfile']);
         }
         else {
           this.message = this.adminStatus.message;
